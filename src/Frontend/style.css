@@ -4,6 +4,7 @@
   text-align: center;
   font-family: "Montserrat", sans-serif;
 }
+
 body {
   background-color: #280044;
   min-height: 730px;
@@ -61,11 +62,17 @@ footer {
 }
 
 .companyRegisterBnt {
-  border-radius: 30px;
+  border-radius: 10px;
   padding: 6px;
   background-color: #9600ff;
   color: white;
   border: 0px;
+  padding: 10px;
+}
+
+.companyRegisterBnt:hover {
+  background-color: #9600ff;
+  color: white;
 }
 
 @media (min-height: 800px) {

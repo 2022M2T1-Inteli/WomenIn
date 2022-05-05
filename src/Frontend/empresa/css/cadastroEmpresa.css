@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800;900&display=swap");
+
+* {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  background-color: #280044;
+  min-height: 730px;
+}
+
+.logoHeader {
+  width: 121px;
+  margin: 10px 0px 90px;
+}
+
+/* MAIN */
+
+.centralText {
+  color: white;
+  width: 270px;
+  margin: auto;
+  font-weight: bold;
+}
+
+.centralText hr {
+  color: white;
+  height: 3px;
+}

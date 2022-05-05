@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800;900&display=swap");
+
+p {
+  color: white;
+}
+
+* {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+}
+body {
+  background-color: #280044;
+}
+
+img {
+  max-width: 45%;
+  margin-top: 25px;
+  margin-bottom: 50px;
+}
+
+.welcomeBack {
+  font-size: xx-large;
+  font-weight: 600;
+  margin-bottom: 50px;
+}
+.registerContainer {
+  display: flexbox;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 80%;
+  border-radius: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+}
+.registerNow {
+  font-size: x-large;
+}
+#cadastreButton {
+  border-radius: 15px;
+}
+
+#cadastreInput {
+  margin-bottom: 15px;
+}
+
+.loginTable {
+  margin: auto;
+  margin-top: 20px;
+}
+/* FOOTER */
+
+.companyRegisterBnt {
+  border-radius: 30px;
+  padding: 6px;
+  background-color: #9600ff;
+  color: white;
+  border: 0px;
+}

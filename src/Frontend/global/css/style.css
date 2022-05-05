@@ -33,14 +33,18 @@ img {
 }
 
 #cadastreButton {
-  margin-top: 20px;
   border-radius: 15px;
+  margin-left: 15px;
 }
 
 #cadastreInput {
   margin-bottom: 15px;
 }
 
+.loginTable {
+  margin: auto;
+  margin-top: 20px;
+}
 /* FOOTER */
 
 footer {
@@ -58,7 +62,19 @@ footer {
 
 .companyRegisterBnt {
   border-radius: 30px;
+  padding: 6px;
   background-color: #9600ff;
   color: white;
   border: 0px;
+}
+
+@media (min-height: 800px) {
+  footer {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }

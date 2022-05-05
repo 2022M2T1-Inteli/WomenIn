@@ -28,3 +28,26 @@ body {
   color: white;
   height: 3px;
 }
+
+.registerContainer {
+  display: flexbox;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 70%;
+  margin: auto;
+  border-radius: 20px;
+}
+
+.registerContainer p {
+  color: white;
+  margin: 0px;
+}
+
+.registerContainer input {
+  margin: 0px 0px 23px;
+}
+
+.registerContainer button {
+  font-weight: bold;
+  color: #280044;
+}

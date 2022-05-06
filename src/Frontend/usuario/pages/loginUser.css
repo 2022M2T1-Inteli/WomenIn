@@ -57,3 +57,9 @@ img {
   color: white;
   border: 0px;
 }
+
+#googleSVG {
+  margin: 2px;
+  margin-right: 10px;
+  transform: translateY(-1.5px);
+}

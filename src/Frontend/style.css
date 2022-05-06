@@ -6,21 +6,13 @@
 }
 
 body {
-  background-color: #280044;
+  background: #280044;
   min-height: 730px;
 }
 
 img {
   max-width: 70%;
   margin-top: 25px;
-}
-
-.matchTitle {
-  font-size: 70px;
-  font-weight: bolder;
-  color: #f3c42e;
-  margin-bottom: 20px;
-  box-shadow: inset 60px black;
 }
 
 .registerContainer {
@@ -46,27 +38,19 @@ img {
   margin: auto;
   margin-top: 20px;
 }
+
 /* FOOTER */
 
-footer {
-  bottom: 30px;
-}
-
 .textFooter {
-  font-style: normal;
   font-weight: 700;
-  font-size: 14px;
-  align-items: center;
-  text-align: center;
-  color: #ffffff;
+  font-size: 16px;
+  color: white;
 }
 
 .companyRegisterBnt {
   border-radius: 10px;
-  padding: 6px;
   background-color: #9600ff;
   color: white;
-  border: 0px;
   padding: 10px;
 }
 

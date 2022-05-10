@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800;900&display=swap");
+
+*{
+    font-family: "Montserrat", sans-serif;
+    text-decoration: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+/* HEADER */
+
+.perfilBackground{
+    background-image: url("../../assets/perfilEmpresaBackground.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 146px;
+    text-align: center;
+}
+
+.btns{
+    height: 70px;
+}
+
+.backBtn{
+    font-weight: bold;
+    margin: 15px 30px;
+    font-size: 20px;
+    color: white;
+    float: left;
+}
+
+.editBtn{
+    background: #280044;
+    font-weight: bold;
+    margin: 15px 15px;
+    font-size: 20px;
+    color: white;
+    float: right;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+
+/* .perfilLogo{
+    display: inline-block;
+} */

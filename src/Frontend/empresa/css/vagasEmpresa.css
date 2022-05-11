@@ -14,13 +14,18 @@ body {
 #header {
   font-size: xx-large;
   font-weight: bold;
-  display: grid;
-  grid-template-columns: 1fr 4fr;
   width: 100%;
   background-color: #280044;
   color: white;
   text-align: center;
-  padding: 10px;
+  padding: 15px 10px 5px;
+}
+
+.backBtn{
+  height: 40px;
+  position: absolute;
+  top: 10px;
+  left: 15px;
 }
 
 .card1 {

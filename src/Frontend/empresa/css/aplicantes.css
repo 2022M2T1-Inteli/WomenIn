@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500;600;700;800&family=Nunito:wght@200;400&family=Roboto+Slab:wght@200;400&display=swap");
+
+* {
+  font-family: "Montserrat", sans-serif;
+  text-decoration: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+    background-color: #280044;
+
+}
+
+/* HEADER */
+
+header{
+    color: #f3c42e;
+    text-align: center;
+    padding: 90px 30px 10px;
+}
+
+.backBtn{
+    height: 40px;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+}
+
+header h1{
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+header p{
+    font-size: 18px;
+}
+
+/* MAIN */
+
+.applicantContainer {
+    margin: 30px 20px;
+    background-color: #f3c42e;
+    display: grid;
+    grid-template-rows: 5fr 1fr;
+    border-radius: 10px;
+    padding: 10px 10px 20px;
+    color: #280044;
+}
+
+.applicantInfos {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    margin-bottom: 20px;
+}
+
+.applicantImg{
+    padding: 10px;
+}
+
+.applicantImg img{
+    width: 100%;
+    border-radius: 50%;
+}
+
+.applicantDescription{
+    padding: 10px;
+}
+
+.applicantDescription h3{
+    text-align: justify;
+}
+
+.applicantDescription p{
+    text-align: justify;
+    font-weight: 500;
+}
+
+.applicantBtns{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+}
+
+.applicantBtns a{ 
+    background-color: #280044;
+    color: #ffffff;
+    font-weight: bold;
+    margin: 0px 20px;
+    border-radius: 10px;
+    padding: 10px;
+}
+

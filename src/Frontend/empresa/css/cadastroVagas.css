@@ -20,7 +20,7 @@ header{
     padding: 90px 30px 10px;
 }
 
-header a img{
+.backBtn{
     height: 40px;
     position: absolute;
     top: 15px;

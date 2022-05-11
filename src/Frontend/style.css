@@ -25,6 +25,11 @@ img {
   margin-bottom: 30px;
 }
 
+.registerContainer p{
+  font-weight: 600;
+  margin: 0px 0px 10px;
+}
+
 #cadastreButton {
   border-radius: 15px;
   margin-left: 15px;
@@ -32,11 +37,13 @@ img {
 
 #cadastreInput {
   margin-bottom: 15px;
+  border-radius: 10px;
 }
 
 .loginTable {
   margin: auto;
   margin-top: 20px;
+  font-weight: 600;
 }
 
 /* FOOTER */

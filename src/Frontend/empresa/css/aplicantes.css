@@ -7,17 +7,14 @@
   margin: 0px;
 }
 
-body {
-    background-color: #280044;
-
-}
 
 /* HEADER */
 
 header{
     color: #f3c42e;
     text-align: center;
-    padding: 90px 30px 10px;
+    padding: 15px;
+    background-color: #280044;
 }
 
 .backBtn{
@@ -29,7 +26,6 @@ header{
 
 header h1{
     font-size: 36px;
-    margin-bottom: 10px;
 }
 
 header p{
@@ -40,12 +36,12 @@ header p{
 
 .applicantContainer {
     margin: 30px 20px;
-    background-color: #f3c42e;
+    background-color: #280044;
     display: grid;
-    grid-template-rows: 5fr 1fr;
+    grid-template-rows: 4r 1fr;
     border-radius: 10px;
     padding: 10px 10px 20px;
-    color: #280044;
+    color: #ffffff;
 }
 
 .applicantInfos {
@@ -83,8 +79,8 @@ header p{
 }
 
 .applicantBtns a{ 
-    background-color: #280044;
-    color: #ffffff;
+    background-color: #f3c42e;
+    color: #280044;
     font-weight: bold;
     margin: 0px 20px;
     border-radius: 10px;

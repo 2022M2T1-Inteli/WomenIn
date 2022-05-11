@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500;600;700;800&family=Nunito:wght@200;400&family=Roboto+Slab:wght@200;400&display=swap");
+
+* {
+  font-family: "Montserrat", sans-serif;
+  text-decoration: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+/* HEADER */
+
+header {
+  border-bottom: 9px #e1e1e1 solid;
+  height: 300px;
+}
+
+.perfilBackground {
+  background-image: url("../../assets/capa.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 146px;
+  text-align: center;
+}
+
+.imgPerfil {
+  text-align: center;
+  position: relative;
+  top: -92px;
+}
+
+.btns {
+  height: 70px;
+}
+
+.backBtn {
+  background: #280044;
+  font-weight: bold;
+  margin: 15px 30px;
+  font-size: 20px;
+  color: white;
+  float: left;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+.headerInfos {
+  text-align: center;
+  top: -92px;
+  position: relative;
+}
+
+.headerInfos h1 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.headerInfos p {
+  font-size: 14px;
+  font-weight: bold;
+  color: #808080;
+}
+
+/* MAIN */
+
+.aboutUs h3 {
+  padding: 10px;
+  border-bottom: 1px #e1e1e1 solid;
+  font-size: 15px;
+  font-weight: 600;
+}
+.aboutUs p {
+  padding: 5px;
+  margin: 0px 5px;
+  text-align: justify;
+  border-bottom: 1px #e1e1e1 solid;
+}
+
+.curriculumContainer{
+  text-align: center;
+  margin: 15px;
+  font-size: 16px;
+}
+
+.curriculumBox{
+  background-color: #DEDEDE;
+  height: 100%;
+  border-radius: 10px;
+  margin: 15px 25px;
+  text-align: center;
+  padding: 30px;
+  position: relative;
+}
+
+.curriculumBtn{
+  background-color: #f3c42e;
+  padding: 10px;
+  border-radius: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #280044;
+  font-size: 14px;
+  font-weight: bold;
+}

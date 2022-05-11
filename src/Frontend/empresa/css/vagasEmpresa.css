@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&family=Nunito:wght@200;400&family=Roboto+Slab:wght@200;400&display=swap");
+
+* {
+  font-family: "montserrat", sans-serif;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+#header {
+  font-size: xx-large;
+  font-weight: bold;
+  width: 100%;
+  background-color: #280044;
+  color: white;
+  text-align: center;
+  padding: 15px 10px 5px;
+}
+
+.backBtn{
+  height: 40px;
+  position: absolute;
+  top: 10px;
+  left: 15px;
+}
+
+.card1 {
+  align-items: center;
+  max-width: 600px;
+  margin: 1.1rem;
+  margin-bottom: 0;
+  padding: 20px;
+  color: white;
+  background-color: #280044;
+  border-radius: 10px;
+}
+
+.job {
+  font-weight: 1000;
+  margin-bottom: 5%;
+  text-align: center;
+}

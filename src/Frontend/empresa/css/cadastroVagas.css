@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500;600;700;800&family=Nunito:wght@200;400&family=Roboto+Slab:wght@200;400&display=swap");
+
+* {
+  font-family: "Montserrat", sans-serif;
+  text-decoration: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+    background-color: #280044;
+
+}
+
+/* HEADER */
+
+header{
+    color: #f3c42e;
+    text-align: center;
+    padding: 90px 30px 10px;
+}
+
+.backBtn{
+    height: 40px;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+}
+
+header h1{
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+header p{
+    font-size: 18px;
+}
+
+/* MAIN */
+
+main{
+    text-align: center;
+}
+
+.inputs{
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 20px 50px;
+    height: 100%;
+}
+
+.inputs input{
+    margin: 15px;
+    padding: 20px 5px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-bottom: 2px #f3c42e solid;
+    background-color: #280044;
+    color: white;
+
+}
+
+.inputs input:focus{
+    outline: none;
+}
+
+.inputs input::placeholder{
+    color: rgb(207, 207, 207);
+}
+
+.registerBtn {
+    background-color: #f3c42e;
+    color: #280044;
+    padding: 15px;
+    font-size: 20px;
+    border-radius: 15px;
+    font-weight: bold;
+    margin: 25px;
+}

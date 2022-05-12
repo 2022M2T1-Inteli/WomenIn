@@ -95,7 +95,7 @@ body {
     color: #280044;
     box-shadow: rgba(0, 0, 0, 0.8) 0 0 10px;
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 5fr 4fr;
     position: absolute;
     top: 30px;
     bottom: 30px;

@@ -10,44 +10,58 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
+    <link rel="shortcut icon" href="../../assets/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/cadastroEmpresa.css" />
     <title>Bit Match | Cadastrar Empresa</title>
   </head>
   <body>
     <header>
       <a href="../../index.html"><img class="logoHeader" src="../../assets/logo2.png" alt="Logo" /></a>
+      <a href="../../index.html">
+        <img class="yellowBackBtn" src="../../assets/yellow-arrow-left.svg" alt="">
+      </a>
+      <a href="../../index.html">
+        <img class="purpleBackBtn" src="../../assets/purple-arrow-left.svg" alt="">
+      </a>
     </header>
     <main>
-      <div class="centralText">
-        <p class="p">Quer incluir sua empresa na plataforma?</p>
-        <hr />
-        <p>Preencha os campos abaixo que entraremos em contato</p>
-      </div>
-      <div class="registerContainer">
-        <p>Nome da empresa</p>
-        <input 
-          class="form-control cadastreInput" 
-          type="text" 
-          placeholder="Digite aqui..." 
-          aria-label="default input example"
-        />
-        <p>Telefone/email para contato</p>
-        <input 
-          class="form-control cadastreInput"
-          type="password"
-          placeholder="Digite aqui..."
-          aria-label="default input example"
-        />
-        </input>
-        <a
-          href="./dashboard.html" 
-          id="cadastreButton" 
-          type="button" 
-          class="btn btn-warning"
-        >
-          Enviar
-        </a>
-      </div>
+      <div class="container">
+        <div class="containerLogoBx">
+          <img class="containerLogo" src="../../assets/logo2.png" alt="Logo" />
+        </div>
+        <div class="containerTextBx">[
+          <div class="centralText">
+            <p class="p">Quer incluir sua empresa na plataforma?</p>
+            <hr />
+            <p>Preencha os campos abaixo que entraremos em contato</p>
+          </div>
+          <div class="registerContainer">
+            <p>Nome da empresa</p>
+            <input 
+              class="form-control cadastreInput" 
+              type="text" 
+              placeholder="Digite aqui..." 
+              aria-label="default input example"
+            />
+            <p>Telefone/email para contato</p>
+            <input 
+              class="form-control cadastreInput"
+              type="password"
+              placeholder="Digite aqui..."
+              aria-label="default input example"
+            />
+            </input>
+            <a
+              href="./dashboard.html" 
+              id="cadastreButton" 
+              type="button" 
+              class="btn btn-warning"
+            >
+              Enviar
+            </a>
+          </div>
+        </div>
+        </div>
     </main>
     <script src="../scripts/cadastroEmpresa.js"></script>
   </body>

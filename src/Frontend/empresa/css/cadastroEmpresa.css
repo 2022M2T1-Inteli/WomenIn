@@ -15,7 +15,28 @@ body {
   margin: 10px 0px 90px;
 }
 
+.yellowBackBtn{
+  display: block;
+  height: 40px;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+}
+
+.purpleBackBtn{
+  height: 40px;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  display: none;
+}
+
+
 /* MAIN */
+
+.containerLogo{
+  display: none;
+}
 
 .centralText {
   color: white;
@@ -50,4 +71,45 @@ body {
 .registerContainer button {
   font-weight: bold;
   color: #280044;
+}
+
+@media (min-width: 700px) {
+  body{
+    padding: 20px;
+    overflow: hidden ;
+    background-color: #f3c42e;
+  }
+
+  
+
+  .yellowBackBtn{
+    display: none;
+  }
+
+  .purpleBackBtn{
+    display: block;
+  }
+
+  .container {
+    background-color: #280044;
+    padding: 60px 20px;
+    border-radius: 15px;
+    color: #280044;
+    box-shadow: rgba(0, 0, 0, 0.8) 0 0 10px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .logoHeader{
+    display: none;
+  }
+
+  .containerLogo{
+    display: block;
+    width: 100%;
+    margin: auto;position: relative;
+    top: 50%;
+    transform: translateY(-50%); 
+  }
+
 }

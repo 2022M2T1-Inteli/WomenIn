@@ -102,8 +102,9 @@ header p{
     }
 
     .applicantContainer{
-        width: 400px;
+        width: 500px;
         display: inline-block;
+        margin: 20px;
     }
 }
 

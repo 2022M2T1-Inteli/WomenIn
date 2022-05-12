@@ -15,7 +15,7 @@ body {
   margin: 10px 0px 90px;
 }
 
-.yellowBackBtn{
+.yellowBackBtn {
   display: block;
   height: 40px;
   position: absolute;
@@ -23,7 +23,7 @@ body {
   left: 15px;
 }
 
-.purpleBackBtn{
+.purpleBackBtn {
   height: 40px;
   position: absolute;
   top: 15px;
@@ -31,10 +31,9 @@ body {
   display: none;
 }
 
-
 /* MAIN */
 
-.containerLogo{
+.containerLogo {
   display: none;
 }
 
@@ -74,19 +73,18 @@ body {
 }
 
 @media (min-width: 700px) {
-  body{
+  body {
     padding: 20px;
-    overflow: hidden ;
-    background-color: #f3c42e;
+    overflow: hidden;
+    background-color: rgb(243, 197, 48, 0.9);
+    text-align: center;
   }
 
-  
-
-  .yellowBackBtn{
+  .yellowBackBtn {
     display: none;
   }
 
-  .purpleBackBtn{
+  .purpleBackBtn {
     display: block;
   }
 
@@ -98,18 +96,24 @@ body {
     box-shadow: rgba(0, 0, 0, 0.8) 0 0 10px;
     display: grid;
     grid-template-columns: 2fr 1fr;
+    position: absolute;
+    top: 30px;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    margin: auto;
   }
 
-  .logoHeader{
+  .logoHeader {
     display: none;
   }
 
-  .containerLogo{
+  .containerLogo {
     display: block;
-    width: 100%;
-    margin: auto;position: relative;
+    width: 80%;
+    margin: auto;
+    position: relative;
     top: 50%;
-    transform: translateY(-50%); 
+    transform: translateY(-50%);
   }
-
 }

@@ -20,10 +20,35 @@
     <title>Bit Match | Dashboard</title>
   </head>
   <body>
+    <nav class="navbar navbar-light fixed-top">
+      <div class="container-fluid">
+          <!-- botão menu offcanvas -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <!-- botão editar -->
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+              aria-labelledby="offcanvasNavbarLabel">
+              <!-- menu offcanvas aberto -->
+              <div class="offcanvas-header">
+                  <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+                  <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                      aria-label="Close"></button>
+              </div>
+              <div class="offcanvas-body">
+                  <ul class="list-group list-group-flush">
+                      <li class="list-group-item"><a class="nav-link active menu" href="cadastroVagas.html">Cadastrar vagas</a></li>
+                      <li class="list-group-item"><a class="nav-link active menu" href="vagasEmpresa.html">Ver minhas vagas</a></li>
+                      <li class="list-group-item"><a class="nav-link active menu" href="../../index.html">Sair</a></li>
+                    </ul>
+              </div>
+          </div>
+      </div>
+  </nav>
     <header>
       <div class="perfilBackground">
         <div class="btns">
-          <a href="../../index.html" class="logoutBtn">Logout</a>
           <a href="#" class="editBtn">Editar</a>
         </div>
       </div>
@@ -37,10 +62,6 @@
       <div class="headerInfos">
         <h1>Amazon Ltda.</h1>
         <p class="slogan">Work Hard, Have Fun, Make History</p>
-        <div class="headerBtns">
-          <a href="./vagasEmpresa.html">Ver minhas vagas</a>
-          <a href="./cadastroVagas.html">Cadastrar vagas</a>
-        </div>
       </div>
     </header>
     <main>

@@ -62,12 +62,6 @@ header {
   color: #808080;
 }
 
-.headerBtns {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  margin: 0px 20px;
-}
-
 .headerInfos a {
   background-color: #f3c42e;
   padding: 10px;

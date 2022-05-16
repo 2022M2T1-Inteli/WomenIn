@@ -1,110 +1,45 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500;600;700;800&family=Nunito:wght@200;400&family=Roboto+Slab:wght@200;400&display=swap");
-
-* {
-  font-family: "Montserrat", sans-serif;
-  text-decoration: none;
-  padding: 0px;
-  margin: 0px;
-}
-
-
-/* HEADER */
-
-header{
+body {
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  
+  #header {
+    width: 100%;
+    background-color: #280044;
     color: #f3c42e;
     text-align: center;
     padding: 15px;
-    background-color: #280044;
-}
-
-.backBtn{
+  }
+  
+  #header h1{
+    font-size: 36px;
+    font-weight: bold;
+    margin: 0px;
+  }
+  
+  .backBtn{
     height: 40px;
     position: absolute;
     top: 15px;
     left: 15px;
-}
-
-header h1{
-    font-size: 36px;
-}
-
-header p{
-    font-size: 18px;
-}
-
-/* MAIN */
-
-.applicantContainer {
-    margin: 30px 20px;
+  }
+  
+  .card1 {
+    align-items: center;
+    max-width: 600px;
+    margin: 1.1rem;
+    margin-bottom: 0;
+    padding: 20px;
+    color: white;
     background-color: #280044;
-    display: grid;
-    grid-template-rows: 4fr 1fr;
     border-radius: 10px;
-    padding: 10px 10px 20px;
-    color: #ffffff;
-}
-
-.applicantInfos {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    margin-bottom: 20px;
-}
-
-.applicantImg{
-    padding: 10px;
-}
-
-.applicantImg img{
-    width: 100%;
-    border-radius: 50%;
-}
-
-.applicantDescription{
-    padding: 10px;
-}
-
-.applicantDescription h3{
-    text-align: justify;
-}
-
-.applicantDescription p{
-    text-align: justify;
-    font-weight: 500;
-}
-
-.applicantBtns{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+  }
+  
+  .job {
+    font-weight: 1000;
+    margin-bottom: 5%;
     text-align: center;
-}
-
-.applicantBtns a{ 
-    background-color: #f3c42e;
-    color: #280044;
-    font-weight: bold;
-    margin: 0px 20px;
-    border-radius: 10px;
-    padding: 10px;
-}
-
-@media (min-width: 700px) {
-    .container{
-        padding: 30px;
-        background-color: #f3c42e;
-        border-radius: 30px;
-        box-shadow: white 0 0 10px;
-        margin: 30px;
-        text-align: center;
-    }   
-
-    body{
-        background-color: #280044;
-    }
-
-    .applicantContainer{
-        width: 500px;
-        display: inline-block;
-        margin: 20px;
-    }
-}
-
+  }
+  

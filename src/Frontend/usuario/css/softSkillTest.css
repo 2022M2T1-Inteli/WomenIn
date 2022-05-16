@@ -11,6 +11,11 @@ body {
   background-color: #280044;
 }
 
+label {
+  color: white;
+  font-weight: bold;
+}
+
 /* HEADER */
 
 header {
@@ -53,15 +58,7 @@ header p {
   height: 100%;
 }
 
-.inputs input {
-  margin: 15px;
-  padding: 20px 5px;
-  font-size: 16px;
-  font-weight: bold;
-  border: none;
-  border-bottom: 2px #f3c42e solid;
-  color: white;
-}
+
 
 .inputs input:focus {
   outline: none;
@@ -117,7 +114,6 @@ header p {
   .inputs {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    color: white;
     font-weight: bold;
     margin: auto;
   }
@@ -131,3 +127,8 @@ header p {
     width: 25%;
   }
 }
+
+.form-range{
+  margin-bottom: 15px;
+}
+

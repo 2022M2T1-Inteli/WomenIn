@@ -34,37 +34,65 @@
     </header>
     <main>
       <div class="inputsContainer">
-        <div class="inputs">
+        <form>
           <div class="column">
-            <input class="checked" type="checkbox"/>Controle das Emoções<br />
-            <input type="checkbox"/>Pensamento criativo<br />
-            <input type="checkbox"/>Colaboração<br />
-            <input type="checkbox"/>Comunicação eficiente<br />
-            <input type="checkbox"/>Liderança<br />
-            <input type="checkbox"/>Criatividade<br />
-            <input type="checkbox"/>Pensamento crítico<br />
-            <input type="checkbox"/>Empatia<br />
-            <input type="checkbox"/>Atitude<br />
-            <input type="checkbox"/>Flexibilidade no trabalho<br />
-            <input type="checkbox"/>Tomada de decisão<br />
+            <label for="" class="form-label">Controle das Emoções</label>
+            <input type="range" class="form-range" min="-2" max="2" step="1" id="OI">
+            <label for="" class="form-label">Pensamento criativo</label>
+            <input type="range" class="form-range" min="-2" max="2" step="1" id="">
+            <label for="" class="form-label">Colaboração</label>
+            <input type="range" class="form-range" min="-2" max="2" step="1" id="">
+            <label for="" class="form-label">Comunicação eficiente</label>
+            <input type="range" class="form-range" min="-2" max="2" step="1" id="">
+            <label for="" class="form-label">Liderança</label>
+            <input type="range" class="form-range" min="-2" max="2" step="1" id="">
+            <label for="" class="form-label">Criatividade</label>
+            <input type="range" class="form-range" min="-2" max="2" step="1" id="">
+            <label for="" class="form-label">Pensamento crítico</label>
+            <input type="range" class="form-range" min="-2" max="2" step="1" id="">
+            <label for="" class="form-label">Empatia</label>
+            <input type="range" class="form-range" min="-2" max="2" step="1" id="">
+            <label for="" class="form-label">Atitude</label>
+            <input type="range" class="form-range" min="-2" max="2" step="1" id="">
+            <label for="" class="form-label">Flexibilidade no trabalho</label>
+            <input type="range" class="form-range" min="-2" max="2" step="1" id="">
+            <label for="" class="form-label">Tomada de decisão</label>
+            <input type="range" class="form-range" min="-2" max="2" step="1" id="">
           </div>
           <div class="column">
-            <input type="checkbox"/>Negociação<br />
-            <input type="checkbox"/>Adaptação<br />
-            <input type="checkbox"/>Ética no trabalho<br />
-            <input type="checkbox"/>Honestidade<br />
-            <input type="checkbox"/>Aprender a aprender<br />
-            <input type="checkbox"/>Autogestão<br />
-            <input type="checkbox"/>Planejamento<br />
-            <input type="checkbox"/>Organização<br />
-            <input type="checkbox"/>Resiliência<br />
-            <input type="checkbox"/>Trabalhar sob pressão<br />
-            <input type="checkbox"/>Desenvolvimento pessoal<br />
+            <label for="" class="form-label">Negociação</label>
+            <input type="range" class="form-range" min="-2" max="2" step="1" id="">
+            <label for="" class="form-label">Adaptação</label>
+            <input type="range" class="form-range" min="-2" max="2" step="1" id="">
+            <label for="" class="form-label">Ética no trabalho</label>
+            <input type="range" class="form-range" min="-2" max="2" step="1" id="">
+            <label for="" class="form-label">Honestidade</label>
+            <input type="range" class="form-range" min="-2" max="2" step="1" id="">
+            <label for="" class="form-label">Autogestão</label>
+            <input type="range" class="form-range" min="-2" max="2" step="1" id="">
+            <label for="" class="form-label">Planejamento</label>
+            <input type="range" class="form-range" min="-2" max="2" step="1" id="">
+            <label for="" class="form-label">Organização</label>
+            <input type="range" class="form-range" min="-2" max="2" step="1" id="">
+            <label for="" class="form-label">Resiliência</label>
+            <input type="range" class="form-range" min="-2" max="2" step="1" id="">
+            <label for="" class="form-label">Trabalhar sob pressão</label>
+            <input type="range" class="form-range" min="-2" max="2" step="1" id="">
+            <label for="" class="form-label">Desenvolvimento pessoal</label>
+            <input type="range" class="form-range" min="-2" max="2" step="1" id="">
           </div>
         </div>
         <a class="registerBtn" href="#">Salvar</a>
       </div>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script>var slider = document.getElementById("OI");
+      var output = document.getElementsByClassName("column");
+      output.innerHTML = slider.value; // Display the default slider value
+      
+      // Update the current slider value (each time you drag the slider handle)
+      slider.oninput = function() {
+        output.innerHTML = this.value;
+        alert('OI')}</script>
   </body>
 </html>

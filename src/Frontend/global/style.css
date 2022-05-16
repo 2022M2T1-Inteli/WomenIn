@@ -5,3 +5,7 @@
   text-decoration: none !important;
   list-style: none !important;
 }
+
+a:hover{
+  color: unset !important;
+}

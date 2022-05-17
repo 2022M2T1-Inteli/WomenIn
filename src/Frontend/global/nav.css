@@ -1,0 +1,9 @@
+@media (min-width: 800px){
+.list-group-flush {
+    border-radius: 0 !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr !important;
+    justify-content: space-evenly !important;
+    justify-items: center !important
+}
+}

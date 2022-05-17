@@ -1,89 +1,49 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500;600;700;800&family=Nunito:wght@200;400&family=Roboto+Slab:wght@200;400&display=swap");
+body {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
 
-* {
-  font-family: "Montserrat", sans-serif;
-  text-decoration: none;
-  padding: 0px;
+#header {
+  width: 100%;
+  background-color: #280044;
+  color: #f3c42e;
+  text-align: center;
+  padding: 15px;
+}
+
+#header h1 {
+  font-size: 36px;
+  font-weight: bold;
   margin: 0px;
 }
 
-
-/* HEADER */
-
-header{
-    color: #f3c42e;
-    text-align: center;
-    padding: 15px;
-    background-color: #280044;
+.backBtn {
+  height: 40px;
+  position: absolute;
+  top: 15px;
+  left: 15px;
 }
 
-.backBtn{
-    height: 40px;
-    position: absolute;
-    top: 15px;
-    left: 15px;
+.card1 {
+  align-items: center;
+  max-width: 600px;
+  margin: 1.1rem;
+  margin-bottom: 0;
+  padding: 20px;
+  color: white;
+  background-color: #280044;
+  border-radius: 10px;
 }
 
-header h1{
-    font-size: 36px;
+.job {
+  font-weight: 1000;
+  margin-bottom: 5%;
+  text-align: center;
 }
 
-header p{
-    font-size: 18px;
+.btnContainer {
+  display: flex;
+  justify-content: space-evenly;
 }
-
-/* MAIN */
-
-.companyContainer {
-    margin: 30px 20px;
-    background-color: #280044;
-    display: grid;
-    grid-template-rows: 4r 1fr;
-    border-radius: 10px;
-    padding: 10px 10px 20px;
-    color: #ffffff;
-}
-
-.companyInfos {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    margin-bottom: 20px;
-}
-
-.companyImg{
-    padding: 10px;
-}
-
-.companyImg img{
-    width: 100%;
-    border-radius: 50%;
-}
-
-.companyDescription{
-    padding: 10px;
-}
-
-.companyDescription h3{
-    text-align: justify;
-}
-
-.companyDescription p{
-    text-align: justify;
-    font-weight: 500;
-}
-
-.companyBtns{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    text-align: center;
-}
-
-.companyBtns a{ 
-    background-color: #f3c42e;
-    color: #280044;
-    font-weight: bold;
-    margin: 0px 20px;
-    border-radius: 10px;
-    padding: 10px;
-}
-

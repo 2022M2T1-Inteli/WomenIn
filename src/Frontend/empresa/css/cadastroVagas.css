@@ -76,6 +76,12 @@ main {
   margin: 25px;
 }
 
+.test{
+  background-color: #280044 !important;
+  color: white !important;
+  margin-bottom: 15px !important;
+}
+
 @media (min-width: 900px) {
   body {
     padding: 0px 300px;

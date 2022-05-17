@@ -29,7 +29,6 @@ document.querySelector("body").addEventListener("mouseup", function (event) {
   if (event.srcElement.nodeName == "INPUT") {
     let currentSlider = event.srcElement.id;
     value = document.getElementById(currentSlider).value;
-    console.log(currentSlider, value);
     const [selectedH2] = $("#" + currentSlider).next();
     switch (value) {
       case "-2":

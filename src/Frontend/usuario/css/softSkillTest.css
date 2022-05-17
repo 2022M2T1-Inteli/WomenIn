@@ -70,11 +70,11 @@ header p {
   background-color: #f3c42e;
   color: #280044;
   padding: 15px;
-  font-size: 20px;
+  font-size: 25px;
   border-radius: 15px;
   text-align: center;
   font-weight: bold;
-  margin: 25px;
+  text-decoration: none;
 }
 
 .checked:checked {

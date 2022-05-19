@@ -13,6 +13,7 @@ header{
     color: #280044;
     text-align: center;
     padding: 50px 30px 10px;
+    color: white;
 }
 
 .backBtn{
@@ -29,6 +30,10 @@ header h1{
 
 header p{
     font-size: 18px;
+}
+body {
+    background-color: #280044 !important;
+    color: white;
 }
 
 /* MAIN */
@@ -51,11 +56,25 @@ main{
     padding: 20px 50px;
     height: 100%;
 }
+.inputs input {
+  margin: 15px;
+  padding: 20px 5px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-bottom: 2px #f3c42e solid;
+  background-color: #280044;
+  color: white;
+}
 .data{
-
+    color: white;
     display: flex;
     width: 100%;
+    color-scheme: dark;
+    margin: 15px;
+    padding: 20px 5px;
 }
+
 
 .inputs input{
     margin: 15px;
@@ -74,22 +93,67 @@ main{
 .inputs input::placeholder{
     color: rgb(207, 207, 207);
 }
+.selectStyle{
+    background-color: #280044 !important;
+    color: white !important;
+    margin: 15px !important;
+    width: auto!important;
+    border: #f3c42e 1px solid!important;
+    -webkit-appearence:none !important;
+    color-scheme: dark !important;
+  }
+  
+  .selectStyle:focus{
+    background-color: #280044 !important;
+    color: white !important;
+    margin: 15px !important;
+    width: auto!important;
+    border: #f3c42e 1px solid!important;
+    box-shadow: #f3c42e 0 0 10px!important;
+  }
 
 .registerBtn {
-    background-color: #f3c42e;
-    color: #280044;
-    padding: 15px;
-    font-size: 20px;
-    border-radius: 15px;
-    font-weight: bold;
-    margin: 25px;
+    background-color: #f3c42e !important;
+    color: #280044 !important;
+    padding: 15px !important;
+    font-size: 20px !important;
+    border-radius: 15px !important;
+    font-weight: bold !important;
+    margin: 25px !important;
 }
 .btn-warning {
-    background-color: #f3c42e;
-    color: #280044;
-    padding: 15px;
-    font-size: 20px;
-    border-radius: 15px;
-    font-weight: bold;
-    margin: 25px;
+    background-color: #f3c42e !important;
+    color: #280044 !important;
+    padding: 15px !important;
+    font-size: 15px !important;
+    border-radius: 15px !important; 
+    font-weight: bold !important;
+    margin: 25px !important;
 }
+@media (min-width: 1050px) {
+    body {
+      padding: 0px 300px;
+      background-color: rgb(40, 0, 68, 0.4)!important;
+    }
+  
+    header {
+      color: #280044;
+      margin: 20px;
+      padding: 0px;
+    }
+  
+    .yellowBackBtn {
+      display: none;
+    }
+  
+    .purpleBackBtn {
+      display: block;
+    }
+  
+    .inputs {
+      border-radius: 15px;
+      box-shadow: #280044 0 0 10px;
+      background-color: #280044;
+    }
+  }
+  

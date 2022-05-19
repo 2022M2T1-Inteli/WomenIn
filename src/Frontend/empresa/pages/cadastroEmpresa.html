@@ -7,12 +7,6 @@
     <link rel="stylesheet" href="../../global/style.css">
     <link rel="stylesheet" href="../css/cadastroEmpresa.css" />
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
-      crossorigin="anonymous"
-    />
-    <link
       rel="shortcut icon"
       href="../../assets/favicon.png"
       type="image/x-icon"
@@ -21,52 +15,38 @@
   </head>
   <body>
     <header>
-      <a href="../../index.html"><img class="logoHeader" src="../../assets/logo2.png" alt="Logo" /></a>
-      <a href="../../index.html">
-        <img class="yellowBackBtn" src="../../assets/yellow-arrow-left.svg" alt="">
-      </a>
-      <a href="../../index.html">
-        <img class="purpleBackBtn" src="../../assets/purple-arrow-left.svg" alt="">
-      </a>
+      <a href="../../index.html"><img class="logoHeader" src="../../assets/logoBIT.png" alt="Logo" /></a>
     </header>
+    <a href="../../index.html">
+      <img class="purpleBackBtn" src="../../assets/purple-arrow-left.svg" alt="back-button">
+    </a>
     <main>
-      <div class="container">
-        <div class="containerLogoBx">
-          <img class="containerLogo" src="../../assets/logo2.png" alt="Logo" />
+      <div class="logoContainer">
+        <img src="../../assets/logo1.png" alt="">
+      </div>
+      <form action="" class="cadastrarForm">
+        <div class="centralText">
+          <p class="p">Quer incluir sua empresa na plataforma?</p>
+          <p>Preencha os campos abaixo que entraremos em contato</p>
         </div>
-        <div class="containerTextBx">[
-          <div class="centralText">
-            <p class="p">Quer incluir sua empresa na plataforma?</p>
-            <hr />
-            <p>Preencha os campos abaixo que entraremos em contato</p>
-          </div>
-          <div class="registerContainer">
-            <p>Nome da empresa</p>
-            <input 
-              class="form-control cadastreInput" 
-              type="text" 
-              placeholder="Digite aqui..." 
-              aria-label="default input example"
-            />
-            <p>Telefone/email para contato</p>
-            <input 
-              class="form-control cadastreInput"
-              type="password"
-              placeholder="Digite aqui..."
-              aria-label="default input example"
-            />
-            </input>
-            <a
-              href="./dashboard.html" 
-              id="cadastreButton" 
-              type="button" 
-              class="btn btn-warning"
-            >
-              Enviar
-            </a>
-          </div>
+        <label for="name" class="inputLabel">Nome da empresa</label>
+        <input
+          type="text"
+          placeholder="Digite seu nome"
+          class="inputText"
+          id="name"
+        />
+        <label for="celEmail" class="inputLabel">Telefone/email para contato</label>
+        <input
+          type="text"
+          placeholder="Celular ou Email"
+          class="inputText"
+          id="celEmail"
+        />
+        <div class="formBtn">
+          <a href="dashboard.html" class="cadastrarBtn">Enviar</a>
         </div>
-        </div>
+      </form>
     </main>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"

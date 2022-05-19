@@ -1,69 +1,147 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&family=Nunito:wght@200;400&family=Roboto+Slab:wght@200;400&display=swap");
+body{
+  background-color: rgb(40, 0, 68, 0.4);
+  padding: 0px 30px;
+}
 
-* {
+header{
   text-align: center;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 600;
+  padding: 30px 50px;
+  margin-bottom: 100px;
 }
 
-body {
-  background-color: #280044;
+.logoHeader {
+  width: 100%;
 }
 
-img {
-  max-width: 45%;
-  margin-top: 25px;
-  margin-bottom: 50px;
+.purpleBackBtn {
+  height: 40px;
+  position: absolute;
+  top: 15px;
+  left: 15px;
 }
 
-.welcomeBack {
-  font-size: xx-large;
-  font-weight: 600;
-  margin-bottom: 50px;
+/* MAIN */
+
+.containerLogo {
+  display: none;
+}
+
+.centralText {
   color: white;
-}
-.registerContainer {
-  display: flexbox;
-  padding: 15px;
-  background-color: rgba(255, 255, 255, 0.5);
-  width: 80%;
-  border-radius: 20px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 50px;
+  width: 270px;
+  margin: 30px auto;
+  font-weight: bold;
+  text-align: center;
 }
 
-.registerNow {
-  font-size: x-large;
-  color: white;
-}
-
-#cadastreButton {
-  border-radius: 15px;
+.centralText p{
   margin: 10px;
+  font-size: 32px;
 }
 
-#cadastreInput {
-  margin-bottom: 15px;
-  border-radius: 10px;
+main {
+  padding: 30px;
+  background-color: #280044;
+  margin: 20px;
+  border-radius: 15px;
+  box-shadow: black 0 0 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 50%;
 }
 
-.loginTable {
-  margin: auto;
+.logoContainer{
+  display: none;
+}
+
+.inputLabel {
+  display: none;
+}
+
+.inputText {
+  padding: 14px 16px;
+  border-radius: 6px;
+  border: 1px #ffffff hidden;
+  margin: 5px;
+  width: 80%;
+}
+
+.inputText::placeholder {
+  font-size: 16px;
+}
+
+.inputText:focus {
+  box-shadow: 0 0 0 0;
+  outline: 0;
+}
+
+.formBtn {
   margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-/* FOOTER */
 
-.companyRegisterBnt {
-  border-radius: 30px;
-  padding: 6px;
-  background-color: #9600ff;
+.cadastrarBtn {
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #f3c42e;
+  font-weight: bold;
+  color: #280044;
+  transition: 200ms;
+  margin-bottom: 10px;
+}
+
+.cadastrarBtn:hover {
+  padding: 11px;
+  box-shadow: white 0 0 10px;
+}
+
+.loginBtn {
   color: white;
-  border: 0px;
+  font-weight: bold;
+  margin-top: 10px;
 }
 
-#googleSVG {
-  margin: 2px;
-  margin-right: 10px;
-  transform: translateY(-1.5px);
+
+@media (min-width: 700px) {
+ 
+  body {
+    overflow: hidden;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  header{
+    display: none;
+  }
+
+  .logoContainer{
+    display: block;
+  }  
+
+  main{
+    display: grid;
+    grid-template-columns: 5fr 3fr;
+    align-self: center;
+    justify-self: center;
+  }
+
+  .logoHeader {
+    display: none;
+  }
+
+  .containerLogo {
+    display: block;
+    width: 80%;
+    margin: auto;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
 }

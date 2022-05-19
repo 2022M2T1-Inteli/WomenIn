@@ -1,26 +1,16 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&family=Nunito:wght@200;400&family=Roboto+Slab:wght@200;400&display=swap");
-
-* {
-  text-align: center;
-  font-family: "Montserrat", sans-serif;
+body{
+  background-color: rgb(40, 0, 68, 0.4);
+  padding: 0px 30px;
 }
 
-body {
-  background-color: #280044;
-  min-height: 730px;
+header{
+  text-align: center;
+  padding: 30px 50px;
+  margin-bottom: 100px;
 }
 
 .logoHeader {
-  width: 121px;
-  margin: 10px 0px 90px;
-}
-
-.yellowBackBtn {
-  display: block;
-  height: 40px;
-  position: absolute;
-  top: 15px;
-  left: 15px;
+  width: 100%;
 }
 
 .purpleBackBtn {
@@ -28,7 +18,6 @@ body {
   position: absolute;
   top: 15px;
   left: 15px;
-  display: none;
 }
 
 /* MAIN */
@@ -40,68 +29,105 @@ body {
 .centralText {
   color: white;
   width: 270px;
-  margin: auto;
+  margin: 30px auto;
   font-weight: bold;
+  text-align: center;
 }
 
-.centralText hr {
-  color: white;
-  height: 3px;
+.centralText p{
+  margin: 10px;
+  font-size: 18px;
 }
 
-.registerContainer {
-  display: flexbox;
-  padding: 15px;
-  background-color: rgba(255, 255, 255, 0.5);
-  width: 70%;
-  margin: auto;
-  border-radius: 20px;
+main {
+  padding: 30px;
+  background-color: #280044;
+  margin: 20px;
+  border-radius: 15px;
+  box-shadow: black 0 0 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 50%;
 }
 
-.registerContainer p {
-  color: white;
-  margin: 0px;
+.logoContainer{
+  display: none;
 }
 
-.registerContainer input {
-  margin: 0px 0px 23px;
+.inputLabel {
+  display: none;
 }
 
-.registerContainer button {
+.inputText {
+  padding: 14px 16px;
+  border-radius: 6px;
+  border: 1px #ffffff hidden;
+  margin: 5px;
+  width: 80%;
+}
+
+.inputText::placeholder {
+  font-size: 16px;
+}
+
+.inputText:focus {
+  box-shadow: 0 0 0 0;
+  outline: 0;
+}
+
+.formBtn {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cadastrarBtn {
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #f3c42e;
   font-weight: bold;
   color: #280044;
+  transition: 200ms;
+}
+
+.cadastrarBtn:hover {
+  padding: 11px;
+  box-shadow: white 0 0 10px;
+}
+
+.loginBtn {
+  color: white;
+  font-weight: bold;
+  margin-top: 10px;
 }
 
 @media (min-width: 700px) {
+ 
   body {
-    padding: 20px;
     overflow: hidden;
-    background-color: rgb(243, 197, 48, 0.9);
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
   }
 
-  .yellowBackBtn {
+  header{
     display: none;
   }
 
-  .purpleBackBtn {
+  .logoContainer{
     display: block;
-  }
+  }  
 
-  .container {
-    background-color: #280044;
-    padding: 60px 20px;
-    border-radius: 15px;
-    color: #280044;
-    box-shadow: rgba(0, 0, 0, 0.8) 0 0 10px;
+  main{
     display: grid;
-    grid-template-columns: 5fr 4fr;
-    position: absolute;
-    top: 30px;
-    bottom: 30px;
-    left: 0;
-    right: 0;
-    margin: auto;
+    grid-template-columns: 5fr 3fr;
+    align-self: center;
+    justify-self: center;
   }
 
   .logoHeader {

@@ -1,22 +1,16 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&family=Nunito:wght@200;400&family=Roboto+Slab:wght@200;400&display=swap");
-
-* {
-  font-family: "montserrat", sans-serif;
-}
-
 body {
   margin: 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  background-color: rgb(40, 0, 68,0.4)!important;
 }
 
 #header {
   width: 100%;
-  color: #f3c42e;
+  color: #280044;
   text-align: center;
   padding: 15px;
-  margin-top: 50px;
 }
 
 #header h1{
@@ -38,7 +32,8 @@ body {
   margin: 1.1rem;
   margin-bottom: 0;
   padding: 20px;
-  background-color:	#D3D3D3;
+  color: white;
+  background-color: #280044;
   border-radius: 10px;
 }
 
@@ -46,4 +41,14 @@ body {
   font-weight: 1000;
   margin-bottom: 5%;
   text-align: center;
+}
+
+.shadowBtn:hover{
+  box-shadow: white 0 0 10px!important;
+}
+
+@media (min-width: 480px) {
+  #header h1 br{
+    display: none;  
+  }
 }

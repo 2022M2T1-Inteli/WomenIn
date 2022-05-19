@@ -1,14 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500;600;700;800&family=Nunito:wght@200;400&family=Roboto+Slab:wght@200;400&display=swap");
-
-* {
-  font-family: "Montserrat", sans-serif;
-  text-decoration: none;
-  padding: 0px;
-  margin: 0px;
-}
-
 body {
-  background-color: #280044;
+  background-color: rgb(40, 0, 68)!important;
 }
 
 label {
@@ -19,7 +10,7 @@ label {
 /* HEADER */
 
 header {
-  color: #280044;
+  color: #ffffff;
   text-align: center;
   padding: 90px 30px 10px;
 }
@@ -92,11 +83,13 @@ h3 {
 @media (min-width: 900px) {
   body {
     padding: 0px 300px 20px;
+    background-color: rgb(40, 0, 68, 0.4)!important;
   }
 
   header {
     margin: 20px;
-    padding: 0px;
+  color: #280044;
+  padding: 0px;
   }
 
   .yellowBackBtn {

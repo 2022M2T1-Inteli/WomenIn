@@ -76,16 +76,33 @@ main {
   margin: 25px;
 }
 
-.test{
+.selectStyle{
   background-color: #280044 !important;
   color: white !important;
-  margin-bottom: 15px !important;
+  margin: 15px !important;
+  width: auto!important;
+  border: #f3c42e 1px solid!important;
 }
+
+.selectStyle:focus{
+  background-color: #280044 !important;
+  color: white !important;
+  margin: 15px !important;
+  width: auto!important;
+  border: #f3c42e 1px solid!important;
+  box-shadow: #f3c42e 0 0 10px!important;
+}
+
+a:hover{
+  color: unset!important;
+  box-shadow: white 0 0 10px;
+}
+
 
 @media (min-width: 900px) {
   body {
     padding: 0px 300px;
-    background-color: rgb(243, 196, 46,0.9);
+    background-color: rgb(40, 0, 68, 0.4)!important;
   }
 
   header {

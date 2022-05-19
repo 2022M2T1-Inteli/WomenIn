@@ -1,54 +1,70 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="global/style.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon" />
+    <title>Bit Match</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
-  <link rel="stylesheet" href="style.css" />
-  <link
-      rel="shortcut icon"
-      href="./assets/favicon.png"
-      type="image/x-icon"
-    />
-  <title>Bit Match</title>
-</head>
-
-<body>
-  <div class="container">
-    <div class = 'divForLogo'>
-      <a href="./Bit/pages/dashboardBit.html"><img src="assets/logo2.png" alt="" /></a>
-    </div>
-    
-    <div class="registerContainer">
-    <p>
-      Participe da maior plataforma de empregos exclusiva para mulheres do Brasil!
-    </p>
-    <p>Login</p>
-    <input id="cadastreInput" class="form-control" type="text" placeholder="Digite seu e-mail"
-      aria-label="default input example">
-    <p>senha</p>
-    <input id="cadastreInput" class="form-control" type="password" placeholder="Digite sua senha"
-      aria-label="default input example" />
-    </input>
-    <button id="cadastreButton" type="button" class="btn btn-warning">Cadastrar-se!</button>
-    <table class="loginTable">
-      <tr>
-        <td>Já tem uma conta?</td>
-        <td>
-          <a href="./usuario/pages/loginUser.html" class="btn btn-warning" id="cadastreButton">Entrar</a>
-        </td>
-      </tr>
-      </table>
-    </div>
-  </div>
-  <footer>
-    <p class="textFooter">Quer colocar as vagas da sua empresa aqui?</p>
-    <a href="./empresa/pages/cadastroEmpresa.html" class="companyRegisterBnt" style="text-decoration: none;">
-      Cadastrar minha empresa
-    </a>
-  </footer>
-</body>
+  <body>
+    <header class="header">
+      <div class="logoContainer">
+        <a href="./Bit/pages/dashboardBit.html  "><img src="./assets/logoBIT.png" alt="Logo-BIT" /></a>
+      </div>
+    </header>
+    <main>
+      <div class="textContainer">
+        <div class="textSection">
+          <h1 class="title">Bem Vinda</h1>
+          <form action="" class="cadastrarForm">
+            <label for="name" class="inputLabel">Nome</label>
+            <input
+              type="text"
+              placeholder="Digite seu nome"
+              class="inputText"
+              id="name"
+            />
+            <label for="celEmail" class="inputLabel">Celular ou Email</label>
+            <input
+              type="text"
+              placeholder="Celular ou Email"
+              class="inputText"
+              id="celEmail"
+            />
+            <label for="password" class="inputLabel">Senha</label>
+            <input
+              type="password"
+              placeholder="Senha"
+              class="inputText"
+              id="password"
+            />
+            <div class="formBtn">
+              <a href="#" class="cadastrarBtn">Cadastre-se</a>
+              <a href="./usuario/pages/loginUser.html" class="loginBtn"
+                >Já tem uma conta?</a
+              >
+            </div>
+          </form>
+          <a href="./empresa/pages/cadastroEmpresa.html" class="cadastrarBtn none"
+        >Cadastrar minha empresa</a
+      >
+        </div>
+      </div>
+      <div class="logoContainerDT">
+        <div class="logoBx">
+          <a href="./Bit/pages/dashboardBit.html"><img src="./assets/logoBIT.png" alt="Logo-BIT" /></a>
+        </div>
+        <img class="gif" src="assets/gif-mulher.gif" alt="gif-mulher-com-celular" />
+      </div>
+    </main>
+    <footer class="footer">
+      <a href="./empresa/pages/cadastroEmpresa.html" class="cadastrarBtn"
+        >Cadastrar minha empresa</a
+      >
+    </footer>
+  </body>
 </html>

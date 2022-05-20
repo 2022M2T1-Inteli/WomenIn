@@ -13,52 +13,65 @@
   <body>
     <header class="header">
       <div class="logoContainer">
-        <a href="./Bit/pages/dashboardBit.html  "><img src="./assets/logoBIT.png" alt="Logo-BIT" /></a>
+        <a href="./Bit/pages/dashboardBit.html  "
+          ><img src="./assets/logoBIT.png" alt="Logo-BIT"
+        /></a>
       </div>
     </header>
     <main>
       <div class="textContainer">
         <div class="textSection">
           <h1 class="title">Bem Vinda</h1>
-          <form action="" class="cadastrarForm">
+          <form action="/signup" method="post" class="cadastrarForm">
             <label for="name" class="inputLabel">Nome</label>
             <input
+              name="name"
               type="text"
               placeholder="Digite seu nome"
               class="inputText"
               id="name"
             />
-            <label for="celEmail" class="inputLabel">Celular ou Email</label>
+            <label for="celEmail" class="inputLabel">Email</label>
             <input
-              type="text"
-              placeholder="Celular ou Email"
+              name="email"
+              type="email"
+              placeholder="Email"
               class="inputText"
-              id="celEmail"
+              id="email"
             />
             <label for="password" class="inputLabel">Senha</label>
             <input
+              name="password"
               type="password"
               placeholder="Senha"
               class="inputText"
               id="password"
             />
             <div class="formBtn">
-              <a href="#" class="cadastrarBtn">Cadastre-se</a>
+              <button type="submit" class="cadastrarBtn">Cadastre-se</button>
               <a href="./usuario/pages/loginUser.html" class="loginBtn"
                 >Já tem uma conta?</a
               >
             </div>
           </form>
-          <a href="./empresa/pages/cadastroEmpresa.html" class="cadastrarBtn none"
-        >Cadastrar minha empresa</a
-      >
+          <a
+            href="./empresa/pages/cadastroEmpresa.html"
+            class="cadastrarBtn none"
+            >Cadastrar minha empresa</a
+          >
         </div>
       </div>
       <div class="logoContainerDT">
         <div class="logoBx">
-          <a href="./Bit/pages/dashboardBit.html"><img src="./assets/logoBIT.png" alt="Logo-BIT" /></a>
+          <a href="./Bit/pages/dashboardBit.html"
+            ><img src="./assets/logoBIT.png" alt="Logo-BIT"
+          /></a>
         </div>
-        <img class="gif" src="assets/gif-mulher.gif" alt="gif-mulher-com-celular" />
+        <img
+          class="gif"
+          src="assets/gif-mulher.gif"
+          alt="gif-mulher-com-celular"
+        />
       </div>
     </main>
     <footer class="footer">

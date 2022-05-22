@@ -3,6 +3,10 @@
 header {
   border-bottom: 9px #e1e1e1 solid;
   height: 320px;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  z-index: -10;
 }
 
 .perfilBackground {
@@ -13,42 +17,20 @@ header {
   text-align: center;
 }
 
+.margin {
+  margin-bottom: 280px;
+}
+
 .imgPerfil {
   text-align: center;
-  position: relative;
-  top: -92px;
 }
 
-.btns {
-  height: 70px;
-}
-
-.logoutBtn {
-  background: #280044;
-  font-weight: bold;
-  margin: 15px 30px;
-  font-size: 20px;
-  color: white;
-  float: left;
-  padding: 5px 10px;
-  border-radius: 10px;
-}
-
-.editBtn {
-  background: #280044;
-  font-weight: bold;
-  margin: 15px 15px;
-  font-size: 20px;
-  color: white;
-  float: right;
-  padding: 5px 10px;
-  border-radius: 10px;
+.imgPerfil img {
+  margin-top: 40px;
 }
 
 .headerInfos {
   text-align: center;
-  top: -92px;
-  position: relative;
 }
 
 .headerInfos h1 {
@@ -76,13 +58,14 @@ header {
 
 /* MAIN */
 
-main h1{
+main h1 {
   margin: 20px 0px 0px;
   text-align: center;
   color: #280044;
+  font-weight: bold;
 }
 
-.statisticsContainer{
+.statisticsContainer {
   padding: 10px;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -98,8 +81,7 @@ main h1{
   position: relative;
 }
 
-
-.statisticsInfoTitle{
+.statisticsInfoTitle {
   text-align: center;
   margin: 10px;
   font-size: 20px;
@@ -113,4 +95,54 @@ main h1{
   top: 50%;
   left: 50%;
   transform: translateX(-50%);
+}
+
+@media (min-width: 700px) {
+  .margin {
+    display: none;
+  }
+
+  .content {
+    display: grid !important;
+    grid-template-columns: 4fr 2fr !important;
+  }
+
+  header {
+    border-radius: 10px;
+    height: 400px;
+    margin: 20px;
+    position: unset;
+    width: unset;
+    border: 3px #f3c42e solid;
+    box-shadow: #f3c42e 0 0 10px;
+  }
+
+  .perfilBackground {
+    border-radius: 10px 10px 0px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .imgPerfil {
+    margin: 20px;
+  }
+
+  .headerInfos {
+    margin: 40px;
+    text-align: left;
+  }
+
+  .statisticsBox {
+    height: 50%;
+  }
+  
+
+  main {
+    border-radius: 10px;
+    border: 3px #f3c42e solid;
+    margin: 20px;
+    box-shadow: #f3c42e 0 0 10px;
+    padding: 20px;
+  }
 }

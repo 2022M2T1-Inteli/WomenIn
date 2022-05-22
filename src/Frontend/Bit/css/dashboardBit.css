@@ -2,55 +2,36 @@
 
 header {
   border-bottom: 9px #e1e1e1 solid;
-  height: 300px;
+  height: 320px;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  z-index: -10;
 }
 
 .perfilBackground {
-  background: #808080;
+  background-image: url("../../assets/perfilEmpresaBackground.png");
+  background-size: cover;
+  background-repeat: no-repeat;
   height: 146px;
   text-align: center;
 }
 
+.margin{
+  margin-bottom: 280px;
+}
+
 .imgPerfil {
   text-align: center;
-  position: relative;
-  top: -92px;
 }
 
 .imgPerfil img{
-  border-radius: 50%;
-}
-
-.btns {
-  height: 70px;
-}
-
-.logoutBtn {
-  background: #280044;
-  font-weight: bold;
-  margin: 15px 30px;
-  font-size: 20px;
-  color: white;
-  float: left;
-  padding: 5px 10px;
-  border-radius: 10px;
-}
-
-.editBtn {
-  background: #280044;
-  font-weight: bold;
-  margin: 15px 15px;
-  font-size: 20px;
-  color: white;
-  float: right;
-  padding: 5px 10px;
-  border-radius: 10px;
+  margin-top: 40px;
 }
 
 .headerInfos {
   text-align: center;
-  top: -92px;
-  position: relative;
+  margin: 20px;
 }
 
 .headerInfos h1 {
@@ -73,7 +54,7 @@ header {
   color: #280044;
   font-size: 14px;
   font-weight: bold;
-  margin: 0px 20px;
+  margin: 0px 10px;
 }
 
 /* MAIN */
@@ -82,6 +63,7 @@ main h1{
   margin: 20px 0px 0px;
   text-align: center;
   color: #280044;
+  font-weight: bold;
 }
 
 .statisticsContainer{
@@ -115,4 +97,40 @@ main h1{
   top: 50%;
   left: 50%;
   transform: translateX(-50%);
+}
+
+@media (min-width: 700px) {
+  .margin{
+    display: none;
+  }
+
+  .content{
+    display: grid!important;
+    grid-template-columns: 4fr 2fr!important;
+  }
+
+  header{
+    border: 3px #f3c42e solid;
+    border-radius: 10px;
+    height: 400px;
+    margin: 20px;
+    position: unset;
+    width: unset;
+  }
+  
+  .perfilBackground{
+    border-radius: 10px 10px 0px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .imgPerfil{
+    margin: 20px;
+  }
+
+  .headerInfos{
+    margin: 40px;
+    text-align: left;
+  }
 }

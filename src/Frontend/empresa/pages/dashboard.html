@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=x, initial-scale=1.0" />
-    <link rel="stylesheet" href="../../global/style.css"/>
-    <link rel="stylesheet" href="../../global/nav.css"/>
+    <link rel="stylesheet" href="../../global/style.css" />
+    <link rel="stylesheet" href="../../global/nav.css" />
     <link rel="stylesheet" href="../css/dashboard.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
@@ -20,42 +20,76 @@
     />
     <title>Bit Match | Dashboard</title>
   </head>
-  <body>  
-    <nav class="navbar navbar-light fixed-tnavbar navbar-expand-lg bg-light fixed-topop">
-    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasResponsive" aria-controls="offcanvasResponsive">
-      <span class="navbar-toggler-icon"></span>
-    </button>    
-    <div class="offcanvas-lg offcanvas-end" tabindex="-1" id="offcanvasResponsive" aria-labelledby="offcanvasResponsiveLabel">
-      <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasResponsiveLabel">Menu</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#offcanvasResponsive" aria-label="Close"></button>
+  <body>
+    <nav
+      id="navStyle"
+      class="navbar navbar-light fixed-tnavbar navbar-expand-lg bg-light fixed-topop"
+    >
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasResponsive"
+        aria-controls="offcanvasResponsive"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div
+        class="offcanvas-lg offcanvas-end"
+        tabindex="-1"
+        id="offcanvasResponsive"
+        aria-labelledby="offcanvasResponsiveLabel"
+      >
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasResponsiveLabel">Menu</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="offcanvas"
+            data-bs-target="#offcanvasResponsive"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <a class="nav-link active menu" href="cadastroVagas.html"
+                >Cadastrar vagas</a
+              >
+            </li>
+            <li class="list-group-item">
+              <a class="nav-link active menu" href="vagasEmpresa.html"
+                >Ver minhas vagas</a
+              >
+            </li>
+            <li class="list-group-item">
+              <a class="nav-link active menu" href="#">Editar Perfil</a>
+            </li>
+            <li class="list-group-item">
+              <a class="nav-link active menu" href="../../index.html">Sair</a>
+            </li>
+          </ul>
+        </div>
       </div>
-      <div class="offcanvas-body">
-        <ul class="list-group list-group-flush">
-        <li class="list-group-item"><a class="nav-link active menu" href="cadastroVagas.html">Cadastrar vagas</a></li>
-        <li class="list-group-item"><a class="nav-link active menu" href="vagasEmpresa.html">Ver minhas vagas</a></li>
-        <li class="list-group-item"><a class="nav-link active menu" href="...">Editar Perfil</a></li>
-        <li class="list-group-item"><a class="nav-link active menu" href="../../index.html">Sair</a></li>
-      </ul>
-      </div>
-    </div>
-  </nav>
-    <header>
-     <div class="perfilBackground">
-      </div>
-      <div class="imgPerfil">
-        <img
-          class="perfilLogo"
-          src="../../assets/amazon.png"
-          alt="amazonLogo"
-        />
-      </div>
-      <div class="headerInfos">
-        <h1>Amazon Ltda.</h1>
-        <p class="slogan">Work Hard, Have Fun, Make History</p>
-      </div>
-    </header>
-    <main>
+    </nav>
+    <div class="content">
+      <header>
+        <div class="perfilBackground">
+          <div class="imgPerfil">
+            <img
+              class="perfilLogo"
+              src="../../assets/amazon.png"
+              alt="amazonLogo"
+            />
+          </div>
+          <div class="headerInfos">
+            <h1>Amazon Ltda.</h1>
+            <p class="slogan">Work Hard, Have Fun, Make History</p>
+          </div>
+        </div>
+      </header>
+      <div class="margin"></div>
+      <main>
         <h1>Estatísticas</h1>
         <div class="statisticsContainer">
           <div class="column">
@@ -79,7 +113,8 @@
             </div>
           </div>
         </div>
-    </main>
+      </main>
+    </div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"

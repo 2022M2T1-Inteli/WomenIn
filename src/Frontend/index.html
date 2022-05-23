@@ -13,7 +13,7 @@
   <body>
     <header class="header">
       <div class="logoContainer">
-        <a href="./Bit/pages/dashboardBit.html  "
+        <a href="./Bit/pages/dashboardBit.html"
           ><img src="./assets/logoBIT.png" alt="Logo-BIT"
         /></a>
       </div>
@@ -25,6 +25,7 @@
           <form action="/signup" method="post" class="cadastrarForm">
             <label for="name" class="inputLabel">Nome</label>
             <input
+              required
               name="name"
               type="text"
               placeholder="Digite seu nome"
@@ -33,6 +34,7 @@
             />
             <label for="celEmail" class="inputLabel">Email</label>
             <input
+              required
               name="email"
               type="email"
               placeholder="Email"
@@ -41,6 +43,7 @@
             />
             <label for="password" class="inputLabel">Senha</label>
             <input
+              required
               name="password"
               type="password"
               placeholder="Senha"

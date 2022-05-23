@@ -4,7 +4,6 @@ document.querySelector("body").addEventListener("touchend", function (event) {
   if (event.srcElement.nodeName == "INPUT") {
     let currentSlider = event.srcElement.id;
     value = document.getElementById(currentSlider).value;
-    console.log(currentSlider, value);
     const [selectedH2] = $("#" + currentSlider).next();
     switch (value) {
       case "-2":
@@ -49,3 +48,36 @@ document.querySelector("body").addEventListener("mouseup", function (event) {
     }
   }
 });
+// cria o objeto para ser salvo no banco de dados
+// no formato: {#ss1: 1, #ss2: -2...}
+// caso alguma pergunta n tenha sido preenchida, retorna false
+// caso contrario, retorna o objeto
+const createObject = () => {
+  let result = {};
+  for (let i = 1; i <= 20; i++) {
+    let currentId = "ss" + i;
+    let value = document.querySelector("#" + currentId).value;
+    if (value == 0) return false;
+    result[currentId] = value;
+  }
+  console.log(result);
+  return result;
+};
+
+const sendTest = () => {
+  let data = createObject();
+  if (data == false) {
+    alert("preencha todos os campos!");
+  } else {
+    const parameters = {
+      method: "POST",
+      body: JSON.stringify(data),
+      credentials: "same-origin",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+    fetch("http://127.0.0.1:3030/api/sendSoftSkills", parameters);
+    window.location.replace("/dashboard");
+  }
+};

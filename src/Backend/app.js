@@ -7,10 +7,10 @@ const app = express();
 const hostname = "127.0.0.1";
 const port = 3030;
 const sqlite3 = require("sqlite3");
-const { stringify } = require("querystring");
 const db = new sqlite3.Database("database.db");
-app.use(bp.urlencoded({ extended: false }));
+app.use(bp.urlencoded({ extended: true }));
 app.use(cors());
+app.use(express.json());
 app.use(cookieParser());
 app.use(express.static("../Frontend/"));
 
@@ -43,14 +43,14 @@ app.post("/signup", (req, res1) => {
 });
 
 app.get("/dashboard", (req, res) => {
-  currentId = req.cookies.id;
-  if (!currentId) {
+  currentId = req.cookies;
+  if (!currentId.id) {
     res.sendFile(path.resolve(__dirname + "/../Frontend/index.html"));
-    console.log(currentId);
+  } else {
+    res.sendFile(
+      path.resolve(__dirname + "/../Frontend/usuario/pages/dashboardUser.html")
+    );
   }
-  res.sendFile(
-    path.resolve(__dirname + "/../Frontend/usuario/pages/dashboardUser.html")
-  );
 });
 
 app.post("/login", (req, res) => {
@@ -73,15 +73,31 @@ app.post("/login", (req, res) => {
           res.end();
         }
       } else {
-        res.send("email incorreto");
-        res.end();
+        db.get(
+          `SELECT id, password FROM empresa WHERE email == '${infos.email}'`,
+          (error, response) => {
+            if (response) {
+              if (response.password === infos.password) {
+                res.cookie("id", response.id);
+                res.send("autenticado! cookie set!");
+                res.end();
+              } else {
+                res.send("senha incorreta");
+                res.end();
+              }
+            } else {
+              res.send("email incorreto");
+              res.end();
+            }
+          }
+        );
       }
     }
   );
 });
 
 app.get("/loginPage", (req, res) => {
-  if (req.cookies.id) {
+  if (req.cookies.id >= 3000) {
     res.sendFile(
       path.resolve(__dirname + "/../Frontend/usuario/pages/dashboardUser.html")
     );
@@ -93,6 +109,7 @@ app.get("/loginPage", (req, res) => {
 
 app.get("/api/getUserInfo", (req, res) => {
   currentId = req.cookies.id;
+  console.log(`--> GET api - sent infos of user ${currentId}`);
   db.get(
     `SELECT * FROM users WHERE id == ${Number(currentId)}`,
     (err, response) => {
@@ -101,8 +118,32 @@ app.get("/api/getUserInfo", (req, res) => {
   );
 });
 
+app.post("/api/sendSoftSkills", (req, res) => {
+  currentId = req.cookies.id;
+  console.log(` --> POST received - user ${currentId} softSKills`);
+  let softSkills = JSON.stringify(req.body);
+  db.run(
+    `UPDATE users SET softSkills = '${softSkills}' WHERE id = ${currentId}`,
+    (err, response) => {
+      if (err == null) {
+        console.log(`--> softSkills of user ${currentId} sent to db`);
+      } else console.log("--> db error - " + err);
+    }
+  );
+});
+
+app.get("/skillTest", (req, res) => {
+  res.sendFile(
+    path.resolve(__dirname + "/../Frontend/usuario/pages/softSkillsTest.html")
+  );
+});
+
 app.get("/index", (req, res) => {
   res.clearCookie("id");
+  res.sendFile(path.resolve(__dirname + "/../Frontend/index.html"));
+});
+
+app.get("/", (req, res) => {
   res.sendFile(path.resolve(__dirname + "/../Frontend/index.html"));
 });
 

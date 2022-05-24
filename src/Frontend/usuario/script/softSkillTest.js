@@ -37,7 +37,7 @@ document.querySelector("body").addEventListener("mouseup", function (event) {
         selectedH2.textContent = "Discordo parcialmente";
         break;
       case "0":
-        selectedH2.textContent = "neutro";
+        selectedH2.textContent = "-";
         break;
       case "1":
         selectedH2.textContent = "Concordo parcialmente";

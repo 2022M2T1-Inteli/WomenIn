@@ -93,6 +93,7 @@ main {
   color: #280044;
   transition: 200ms;
   margin-bottom: 10px;
+  cursor: pointer;
 }
 
 .cadastrarBtn:hover {

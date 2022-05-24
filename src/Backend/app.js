@@ -74,13 +74,19 @@ app.post("/login", (req, res) => {
         }
       } else {
         db.get(
-          `SELECT id, password FROM empresa WHERE email == '${infos.email}'`,
+          `SELECT id, password, accepted FROM empresas WHERE email == '${infos.email}'`,
           (error, response) => {
+            console.log(error);
             if (response) {
               if (response.password === infos.password) {
-                res.cookie("id", response.id);
-                res.send("autenticado! cookie set!");
-                res.end();
+                if (response.accepted == 1) {
+                  res.cookie("id", response.id);
+                  res.send("autenticado! cookie set!");
+                  res.end();
+                } else {
+                  res.send("Sua empresa aínda não foi aceita!");
+                  res.end();
+                }
               } else {
                 res.send("senha incorreta");
                 res.end();
@@ -145,6 +151,35 @@ app.get("/index", (req, res) => {
 
 app.get("/", (req, res) => {
   res.sendFile(path.resolve(__dirname + "/../Frontend/index.html"));
+});
+
+app.get("/cadastroEmpresa", (req, res) => {
+  res.sendFile(
+    path.resolve(__dirname + "/../Frontend/empresa/pages/cadastroEmpresa.html")
+  );
+});
+
+app.post("/api/cadastrarEmpresa", (req, res) => {
+  console.log("--> received new POST - cadastrarEmpresa");
+  data = req.body;
+  db.run(
+    `INSERT INTO empresas(name, email, password) VALUES('${data.name}','${data.email}','${data.password}')`,
+    (err) => {
+      if (err == null) {
+        console.log(
+          `--> nenhum erro. '${data.name}' inserida no banco de dados.`
+        );
+      } else {
+        console.log("--> ERRO!", err);
+      }
+    }
+  );
+});
+
+app.get("/teste", (req, res) => {
+  db.get("SELECT name FROM users WHERE id==3010", (error, response) => {
+    res.send(`Seu nome é ${response.name}`);
+  });
 });
 
 app.listen(port, hostname, () => {

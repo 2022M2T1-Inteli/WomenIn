@@ -46,6 +46,9 @@ main {
   padding: 20px 50px;
   height: 100%;
 }
+option {
+  color: white;
+}
 
 .inputs input {
   margin: 15px;
@@ -76,25 +79,27 @@ main {
   margin: 25px;
 }
 
-.selectStyle{
+.selectStyle {
   background-color: #280044 !important;
   color: white !important;
   margin: 15px !important;
-  width: auto!important;
-  border: #f3c42e 1px solid!important;
+  width: auto !important;
+  border: #f3c42e 1px solid !important;
+  -webkit-appearence: none !important;
+  color-scheme: dark !important;
 }
 
-.selectStyle:focus{
+.selectStyle:focus {
   background-color: #280044 !important;
   color: white !important;
   margin: 15px !important;
-  width: auto!important;
-  border: #f3c42e 1px solid!important;
-  box-shadow: #f3c42e 0 0 10px!important;
+  width: auto !important;
+  border: #f3c42e 1px solid !important;
+  box-shadow: #f3c42e 0 0 10px !important;
 }
 
-a:hover{
-  color: unset!important;
+a:hover {
+  color: unset !important;
   box-shadow: white 0 0 10px;
 }
 
@@ -102,7 +107,7 @@ a:hover{
 @media (min-width: 900px) {
   body {
     padding: 20px 300px;
-    background-color: rgb(40, 0, 68, 0.4)!important;
+    background-color: rgb(40, 0, 68, 0.4) !important;
   }
 
   header {

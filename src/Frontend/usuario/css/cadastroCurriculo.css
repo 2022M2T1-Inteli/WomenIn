@@ -115,7 +115,7 @@ main{
     margin: 15px !important;
     width: auto!important;
     border: #f3c42e 1px solid!important;
-    -webkit-appearence:none !important;
+    /* -webkit-appearence:none !important; */
     color-scheme: dark !important;
   }
   
@@ -150,7 +150,9 @@ main{
     *{
       color: #280044;
     }
-
+    option {
+      color: white;
+    }
     body {
       padding: 0px 300px;
       background-color: rgb(40, 0, 68, 0.4)!important;

@@ -101,3 +101,26 @@ header {
   font-size: 14px;
   font-weight: bold;
 }
+
+@media (min-width:700px){
+  main{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .aboutUs{
+    margin: 20px;
+  }
+
+  .curriculumBox{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .curriculumBtn{
+    padding: 10px;
+  }
+
+}

@@ -50,6 +50,7 @@ main {
   justify-content: space-evenly;
   align-items: center;
   height: 50%;
+  text-align: center;
 }
 
 .logoContainer{
@@ -105,6 +106,16 @@ main {
   margin-top: 10px;
 }
 
+.googleBtn{
+  color: #f3c42e;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.googleBtn p{
+  margin: 5px;
+}
 
 @media (min-width: 700px) {
  

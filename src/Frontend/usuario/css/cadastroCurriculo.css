@@ -5,6 +5,9 @@
   text-decoration: none;
   padding: 0px;
   margin: 0px;
+  color: #f3c42e;
+  text-align: center!important;
+  margin: auto;
 }
 
 /* HEADER */
@@ -16,11 +19,19 @@ header{
     color: white;
 }
 
-.backBtn{
+.yellowBackBtn{
     height: 40px;
     position: absolute;
     top: 15px;
     left: 15px;
+}
+
+.purpleBackBtn{
+  display: none;
+  height: 40px;
+  position: absolute;
+  top: 15px;
+  left: 15px;
 }
 
 header h1{
@@ -42,10 +53,11 @@ main{
     text-align: center;
 }
 #experiencia{
-    margin-top: 50px;
+    margin: 30px;
 }
+
 #habilidades{
-    margin-top: 50px;
+    margin: 30px;
 }
 .form-check{
     text-align: center;
@@ -73,8 +85,12 @@ main{
     color-scheme: dark;
     margin: 15px;
     padding: 20px 5px;
+    justify-content: center;
 }
 
+.data p{
+  margin: 0px!important;
+}
 
 .inputs input{
     margin: 15px;
@@ -131,6 +147,10 @@ main{
     margin: 25px !important;
 }
 @media (min-width: 1050px) {
+    *{
+      color: #280044;
+    }
+
     body {
       padding: 0px 300px;
       background-color: rgb(40, 0, 68, 0.4)!important;

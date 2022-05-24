@@ -17,7 +17,7 @@
 }
 
 #navStyle{
-    background-color: #ffff!important;
+    background-color: #280044!important;
     display: flex!important;
     justify-content: flex-end!important;
     align-content: center!important;
@@ -26,9 +26,9 @@
 .list-group-item{
     margin: 10px!important;
     background-color: unset!important;
-    color: rgba(40, 0, 68)!important;
+    color: #f3c42e!important;
     font-weight: bold!important;
-    border: 2px #ffffff solid!important;
+    border: 2px #280044 solid!important;
     transition: 200ms!important;
 }
 

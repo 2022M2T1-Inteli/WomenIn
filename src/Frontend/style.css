@@ -1,6 +1,5 @@
 body {
   background-color: rgb(40, 0, 68, 0.4);
-  height: 100vh;
 }
 
 /* HEADER */
@@ -71,6 +70,8 @@ body {
   font-weight: bold;
   color: #280044;
   transition: 200ms;
+  border: none;
+  cursor: pointer;
 }
 
 .cadastrarBtn:hover {
@@ -92,13 +93,9 @@ body {
 
 .footer {
   text-align: center;
-  padding: 20px 0px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  position: absolute;
-  bottom: 0px;
-  transform: translateX(-50%);
-  left: 50%;
 }
 
 .footer h2 {
@@ -120,7 +117,6 @@ body {
   
   body{
     background-color: #ffffff;
-    overflow-y: hidden;
   }
 
   .footer{
@@ -139,7 +135,8 @@ body {
   .textContainer{
     background-color: rgb(40, 0, 68,0.4);
     border-radius: 0px 15px 15px 0px;
-    padding: 30px;
+    padding: 0px 30px;
+    height: 100vh;
   }
 
   .none{
@@ -150,9 +147,10 @@ body {
   }
 
   .logoContainerDT{
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;;
     text-align: center;
-    grid-template-rows: 1fr 10fr;
   }
 
   .logoBx{
@@ -173,84 +171,3 @@ body {
 
 
 }
-
-/* 
-.textContainer h1 {
-  margin-bottom: 100px;
-  text-align: center;
-  color: #373737;
-  font-weight: bold;
-  font-size: 32px;
-}
-
-.formContainer {
-  color: #373737;
-  font-weight: bold;
-}
-
-.formContainer p {
-  color: #373737;
-  font-weight: bold;
-  margin: 10px 0px;
-}
-
-.formContainer input {
-  padding: 3px 10px;
-  border-radius: 15px;
-  border: 1px #dde6ff hidden;
-  width: 100%;
-}
-
-.formContainer input:focus {
-  box-shadow: 0 0 0 0;
-  outline: 0;
-}
-
-#passwordForgoten {
-  color: rgba(40, 0, 68);
-  color: #3468fc;
-  font-size: 14px;
-  text-align: center;
-  margin: auto;
-} 
-.btnBx {
-  text-align: center;
-  width: 100%;
-  transform: translateY(20px);
-}
-
-.loginBtn {
-  padding: 8px 13px;
-  color: rgba(40, 0, 68);
-  font-weight: bold;
-  background-color: white;
-  border-radius: 10px;
-  text-align: center;
-}
-
-
-.logoBx {
-  z-index: 1000;
-  position: absolute;
-  width: 90%;
-}
-
-.logoFdp {
-  position: relative;
-}
-
-.logoBx img {
-  width: 200px;
-  margin: 20px;
-  position: absolute;
-  right: 50%;
-  transform: translateX(-50%);
-}
-
-.imgBx {
-  text-align: center;
-}
-
-.gif {
-  width: 100%;
-} */

@@ -1,92 +1,156 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../css/cadastroCurriculo.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
     <title>Cadastrar Curriculo</title>
-    <script language="JavaScript" type="text/javascript" src="../script/cidades-estados-1.4-utf8.js"></script>
-</head>
+    <script
+      language="JavaScript"
+      type="text/javascript"
+      src="../script/cidades-estados-1.4-utf8.js"
+    ></script>
+  </head>
 
-<body>
+  <body>
     <script src="../../../Backend/user/MainPageUser.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
     <header>
-        <i id="seta" class="bi bi-yellow-arrow-left"></i>
+      <i id="seta" class="bi bi-yellow-arrow-left"></i>
     </header>
-
-</body>
-
-<!DOCTYPE html>
-<html lang="pt-BR">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../css/cadastroVagas.css" />
-    <link rel="stylesheet" href="../../global/style.css">
+    <link rel="stylesheet" href="../../global/style.css" />
     <link
       rel="shortcut icon"
       href="../../assets/favicon.png"
       type="image/x-icon"
     />
     <title>Bit | Cadastrar Vagas</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <a href="./dashboardUser.html">
-            <img class="yellowBackBtn" src="../../assets/yellow-arrow-left.svg" alt="">
-            <img class="purpleBackBtn" src="../../assets/purple-arrow-left.svg" alt="">
-        </a>
-        <h1>Cadastre seu curriculo</h1>
-        <p>
-            Preencha todos os campos e faça parte dessa rede
-        </p>
+      <a href="./dashboardUser.html">
+        <img
+          class="yellowBackBtn"
+          src="../../assets/yellow-arrow-left.svg"
+          alt=""
+        />
+        <img
+          class="purpleBackBtn"
+          src="../../assets/purple-arrow-left.svg"
+          alt=""
+        />
+      </a>
+      <h1>Cadastre seu curriculo</h1>
+      <p>Preencha todos os campos e faça parte dessa rede</p>
     </header>
     <main>
+      <div id="formacao">
         <div class="inputs">
-            <input placeholder="Nome completo" type="text">
-            <input placeholder="Formação" type="text">
-            <input placeholder="Universidade" type="text">
-            <select class="form-select selectStyle" id="estado1" value="Estado" aria-label="Default select example"></select>
-            <select class="form-select selectStyle" id="cidade1" value="Cidade" aria-label="Default select example"></select>
-            <script language="JavaScript" type="text/javascript" charset="utf-8">
-                new dgCidadesEstados({
-                    cidade: document.getElementById('cidade1'),
-                    estado: document.getElementById('estado1')
-                })
-            </script>
-            <input placeholder="Formação Acadêmica" type="text">
+          <select
+            class="form-select selectStyle"
+            id="estado1"
+            value="Estado"
+            aria-label="Default select example"
+          ></select>
+          <select
+            class="form-select selectStyle"
+            id="cidade1"
+            value="Cidade"
+            aria-label="Default select example"
+          ></select>
+          <script language="JavaScript" type="text/javascript" charset="utf-8">
+            new dgCidadesEstados({
+              cidade: document.getElementById("cidade1"),
+              estado: document.getElementById("estado1"),
+            });
+          </script>
         </div>
-        <h1 id="experiencia">Experiência</h1>
+        <h1 id="experiencia">Formação</h1>
         <div class="inputs">
-            <input placeholder="Cargo/Posição" type="text">
-            <input placeholder="Empresa" type="text">
-            <div class="data">
-                <p>Data de entrada: <input class="datecolor" type="date" placeholder="Duração" type="text"> </p>
-                <p>Data de saída: <input type="date" placeholder="Duração" type="text"></p>
-            </div>
-            <input placeholder="Endereço" type="text">
-            <input type="" placeholder="Hábilidades" type="text">
-            <select class="form-select selectStyle" aria-label="Default select example">
-                <option selected aria-label="Disabled select example">Tipo</option>
-                <option value="1">Estágio</option>
-                <option value="2">Trabalho voluntário</option>
-                <option value="3">Iniciação Cientifica</option>
-            </select>
-            <button type="button" class="btn btn-warning">Adicionar experiência</button>
-            <a class="registerBtn" href="#">Cadastrar</a>
+          <input placeholder="Formação" type="text" />
+          <input placeholder="Universidade" type="text" />
+          <div class="data">
+            <p>
+              Data de entrada:
+              <input
+                class="datecolor"
+                type="date"
+                placeholder="Duração"
+                type="text"
+              />
+            </p>
+            <p>
+              Data de saída:
+              <input type="date" placeholder="Duração" type="text" />
+            </p>
+          </div>
+          <button
+            type="button"
+            id="newFormacao"
+            class="btn btn-warning"
+            onclick="addExperiencia()"
+          >
+            Adicionar experiência
+          </button>
         </div>
+      </div>
 
+      <h1 id="experiencia">Experiência</h1>
+      <div class="inputs">
+        <input placeholder="Cargo/Posição" type="text" />
+        <input placeholder="Empresa" type="text" />
+        <div class="data">
+          <p>
+            Data de entrada:
+            <input
+              class="datecolor"
+              type="date"
+              placeholder="Duração"
+              type="text"
+            />
+          </p>
+          <p>
+            Data de saída:
+            <input type="date" placeholder="Duração" type="text" />
+          </p>
+        </div>
+        <input placeholder="Endereço" type="text" />
+        <input type="" placeholder="Hábilidades" type="text" />
+        <select
+          class="form-select selectStyle"
+          aria-label="Default select example"
+        >
+          <option selected aria-label="Disabled select example">Tipo</option>
+          <option value="1">Estágio</option>
+          <option value="2">Trabalho voluntário</option>
+          <option value="3">Iniciação Cientifica</option>
+          <option value="4">Efetivo</option>
+        </select>
+        <button type="button" class="btn btn-warning">
+          Adicionar experiência
+        </button>
+        <a class="registerBtn" href="#">Cadastrar</a>
+      </div>
     </main>
-</body>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/usuario/script/cadastroCurriculo.js"></script>
+  </body>
 </html>

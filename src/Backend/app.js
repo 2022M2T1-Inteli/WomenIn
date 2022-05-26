@@ -33,7 +33,7 @@ app.post("/signup", (req, res1) => {
         );
         res1.sendFile(
           path.resolve(
-            __dirname + "/../Frontend/usuario/pages/signUpCompleted.html"
+            __dirname + "/../Frontend/usuario/pages/dashboardUser.html"
           )
         );
       } else if (res2.code == "SQLITE_CONSTRAINT")
@@ -159,7 +159,7 @@ app.get("/cadastroEmpresa", (req, res) => {
   );
 });
 
-app.get("/cadastroCurriculo.html", (req, res) => {
+app.get("/cadastroCurriculo", (req, res) => {
   res.sendFile(
     path.resolve(__dirname + "/../Frontend/usuario/pages/cadastroCurriculo.html")
   );

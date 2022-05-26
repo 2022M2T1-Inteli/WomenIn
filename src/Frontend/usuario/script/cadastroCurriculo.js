@@ -24,7 +24,7 @@ const addFormacao = () => {
       <button
         type="button"
         id="newFormacao"
-        class="btn btn-warning"
+        class="hover btn btn-warning"
         onclick="addFormacao()"
       >
         Adicionar Formação
@@ -36,7 +36,45 @@ const addFormacao = () => {
 };
 
 const addExperiencia = () => {
-  $("#formacao").append(
-    "<div class='inputs'><selectclass='form-select selectStyle'id='estado1'value='Estado'aria-label='Default select example'></select><select  class='form-select selectStyle'  id='cidade1'  value='Cidade'  aria-label='Default select example'></select><script language='JavaScript' type='text/javascript' charset='utf-8'>  new dgCidadesEstados({    cidade: document.getElementById('cidade1'),    estado: document.getElementById('estado1'),  });</script></div>"
+  $("#novaExperiencia").append(
+    `
+    <div style="margin:20px">
+    <h1 id="experiencia" style="margin:20px">Experiência</h1>
+      <div class="inputs">
+        <input placeholder="Cargo/Posição" type="text" />
+        <input placeholder="Empresa" type="text" />
+        <div class="data">
+          <p>
+            Data de entrada:
+            <input
+              class="datecolor"
+              type="date"
+              placeholder="Duração"
+              type="text"
+            />
+          </p>
+          <p>
+            Data de saída:
+            <input type="date" placeholder="Duração" type="text" />
+          </p>
+        </div>
+        <input placeholder="Endereço" type="text" />
+        <input type="" placeholder="Hábilidades" type="text" />
+        <select
+          class="form-select selectStyle"
+          aria-label="Default select example"
+        >
+          <option selected aria-label="Disabled select example">Tipo</option>
+          <option value="1">Estágio</option>
+          <option value="2">Trabalho voluntário</option>
+          <option value="3">Iniciação Cientifica</option>
+          <option value="4">Efetivo</option>
+        </select>
+        <button onclick="addExperiencia()" type="button" class="hover btn btn-warning">
+          Adicionar experiência
+        </button>
+      </div>
+    </div>
+    `
   );
 };

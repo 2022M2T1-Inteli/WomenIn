@@ -177,5 +177,21 @@ main{
       box-shadow: #280044 0 0 10px;
       background-color: #280044;
     }
+
+    .registerBtnContainer{
+      /* background-color: #280044; */
+      padding: 20px;
+      border-radius: 15px;
+      margin: 20px;
+    }
+
+    .registerBtn{
+      text-decoration: none;
+    }
+
+    .hover:hover{
+      box-shadow: white 0 0 10px;
+      transition: 200ms;
+    }
   }
   

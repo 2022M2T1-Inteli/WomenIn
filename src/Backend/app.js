@@ -159,6 +159,12 @@ app.get("/cadastroEmpresa", (req, res) => {
   );
 });
 
+app.get("/cadastroCurriculo.html", (req, res) => {
+  res.sendFile(
+    path.resolve(__dirname + "/../Frontend/usuario/pages/cadastroCurriculo.html")
+  );
+});
+
 app.post("/api/cadastrarEmpresa", (req, res) => {
   console.log("--> received new POST - cadastrarEmpresa");
   data = req.body;

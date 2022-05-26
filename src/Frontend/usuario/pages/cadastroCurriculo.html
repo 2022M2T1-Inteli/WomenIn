@@ -19,7 +19,7 @@
     ></script>
   </head>
 
-  <body>
+  <!-- <body>
     <script src="../../../Backend/user/MainPageUser.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
@@ -42,7 +42,7 @@
       type="image/x-icon"
     />
     <title>Bit | Cadastrar Vagas</title>
-  </head>
+  </head> -->
 
   <body>
     <header>
@@ -62,7 +62,7 @@
       <p>Preencha todos os campos e faça parte dessa rede</p>
     </header>
     <main>
-      <div id="formacao">
+      <div id="curriculo">
         <div class="inputs">
           <select
             class="form-select selectStyle"
@@ -83,7 +83,7 @@
             });
           </script>
         </div>
-        <h1 id="experiencia">Formação</h1>
+        <h1 id="formacao" style="margin:20px">Formação</h1>
         <div class="inputs">
           <input placeholder="Formação" type="text" />
           <input placeholder="Universidade" type="text" />
@@ -106,12 +106,13 @@
             type="button"
             id="newFormacao"
             class="btn btn-warning"
-            onclick="addExperiencia()"
+            onclick="addFormacao()"
           >
-            Adicionar experiência
+            Adicionar Formação
           </button>
         </div>
       </div>
+      <span id="novaFormacao"></span>
 
       <h1 id="experiencia">Experiência</h1>
       <div class="inputs">
@@ -151,6 +152,6 @@
       </div>
     </main>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="/usuario/script/cadastroCurriculo.js"></script>
+    <script src="../script/cadastroCurriculo.js"></script>
   </body>
 </html>

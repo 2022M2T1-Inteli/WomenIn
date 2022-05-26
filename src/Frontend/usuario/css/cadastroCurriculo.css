@@ -45,7 +45,8 @@ header p{
 body {
     background-color: #280044 !important;
     color: white;
-}
+    padding-bottom: 50px!important;
+  }
 
 /* MAIN */
 
@@ -135,7 +136,6 @@ main{
     font-size: 20px !important;
     border-radius: 15px !important;
     font-weight: bold !important;
-    margin: 25px !important;
 }
 .btn-warning {
     background-color: #f3c42e !important;

@@ -64,8 +64,12 @@
         </div>
         <h1 id="formacao" style="margin: 20px">Formação</h1>
         <div class="inputs">
-          <input placeholder="Formação" type="text" />
-          <input placeholder="Universidade" type="text" />
+          <input placeholder="Formação" type="text" id="inputFormacao1" />
+          <input
+            placeholder="Universidade"
+            type="text"
+            id="inputUniversidade1"
+          />
           <div class="data">
             <p>
               Data de entrada:
@@ -74,11 +78,17 @@
                 type="date"
                 placeholder="Duração"
                 type="text"
+                id="inputDataEntrada1"
               />
             </p>
             <p>
               Data de saída:
-              <input type="date" placeholder="Duração" type="text" />
+              <input
+                type="date"
+                placeholder="Duração"
+                type="text"
+                id="inputDataSaida1"
+              />
             </p>
           </div>
           <button
@@ -95,35 +105,9 @@
 
       <h1 id="experiencia">Experiência</h1>
       <div class="inputs">
-        <input placeholder="Cargo/Posição" type="text" />
-        <input placeholder="Empresa" type="text" />
-        <div class="data">
-          <p>
-            Data de entrada:
-            <input
-              class="datecolor"
-              type="date"
-              placeholder="Duração"
-              type="text"
-            />
-          </p>
-          <p>
-            Data de saída:
-            <input type="date" placeholder="Duração" type="text" />
-          </p>
-        </div>
-        <input placeholder="Endereço" type="text" />
-        <input type="" placeholder="Hábilidades" type="text" />
-        <select
-          class="form-select selectStyle"
-          aria-label="Default select example"
-        >
-          <option selected aria-label="Disabled select example">Tipo</option>
-          <option value="1">Estágio</option>
-          <option value="2">Trabalho voluntário</option>
-          <option value="3">Iniciação Cientifica</option>
-          <option value="4">Efetivo</option>
-        </select>
+        <input placeholder="Título" type="text" id="inputTitulo1" />
+        <input placeholder="Descrição" type="text" id="inputDescricao1" />
+
         <button
           onclick="addExperiencia()"
           type="button"
@@ -135,7 +119,7 @@
       <span id="novaExperiencia"></span>
 
       <div class="registerBtnContainer">
-        <a class="hover registerBtn" href="#">Cadastrar</a>
+        <a class="hover registerBtn" onclick="finalizar()">Cadastrar</a>
       </div>
     </main>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

@@ -67,7 +67,12 @@ const createObject = () => {
 const sendTest = () => {
   let data = createObject();
   if (data == false) {
-    alert("preencha todos os campos!");
+    Swal.fire({
+      title: "Oops!",
+      text: "Preencha todos os campos!",
+      icon: "error",
+      confirmButtonText: "OK",
+    });
   } else {
     const parameters = {
       method: "POST",

@@ -1,11 +1,17 @@
+"use strict";
+
+let counterFormacao = 1;
+let counterExperiencia = 1;
+
 const addFormacao = () => {
+  counterFormacao += 1;
   $("#novaFormacao").append(
     `
     <div style="margin:20px">
-    <h1 id="formacao" style="margin:20px">Formação</h1>
+    <h1 id="formacao" style="margin:20px">Formação ${counterFormacao}</h1>
     <div class="inputs">
-      <input placeholder="Formação" type="text" />
-      <input placeholder="Universidade" type="text" />
+      <input placeholder="Formação" type="text" id = "inputFormacao${counterFormacao}"/>
+      <input placeholder="Universidade" type="text" id = "inputUniversidade${counterFormacao}"/>
       <div class="data">
         <p>
           Data de entrada:
@@ -14,67 +20,69 @@ const addFormacao = () => {
             type="date"
             placeholder="Duração"
             type="text"
-          />
+          id = "inputDataEntrada${counterFormacao}"/>
         </p>
         <p>
           Data de saída:
-          <input type="date" placeholder="Duração" type="text" />
+          <input type="date" placeholder="Duração" type="text" id = "inputDataSaida${counterFormacao}"/>
         </p>
       </div>
-      <button
-        type="button"
-        id="newFormacao"
-        class="hover btn btn-warning"
-        onclick="addFormacao()"
-      >
-        Adicionar Formação
-      </button>
     </div>
     </div>
     `
   );
 };
 
+const criarArrayFormacao = () => {
+  let arrayFinal = [];
+  for (let i = 1; i <= counterFormacao; i++) {
+    let objetoAtual = {};
+    objetoAtual.Formacao = document.querySelector(`#inputFormacao${i}`).value;
+    objetoAtual.lugar = document.querySelector(`#inputUniversidade${i}`).value;
+    objetoAtual.DataEntrada = document.querySelector(
+      `#inputDataEntrada${i}`
+    ).value;
+    objetoAtual.DataSaida = document.querySelector(`#inputDataSaida${i}`).value;
+    arrayFinal.push(objetoAtual);
+  }
+  return arrayFinal;
+};
+
 const addExperiencia = () => {
+  counterExperiencia += 1;
   $("#novaExperiencia").append(
     `
-    <div style="margin:20px">
-    <h1 id="experiencia" style="margin:20px">Experiência</h1>
-      <div class="inputs">
-        <input placeholder="Cargo/Posição" type="text" />
-        <input placeholder="Empresa" type="text" />
-        <div class="data">
-          <p>
-            Data de entrada:
-            <input
-              class="datecolor"
-              type="date"
-              placeholder="Duração"
-              type="text"
-            />
-          </p>
-          <p>
-            Data de saída:
-            <input type="date" placeholder="Duração" type="text" />
-          </p>
-        </div>
-        <input placeholder="Endereço" type="text" />
-        <input type="" placeholder="Hábilidades" type="text" />
-        <select
-          class="form-select selectStyle"
-          aria-label="Default select example"
-        >
-          <option selected aria-label="Disabled select example">Tipo</option>
-          <option value="1">Estágio</option>
-          <option value="2">Trabalho voluntário</option>
-          <option value="3">Iniciação Cientifica</option>
-          <option value="4">Efetivo</option>
-        </select>
-        <button onclick="addExperiencia()" type="button" class="hover btn btn-warning">
-          Adicionar experiência
-        </button>
-      </div>
-    </div>
+    <h1 id="experiencia">Experiência ${counterExperiencia}</h1>
+    <div class="inputs">
+      <input placeholder="Título" type="text" id="inputTitulo${counterExperiencia}"/>
+      <input placeholder="Descrição" type="text" id="inputDescricao${counterExperiencia}"/>
     `
   );
+};
+
+const criarArrayExperiencia = () => {
+  let arrayFinal = [];
+  for (let i = 1; i <= counterExperiencia; i++) {
+    let objetoAtual = {};
+    objetoAtual.titulo = document.querySelector(`#inputTitulo${i}`).value;
+    objetoAtual.descricao = document.querySelector(`#inputDescricao${i}`).value;
+    arrayFinal.push(objetoAtual);
+  }
+  return arrayFinal;
+};
+
+const finalizar = () => {
+  let objetoFinal = {};
+  objetoFinal.formacao = criarArrayFormacao();
+  objetoFinal.experiencia = criarArrayExperiencia();
+  // console.log(objetoFinal);
+  enviarCurriculum(objetoFinal);
+  window.location.replace("/dashboard");
+};
+
+const enviarCurriculum = (file) => {
+  const params = { contenttype: "application/json" };
+  $.post("http://127.0.0.1:3030/cadastrarCurriculo", file, (err) => {
+    console.log(err);
+  });
 };

@@ -161,7 +161,25 @@ app.get("/cadastroEmpresa", (req, res) => {
 
 app.get("/cadastroCurriculo", (req, res) => {
   res.sendFile(
-    path.resolve(__dirname + "/../Frontend/usuario/pages/cadastroCurriculo.html")
+    path.resolve(
+      __dirname + "/../Frontend/usuario/pages/cadastroCurriculo.html"
+    )
+  );
+});
+
+app.post("/cadastrarCurriculo", (req, res) => {
+  console.log("Posted!");
+  let curriculum = req.body;
+  currentId = req.cookies.id;
+  db.run(
+    `UPDATE users SET curriculum = '${JSON.stringify(
+      curriculum
+    )}' WHERE id = ${currentId}`,
+    (err, response) => {
+      if (err == null) {
+        console.log(`--> curriculum of user ${currentId} sent to db`);
+      } else console.log("--> db error - " + err);
+    }
   );
 });
 

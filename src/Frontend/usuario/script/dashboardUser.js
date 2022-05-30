@@ -12,33 +12,45 @@ getInfo().then((res) => {
 
   //confere se o questionario de softskills já foi preenchido
   if (res.softSkills) {
-    $("#skillAndCurriculum").append(
+    $("#skillCurriculo").append(
       "<h4 class='local'>SoftSkills cadastradas</h4>"
     );
   } else {
-    $("#skillAndCurriculum").append(
-      "<h4 id='setRed' class='local'>SoftSkills pendentes</h4>"
+    $("#skillCurriculo").append(
+      `
+      <h2 id="curriculum">Minhas Soft Skills</h2>
+      <h4 class="local">Você ainda não possui um currículo</h4>
+      <a href="/skillTest">
+        <button id="criarcurriculo"type="button"  class="btn btn-warning">Criar Curriculo</button>
+      </a>
+      `
     );
   }
 
   //confere se o curriculo já foi preenchido
   if (res.curriculum) {
-    $("#skillAndCurriculum").append(
+    $("#curriculoContainer").append(
       "<h4 class='local'>Currículo cadastrado</h4>"
     );
   } else {
-    $("#skillAndCurriculum").append(
-      "<h4 id='setRed' class='local'>Currículo pendente</h4>"
-    );
-    $("#noCurriculum").append(
+    $("#curriculoContainer").append(
       `
       <h2 id="curriculum">Meu Currículo</h2>
-  </div>
       <h4 class="local">Você ainda não possui um currículo</h4>
       <a href="/cadastroCurriculo">
-          <button id="criarcurriculo"type="button"  class="btn btn-warning">Criar Curriculo</button>
-      </a>`
+        <button id="criarcurriculo"type="button"  class="btn btn-warning">Criar Curriculo</button>
+      </a>
+      `
     );
+  //   $("#noCurriculum").append(
+  //     `
+  //     <h2 id="curriculum">Meu Currículo</h2>
+  // </div>
+  //     <h4 class="local">Você ainda não possui um currículo</h4>
+  //     <a href="/cadastroCurriculo">
+  //         <button id="criarcurriculo"type="button"  class="btn btn-warning">Criar Curriculo</button>
+  //     </a>`
+  //   );
   }
 
   if (!res.curriculum && !res.softSkills) {

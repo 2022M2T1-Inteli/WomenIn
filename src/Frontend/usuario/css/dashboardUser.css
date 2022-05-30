@@ -1,7 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&family=Nunito:wght@200;400&family=Roboto+Slab:wght@200;400&display=swap");
-.btn {
-  font-family: "Nunito", sans-serif;
+*{
+  text-decoration: none!important;
 }
+
+html{
+  overflow-x: hidden;
+}
+
 #user {
   border-radius: 50%;
   display: block;
@@ -10,18 +14,15 @@
   margin-top: 100px;
 }
 #username {
-  font-family: "Nunito", sans-serif, Regular 400;
   text-align: center;
   margin-top: 20px;
 }
 .local {
   text-align: center;
-  font-family: "Nunito", sans-serif;
+  margin-top: 30px;
 }
 #curriculum {
   text-align: center;
-  font-family: "Nunito", sans-serif, Regular 400;
-  margin-top: 30px;
 }
 #criarcurriculo {
   margin-left: auto;
@@ -38,4 +39,15 @@
 
 #setRed {
   color: rgb(188, 0, 0);
+}
+
+button:hover{
+  box-shadow: rgb(40, 0, 68) 0 0 10px!important;
+}
+
+.infosContainer{
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  display: flex;
 }

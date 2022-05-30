@@ -14,6 +14,8 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(express.static("../Frontend/"));
 
+
+//verifica se o e-mail cadastrado já existe no banco de dados
 app.post("/signup", (req, res1) => {
   const infos = req.body;
   db.run(

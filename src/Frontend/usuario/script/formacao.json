@@ -1,0 +1,11 @@
+{
+  "formacao": [
+    {
+      "Formacao": "Ciência da computação",
+      "lugar": "INTELI",
+      "DataEntrada": "2022-06-01",
+      "DataSaida": "2025-12-20"
+    }
+  ],
+  "experiencia": [{ "titulo": "Freelancer", "descricao": "aaaa" }]
+}

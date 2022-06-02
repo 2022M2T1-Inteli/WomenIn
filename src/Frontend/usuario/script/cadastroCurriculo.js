@@ -71,17 +71,13 @@ const criarArrayExperiencia = () => {
   return arrayFinal;
 };
 
-//FUNÇAO PRINCIPAL
-const finalizar = () => {
-  let userId = document.cookie.split("=")[1];
-  let objetoFinal = {};
-  objetoFinal.id = userId;
-  objetoFinal.formacao = criarArrayFormacao();
-  objetoFinal.experiencia = criarArrayExperiencia();
-  // console.log(objetoFinal);
-  enviarCurriculum(objetoFinal);
-  alert(JSON.stringify(objetoFinal));
-  window.location.replace("/dashboard");
+const criarStrLocalizacao = () => {
+  let cidade = $("#cidade1").val();
+  let estado = $("#estado1").val();
+  if (cidade && estado) {
+    return `${cidade}, ${estado}`;
+  }
+  return null;
 };
 
 const enviarCurriculum = (file) => {
@@ -89,4 +85,22 @@ const enviarCurriculum = (file) => {
   $.post("http://127.0.0.1:3030/cadastrarCurriculo", file, (err) => {
     console.log(err);
   });
+};
+
+//FUNÇAO PRINCIPAL
+const finalizar = () => {
+  let userId = document.cookie.split("=")[1];
+  let objetoFinal = {};
+  //adiciona o ID do usuario ao obj
+  objetoFinal.id = userId;
+  //adiciona as outras informações cadastradas ao obj
+
+  objetoFinal.loc = criarStrLocalizacao();
+
+  objetoFinal.formacao = criarArrayFormacao();
+  objetoFinal.experiencia = criarArrayExperiencia();
+  // envia o curriculo
+  enviarCurriculum(objetoFinal);
+  alert(JSON.stringify(objetoFinal));
+  window.location.replace("/dashboard");
 };

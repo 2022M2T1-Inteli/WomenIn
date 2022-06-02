@@ -169,8 +169,20 @@ app.get("/cadastroCurriculo", (req, res) => {
 app.post("/cadastrarCurriculo", (req, res) => {
   console.log("Posted!");
   let curriculum = req.body;
+  // salva o id e a localizacao em variaveis e os deleta do obj curriculum
   currentId = curriculum.id;
   delete curriculum.id;
+  let localizacao = curriculum.loc;
+  delete curriculum.loc;
+  db.run(
+    `UPDATE users SET location = '${localizacao}' WHERE id = ${currentId}`,
+    (err, response) => {
+      if (!err) console.log("--> location OK");
+      else console.log("erro com a localização");
+    }
+  );
+
+  // envia o curriculo para o db
   db.run(
     `UPDATE users SET curriculum = '${JSON.stringify(
       curriculum
@@ -199,12 +211,6 @@ app.post("/api/cadastrarEmpresa", (req, res) => {
       }
     }
   );
-});
-
-app.get("/teste", (req, res) => {
-  db.get("SELECT name FROM users WHERE id==3010", (error, response) => {
-    res.send(`Seu nome é ${response.name}`);
-  });
 });
 
 app.listen(port, hostname, () => {

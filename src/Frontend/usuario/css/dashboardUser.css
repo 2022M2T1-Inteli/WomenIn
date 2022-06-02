@@ -6,6 +6,10 @@ html{
   overflow-x: hidden;
 }
 
+.center{
+  text-align: center;
+}
+
 #user {
   border-radius: 50%;
   display: block;
@@ -50,4 +54,26 @@ button:hover{
   align-items: center;
   flex-direction: row;
   display: flex;
+}
+
+.infosBx{
+  width: 50%!important;
+}
+
+.curriculoBx{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  flex-direction: row;
+}
+
+.skillsBx{
+  max-height: 200px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.skillsBx p{
+  margin: 0px 10px;
 }

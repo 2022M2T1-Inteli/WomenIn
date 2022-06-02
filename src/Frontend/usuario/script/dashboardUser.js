@@ -22,13 +22,17 @@ const getInfo = async () => {
 getInfo().then((res) => {
   //colocar nome
   document.querySelector("#username").textContent = res.name;
-
-  //confere se o questionario de softskills já foi preenchido
-  if (res.softSkills) {
-    $("#skillCurriculo").append(
-      "<h4 class='local'>SoftSkills cadastradas</h4>"
+ if (res.softSkills){
+  $("#skillCurriculo").append(res.softSkills
     );
-  } else {
+    $("#skillCurriculo").append( 
+    `
+      <a href="/skillTest">
+        <button id="editarsoftskills"type="button"  class="btn btn-warning">Editar Softskills</button>
+      </a>
+      `
+    );
+   }  else {
     $("#skillCurriculo").append(
       `
       <h2 id="curriculum">Minhas Soft Skills</h2>
@@ -39,11 +43,16 @@ getInfo().then((res) => {
       `
     );
   }
-
-  //confere se o curriculo já foi preenchido
   if (res.curriculum) {
     $("#curriculoContainer").append(
-      "<h4 class='local'>Currículo cadastrado</h4>"
+      res.curriculum
+    );
+    $("#curriculoContainer").append(
+      `
+      <a href="/cadastroCurriculo">
+      <button id="editarcurriculo"type="button"  class="btn btn-warning">Editar Curriculo</button>
+    </a>
+      `
     );
   } else {
     $("#curriculoContainer").append(

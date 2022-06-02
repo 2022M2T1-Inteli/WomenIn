@@ -96,6 +96,15 @@ const finalizar = () => {
   //adiciona as outras informações cadastradas ao obj
 
   objetoFinal.loc = criarStrLocalizacao();
+  if (!objetoFinal.loc) {
+    Swal.fire({
+      title: "Oops!",
+      text: "Preencha sua localização",
+      icon: "error",
+      confirmButtonText: "OK",
+    });
+    return;
+  }
 
   objetoFinal.formacao = criarArrayFormacao();
   objetoFinal.experiencia = criarArrayExperiencia();

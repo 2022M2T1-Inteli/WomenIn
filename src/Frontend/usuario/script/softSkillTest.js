@@ -74,6 +74,8 @@ const sendTest = () => {
       confirmButtonText: "OK",
     });
   } else {
+    let userId = document.cookie.split("=")[1];
+    data.id = userId;
     const parameters = {
       method: "POST",
       body: JSON.stringify(data),

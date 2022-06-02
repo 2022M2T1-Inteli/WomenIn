@@ -14,8 +14,6 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(express.static("../Frontend/"));
 
-
-//verifica se o e-mail cadastrado já existe no banco de dados
 app.post("/signup", (req, res1) => {
   const infos = req.body;
   db.run(
@@ -105,31 +103,29 @@ app.post("/login", (req, res) => {
 });
 
 app.get("/loginPage", (req, res) => {
-  if (req.cookies.id >= 3000) {
-    res.sendFile(
-      path.resolve(__dirname + "/../Frontend/usuario/pages/dashboardUser.html")
-    );
-  }
   res.sendFile(
     path.resolve(__dirname + "/../Frontend/usuario/pages/loginUser.html")
   );
 });
 
-app.get("/api/getUserInfo", (req, res) => {
-  currentId = req.cookies.id;
-  console.log(`--> GET api - sent infos of user ${currentId}`);
+app.post("/api/getUserInfo", (req, res) => {
+  currentId = req.body.id;
   db.get(
     `SELECT * FROM users WHERE id == ${Number(currentId)}`,
     (err, response) => {
+      console.log(`--> GET api - sent infos of user ${currentId}`);
       res.send(response);
     }
   );
 });
 
 app.post("/api/sendSoftSkills", (req, res) => {
-  currentId = req.cookies.id;
+  currentId = req.body.id;
+  let skills = req.body;
+  // delete skills.id;
+  let softSkills = JSON.stringify(skills);
+  console.log(softSkills);
   console.log(` --> POST received - user ${currentId} softSKills`);
-  let softSkills = JSON.stringify(req.body);
   db.run(
     `UPDATE users SET softSkills = '${softSkills}' WHERE id = ${currentId}`,
     (err, response) => {
@@ -138,6 +134,7 @@ app.post("/api/sendSoftSkills", (req, res) => {
       } else console.log("--> db error - " + err);
     }
   );
+  res.end();
 });
 
 app.get("/skillTest", (req, res) => {
@@ -172,7 +169,8 @@ app.get("/cadastroCurriculo", (req, res) => {
 app.post("/cadastrarCurriculo", (req, res) => {
   console.log("Posted!");
   let curriculum = req.body;
-  currentId = req.cookies.id;
+  currentId = curriculum.id;
+  delete curriculum.id;
   db.run(
     `UPDATE users SET curriculum = '${JSON.stringify(
       curriculum
@@ -183,6 +181,7 @@ app.post("/cadastrarCurriculo", (req, res) => {
       } else console.log("--> db error - " + err);
     }
   );
+  res.end();
 });
 
 app.post("/api/cadastrarEmpresa", (req, res) => {

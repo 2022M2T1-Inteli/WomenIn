@@ -1,7 +1,20 @@
 let userId = document.cookie.split("=")[1];
 
 const getInfo = async () => {
-  const response = await fetch("http://127.0.0.1:3030/api/getUserInfo");
+  infos = { id: userId };
+  console.log(JSON.stringify(infos));
+  const parameters = {
+    method: "POST",
+    body: JSON.stringify(infos),
+    credentials: "same-origin",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
+  const response = await fetch(
+    "http://127.0.0.1:3030/api/getUserInfo",
+    parameters
+  );
   const data = await response.json();
   return data;
 };

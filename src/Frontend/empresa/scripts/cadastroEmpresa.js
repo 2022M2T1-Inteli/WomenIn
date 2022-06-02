@@ -8,6 +8,8 @@ const cadastrarEmpresa = () => {
     password: password,
   };
 
+  alert(JSON.stringify(objeto));
+
   const parameters = {
     method: "POST",
     body: JSON.stringify(objeto),

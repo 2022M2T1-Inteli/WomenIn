@@ -71,12 +71,16 @@ const criarArrayExperiencia = () => {
   return arrayFinal;
 };
 
+//FUNÇAO PRINCIPAL
 const finalizar = () => {
+  let userId = document.cookie.split("=")[1];
   let objetoFinal = {};
+  objetoFinal.id = userId;
   objetoFinal.formacao = criarArrayFormacao();
   objetoFinal.experiencia = criarArrayExperiencia();
   // console.log(objetoFinal);
   enviarCurriculum(objetoFinal);
+  alert(JSON.stringify(objetoFinal));
   window.location.replace("/dashboard");
 };
 

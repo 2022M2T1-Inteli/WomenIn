@@ -69,6 +69,27 @@ option {
   color: rgb(207, 207, 207);
 }
 
+.ssContainer {
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+}
+
+.ssContainer h1{
+  color: #f3c42e;
+  font-size: 32px;
+  margin: 15px;
+}
+.ssContainer div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.ssContainer div label{
+  color: white;
+}
+
 .registerBtn {
   background-color: #f3c42e;
   color: #280044;

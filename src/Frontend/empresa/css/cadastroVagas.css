@@ -129,4 +129,7 @@ a:hover {
     box-shadow: #280044 0 0 10px;
     background-color: #280044;
   }
+  .input_softskills input{
+    color: white;
+  }
 }

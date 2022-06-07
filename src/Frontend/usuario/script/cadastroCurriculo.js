@@ -1,7 +1,28 @@
 "use strict";
 
+let userId = document.cookie.split("=")[1];
 let counterFormacao = 1;
 let counterExperiencia = 1;
+
+//Funções
+
+const getInfo = async () => {
+  let infos = { id: userId };
+  const parameters = {
+    method: "POST",
+    body: JSON.stringify(infos),
+    credentials: "same-origin",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
+  const response = await fetch(
+    "http://127.0.0.1:3030/api/getUserInfo",
+    parameters
+  );
+  const data = await response.json();
+  return data;
+};
 
 const addFormacao = () => {
   counterFormacao += 1;
@@ -37,12 +58,12 @@ const criarArrayFormacao = () => {
   let arrayFinal = [];
   for (let i = 1; i <= counterFormacao; i++) {
     let objetoAtual = {};
-    objetoAtual.Formacao = document.querySelector(`#inputFormacao${i}`).value;
+    objetoAtual.formacao = document.querySelector(`#inputFormacao${i}`).value;
     objetoAtual.lugar = document.querySelector(`#inputUniversidade${i}`).value;
-    objetoAtual.DataEntrada = document.querySelector(
+    objetoAtual.dataEntrada = document.querySelector(
       `#inputDataEntrada${i}`
     ).value;
-    objetoAtual.DataSaida = document.querySelector(`#inputDataSaida${i}`).value;
+    objetoAtual.dataSaida = document.querySelector(`#inputDataSaida${i}`).value;
     arrayFinal.push(objetoAtual);
   }
   return arrayFinal;
@@ -87,14 +108,14 @@ const enviarCurriculum = (file) => {
   });
 };
 
-//FUNÇAO PRINCIPAL
+//FUNÇAO PRINCIPAL que envia o curriculo preenchido
 const finalizar = () => {
   let userId = document.cookie.split("=")[1];
   let objetoFinal = {};
   //adiciona o ID do usuario ao obj
   objetoFinal.id = userId;
-  //adiciona as outras informações cadastradas ao obj
 
+  //adiciona as outras informações cadastradas ao obj
   objetoFinal.loc = criarStrLocalizacao();
   if (!objetoFinal.loc) {
     Swal.fire({
@@ -105,11 +126,54 @@ const finalizar = () => {
     });
     return;
   }
-
   objetoFinal.formacao = criarArrayFormacao();
   objetoFinal.experiencia = criarArrayExperiencia();
   // envia o curriculo
   enviarCurriculum(objetoFinal);
-  alert(JSON.stringify(objetoFinal));
   window.location.replace("/dashboard");
 };
+
+//RODA QUANDO O CÒDIGO INICIA -> responsavel por pré-preencher
+//o formulário com as infos já armazenadas no db
+getInfo().then((res) => {
+  // PREPARANDO O AMBIENTE:
+
+  //cria as variaveis necessarias
+  let local = res.location.split(", ");
+  let arrFormacoes = JSON.parse(res.curriculum).formacao;
+  let arrExperiencias = JSON.parse(res.curriculum).experiencia;
+  let tamanhoArrExperiencias = arrExperiencias.length;
+  let tamanhoArrFormacoes = arrFormacoes.length;
+
+  //cria as n seções HTML de formacao e experiencia necessárias
+  for (let qtde = 1; tamanhoArrExperiencias > qtde; qtde++) addExperiencia();
+  for (let qtde = 1; tamanhoArrFormacoes > qtde; qtde++) addFormacao();
+
+  //PREENCHENDO AS SEÇÕES:
+
+  // Preenchendo as formações
+  //loop itera entre todas as formações no array vindo do db
+  for (let i = 1; i <= tamanhoArrFormacoes; i++) {
+    let formacaoAtual = arrFormacoes[i - 1];
+    //data entrada
+    document.querySelector(`#inputDataEntrada${i}`).value =
+      formacaoAtual.dataEntrada;
+    // data saida
+    document.querySelector(`#inputDataSaida${i}`).value =
+      formacaoAtual.dataSaida;
+    // formacao
+    document.querySelector(`#inputFormacao${i}`).value = formacaoAtual.formacao;
+    // universidade / instituição
+    document.querySelector(`#inputUniversidade${i}`).value =
+      formacaoAtual.lugar;
+  }
+  //mesma coisa para as experiencias
+  for (let i = 1; i <= tamanhoArrExperiencias; i++) {
+    let experienciaAtual = arrExperiencias[i - 1];
+    // titulo
+    document.querySelector(`#inputTitulo${i}`).value = experienciaAtual.titulo;
+    // descricao
+    document.querySelector(`#inputDescricao${i}`).value =
+      experienciaAtual.descricao;
+  }
+});

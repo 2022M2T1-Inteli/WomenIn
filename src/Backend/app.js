@@ -212,6 +212,40 @@ app.post("/api/cadastrarEmpresa", (req, res) => {
     }
   );
 });
+app.post("/api/editarEmpresa", (req,res) => {
+  console.log("oi");
+  console.log(req.body)
+  var data = req.body
+  db.run(
+`UPDATE empresas SET (profileName, bio, website, companyState, companyCity) = ('${data.name}', '${data.bio}', '${data.website}', '${data.estado}','${data.cidade}') WHERE id = ${data.id}`
+,(err) => {
+  if (err == null) {
+    console.log(
+      `--> nenhum erro. '${data.name}' inserida no banco de dados.`
+    );
+  } else {
+    console.log("--> ERRO!", err);
+  }
+})
+
+
+
+}) 
+app.get("/editarEmpresa", (req,res) => {
+res.sendFile(
+    path.resolve(
+      __dirname + "/../Frontend/empresa/pages/editarPerfilEmpresa.html"
+    )
+  );
+
+
+} )
+
+
+
+
+
+
 
 app.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`);

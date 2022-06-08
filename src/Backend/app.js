@@ -81,8 +81,8 @@ app.post("/login", (req, res) => {
               if (response.password === infos.password) {
                 if (response.accepted == 1) {
                   res.cookie("id", response.id);
-                  res.send("autenticado! cookie set!");
-                  res.end();
+                  res.sendFile(
+                      path.resolve(__dirname + "/../Frontend/empresa/pages/dashboard.html"));
                 } else {
                   res.send("Sua empresa aínda não foi aceita!");
                   res.end();
@@ -114,6 +114,17 @@ app.post("/api/getUserInfo", (req, res) => {
     `SELECT * FROM users WHERE id == ${Number(currentId)}`,
     (err, response) => {
       console.log(`--> GET api - sent infos of user ${currentId}`);
+      res.send(response);
+    }
+  );
+});
+
+app.get("/teste", (req, res) => {
+  currentId = req.body.id;
+  db.get(
+    `SELECT * FROM users WHERE id == 3025`,
+    (err, response) => {
+      console.log(`--> GET api - sent infos of user 3025`);
       res.send(response);
     }
   );

@@ -157,7 +157,6 @@ app.get("/cadastroEmpresa", (req, res) => {
     path.resolve(__dirname + "/../Frontend/empresa/pages/cadastroEmpresa.html")
   );
 });
-
 app.get("/cadastroCurriculo", (req, res) => {
   res.sendFile(
     path.resolve(
@@ -181,6 +180,7 @@ app.post("/cadastrarCurriculo", (req, res) => {
       else console.log("erro com a localização");
     }
   );
+  
 
   // envia o curriculo para o db
   db.run(
@@ -213,9 +213,9 @@ app.post("/api/cadastrarEmpresa", (req, res) => {
   );
 });
 app.post("/api/editarEmpresa", (req,res) => {
-  console.log("oi");
   console.log(req.body)
   var data = req.body
+  var info = req.body.id
   db.run(
 `UPDATE empresas SET (profileName, bio, website, companyState, companyCity) = ('${data.name}', '${data.bio}', '${data.website}', '${data.estado}','${data.cidade}') WHERE id = ${data.id}`
 ,(err) => {
@@ -227,7 +227,13 @@ app.post("/api/editarEmpresa", (req,res) => {
     console.log("--> ERRO!", err);
   }
 })
-
+db.get(
+  `SELECT * FROM empresas WHERE id == ${info}`,
+  (err, response) => {
+    console.log(`--> GET api - sent infos of empresas ${info}`);
+    res.send(response);
+  }
+);
 
 
 }) 
@@ -240,7 +246,15 @@ res.sendFile(
 
 
 } )
-
+app.get("/empresa", (req,res) => {
+  res.sendFile(
+      path.resolve(
+        __dirname + "/../Frontend/empresa/pages/dashboard.html"
+      )
+    );
+  
+  
+  } )
 
 
 

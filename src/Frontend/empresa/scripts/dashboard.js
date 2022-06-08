@@ -22,10 +22,22 @@ const getInfo = async () => {
 getInfo().then((res) => {
   if (res.profileName) {
     $("#infoEmpresa").append(
-      `<h1>Nome da empresa:</h1>
-      <p>
-            ${res.profileName}
-          </p>
+      `
+      <div class="infos">
+        <div class="nome">
+            <h2>${res.profileName}</h2>
+        </div>
+        <div class="location">
+             <h1>Sede da empresa: ${res.companyCity}, ${res.companyState}</h1>
+        </div>     
+        <div class="site">
+             <h1>Site: ${res.website}</h1>
+        </div>
+      </div>
+      <div class="bio">
+        <h2> ${res.bio} </h2>
+      </div>
+
       `
     );
   } else {

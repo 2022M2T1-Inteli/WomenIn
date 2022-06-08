@@ -96,7 +96,26 @@ main h1 {
   left: 50%;
   transform: translateX(-50%);
 }
+.infos {
+  display: 100%;
+  margin: auto;
+  padding: 5px;
+}
+.nome{
+  display: inline-block;
+  font-weight: 100px;
+ 
+}
+.site {
+  display: inline;
+  
+}
+.location {
+  display: inline-block;
+  margin-left: 1200px;
 
+ 
+}
 @media (min-width: 700px) {
   .margin {
     display: none;
@@ -105,13 +124,14 @@ main h1 {
   .content {
     display: grid !important;
     grid-template-columns: 4fr 2fr !important;
+    
   }
 
   header {
     border-radius: 10px;
-    height: 400px;
+    height: 100%;
     margin: 20px;
-    position: unset;
+    position: grid;
     width: unset;
     border: 3px #280044 solid;
     box-shadow: #280044 0 0 10px;

@@ -250,6 +250,11 @@ app.get("/empresa", (req, res) => {
     path.resolve(__dirname + "/../Frontend/empresa/pages/dashboard.html")
   );
 });
+app.get("/cadastrarVaga", (req, res) => {
+  res.sendFile(
+    path.resolve(__dirname + "/../Frontend/empresa/pages/cadastroVagas.html")
+  );
+});
 
 app.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`);

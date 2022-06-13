@@ -142,7 +142,7 @@ getInfo().then((res) => {
       `
     );
   } else {
-    $("#skillCurriculo").append(
+    $("#skillContainer").append(
       `
       <h2 id="curriculum">Minhas Soft Skills</h2>
       <h4 class="local">Você ainda não possui um currículo</h4>

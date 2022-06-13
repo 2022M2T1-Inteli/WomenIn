@@ -6,27 +6,28 @@
   padding: 0px;
   margin: 0px;
   color: #f3c42e;
-  text-align: center!important;
+  text-align: center !important;
+  text-decoration: none !important;
   margin: auto;
 }
 
 /* HEADER */
 
-header{
-    color: #280044;
-    text-align: center;
-    padding: 50px 30px 10px;
-    color: white;
+header {
+  color: #280044;
+  text-align: center;
+  padding: 50px 30px 10px;
+  color: white;
 }
 
-.yellowBackBtn{
-    height: 40px;
-    position: absolute;
-    top: 15px;
-    left: 15px;
+.yellowBackBtn {
+  height: 40px;
+  position: absolute;
+  top: 15px;
+  left: 15px;
 }
 
-.purpleBackBtn{
+.purpleBackBtn {
   display: none;
   height: 40px;
   position: absolute;
@@ -34,40 +35,40 @@ header{
   left: 15px;
 }
 
-header h1{
-    font-size: 36px;
-    margin-bottom: 10px;
+header h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
 }
 
-header p{
-    font-size: 18px;
+header p {
+  font-size: 18px;
 }
 body {
-    background-color: #280044 !important;
-    color: white;
-    padding-bottom: 50px!important;
-  }
+  background-color: #280044 !important;
+  color: white;
+  padding-bottom: 50px !important;
+}
 
 /* MAIN */
 
-main{
-    text-align: center;
+main {
+  text-align: center;
 }
-#experiencia{
-    margin: 30px;
+#experiencia {
+  margin: 30px;
 }
 
-#habilidades{
-    margin: 30px;
+#habilidades {
+  margin: 30px;
 }
-.form-check{
-    text-align: center;
+.form-check {
+  text-align: center;
 }
-.inputs{
-    display: grid;
-    grid-template-columns: 1fr;
-    padding: 20px 50px;
-    height: 100%;
+.inputs {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 50px;
+  height: 100%;
 }
 .inputs input {
   margin: 15px;
@@ -79,119 +80,230 @@ main{
   background-color: #280044;
   color: white;
 }
-.data{
-    color: white;
-    display: flex;
-    width: 100%;
-    color-scheme: dark;
-    margin: 15px;
-    padding: 20px 5px;
-    justify-content: center;
+.data {
+  color: white;
+  display: flex;
+  width: 100%;
+  color-scheme: dark;
+  margin: 15px;
+  padding: 20px 5px;
+  justify-content: center;
 }
 
-.data p{
-  margin: 0px!important;
+.data p {
+  margin: 0px !important;
 }
 
-.inputs input{
-    margin: 15px;
-    padding: 20px 5px;
-    font-size: 16px;
-    font-weight: bold;
-    border: none;
-    border-bottom: 2px #f3c42e solid;
-
+.inputs input {
+  margin: 15px;
+  padding: 20px 5px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-bottom: 2px #f3c42e solid;
 }
 
-.inputs input:focus{
-    outline: none;
+.inputs input:focus {
+  outline: none;
 }
 
-.inputs input::placeholder{
-    color: rgb(207, 207, 207);
+.inputs input::placeholder {
+  color: rgb(207, 207, 207);
 }
-.selectStyle{
-    background-color: #280044 !important;
-    color: white !important;
-    margin: 15px !important;
-    width: auto!important;
-    border: #f3c42e 1px solid!important;
-    /* -webkit-appearence:none !important; */
-    color-scheme: dark !important;
-  }
-  
-  .selectStyle:focus{
-    background-color: #280044 !important;
-    color: white !important;
-    margin: 15px !important;
-    width: auto!important;
-    border: #f3c42e 1px solid!important;
-    box-shadow: #f3c42e 0 0 10px!important;
-  }
+.selectStyle {
+  background-color: #280044 !important;
+  color: white !important;
+  margin: 15px !important;
+  width: auto !important;
+  border: #f3c42e 1px solid !important;
+  /* -webkit-appearence:none !important; */
+  color-scheme: dark !important;
+}
+
+.selectStyle:focus {
+  background-color: #280044 !important;
+  color: white !important;
+  margin: 15px !important;
+  width: auto !important;
+  border: #f3c42e 1px solid !important;
+  box-shadow: #f3c42e 0 0 10px !important;
+}
 
 .registerBtn {
-    background-color: #f3c42e !important;
-    color: #280044 !important;
-    padding: 15px !important;
-    font-size: 20px !important;
-    border-radius: 15px !important;
-    font-weight: bold !important;
+  background-color: #f3c42e !important;
+  color: #280044 !important;
+  padding: 15px !important;
+  font-size: 20px !important;
+  border-radius: 15px !important;
+  font-weight: bold !important;
 }
 .btn-warning {
-    background-color: #f3c42e !important;
-    color: #280044 !important;
-    padding: 15px !important;
-    font-size: 15px !important;
-    border-radius: 15px !important; 
-    font-weight: bold !important;
-    margin: 25px !important;
+  background-color: #f3c42e !important;
+  color: #280044 !important;
+  padding: 15px !important;
+  font-size: 15px !important;
+  border-radius: 15px !important;
+  font-weight: bold !important;
+  margin: 25px !important;
 }
+
+menu img {
+  width: 60%;
+}
+
+menu a i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #280044;
+}
+
+menu {
+  --size: 2.5rem;
+  --radius: 6rem;
+  --padding: 1rem;
+  --bg-color: #f3c42e;
+  --fg-color: rgba(0, 0, 0, 0.7);
+  --hi-color: #280044;
+
+  position: fixed;
+  bottom: var(--padding);
+  right: var(--padding);
+}
+
+menu > * {
+  position: absolute;
+
+  display: grid;
+  place-content: center;
+
+  border-radius: 15px;
+
+  background: var(--bg-color);
+  color: var(--fg-color);
+
+  text-decoration: none;
+
+  box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.6);
+}
+
+menu > .action {
+  --factor: 0;
+
+  width: var(--size);
+  height: var(--size);
+  right: calc(0.35 * var(--size));
+  bottom: calc(0.35 * var(--size));
+
+  opacity: 0;
+
+  transform: rotate(calc(-1 * var(--angle)))
+    translateY(calc(-1 * var(--radius) * var(--factor))) rotate(var(--angle));
+
+  transition: transform 250ms ease-in-out, opacity 250ms ease-in-out,
+    box-shadow 250ms ease-in-out, color 250ms ease-in-out;
+}
+
+menu > .action:hover,
+menu > .trigger:hover {
+  color: var(--hi-color);
+  box-shadow: 0px 0px 0px 0.35rem rgba(0, 0, 0, 0.2);
+}
+
+menu.open > .action {
+  --factor: 1;
+
+  opacity: 1;
+}
+
+menu > .action:nth-child(1) {
+  --angle: 10deg;
+  transition-delay: 0ms;
+  width: min-content;
+  padding: 10px;
+  height: 60px;
+  font-weight: bold;
+}
+
+menu > .action:nth-child(2) {
+  --angle: 80deg;
+  transition-delay: 50ms;
+  width: min-content;
+  padding: 10px;
+  height: 60px;
+  font-weight: bold;
+}
+
+menu > .trigger {
+  width: calc(1.6 * var(--size));
+  height: calc(1.6 * var(--size));
+  bottom: 0;
+  right: 0;
+  border-radius: 50% !important;
+
+  font-size: 2rem;
+  transition: box-shadow 250ms ease-in-out, color 250ms ease-in-out;
+}
+
+menu > .trigger > i {
+  transition: transform 250ms ease-in-out;
+}
+
+menu.open > .trigger > i {
+  transform: rotate(-135deg);
+}
+
 @media (min-width: 1050px) {
-    *{
-      color: #280044;
-    }
-    option {
-      color: white;
-    }
-    body {
-      padding: 0px 300px;
-      background-color: rgb(40, 0, 68, 0.4)!important;
-    }
-  
-    header {
-      color: #280044;
-      margin: 20px;
-      padding: 0px;
-    }
-  
-    .yellowBackBtn {
-      display: none;
-    }
-  
-    .purpleBackBtn {
-      display: block;
-    }
-  
-    .inputs {
-      border-radius: 15px;
-      box-shadow: #280044 0 0 10px;
-      background-color: #280044;
-    }
-
-    .registerBtnContainer{
-      /* background-color: #280044; */
-      padding: 20px;
-      border-radius: 15px;
-      margin: 20px;
-    }
-
-    .registerBtn{
-      text-decoration: none;
-    }
-
-    .hover:hover{
-      box-shadow: white 0 0 10px;
-      transition: 200ms;
-    }
+  * {
+    color: #280044;
+    text-decoration: none !important;
   }
-  
+  option {
+    color: white;
+  }
+  body {
+    padding: 0px 300px;
+    background-color: rgb(40, 0, 68, 0.4) !important;
+  }
+
+  header {
+    color: #280044;
+    margin: 20px;
+    padding: 0px;
+  }
+
+  .data p {
+    color: white;
+    font-weight: bold;
+  }
+
+  .yellowBackBtn {
+    display: none;
+  }
+
+  .purpleBackBtn {
+    display: block;
+  }
+
+  .inputs {
+    border-radius: 15px;
+    box-shadow: #280044 0 0 10px;
+    background-color: #280044;
+  }
+
+  .registerBtnContainer {
+    /* background-color: #280044; */
+    padding: 20px;
+    border-radius: 15px;
+    margin: 20px;
+  }
+
+  .registerBtn {
+    text-decoration: none;
+  }
+
+  .hover:hover {
+    box-shadow: white 0 0 10px;
+    transition: 200ms;
+  }
+}

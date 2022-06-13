@@ -16,6 +16,10 @@
       href="../../assets/favicon.png"
       type="image/x-icon"
     />
+    <link
+      href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css"
+      rel="stylesheet"
+    />
     <title>Cadastrar Curriculo</title>
     <script
       language="JavaScript"
@@ -91,14 +95,6 @@
               />
             </p>
           </div>
-          <button
-            type="button"
-            id="newFormacao"
-            class="hover btn btn-warning"
-            onclick="addFormacao()"
-          >
-            Adicionar Formação
-          </button>
         </div>
       </div>
       <span id="novaFormacao"></span>
@@ -107,20 +103,18 @@
       <div class="inputs">
         <input placeholder="Título" type="text" id="inputTitulo1" />
         <input placeholder="Descrição" type="text" id="inputDescricao1" />
-
-        <button
-          onclick="addExperiencia()"
-          type="button"
-          class="hover btn btn-warning"
-        >
-          Adicionar experiência
-        </button>
       </div>
       <span id="novaExperiencia"></span>
 
       <div class="registerBtnContainer">
         <a class="hover registerBtn" onclick="finalizar()">Cadastrar</a>
       </div>
+
+      <menu>
+        <a href="#" class="action" onclick="addFormacao()"><i>Adicionar Formação</i></a>
+        <a href="#" class="action" onclick="addExperiencia()"><i>Adicionar Experiência</i></a>
+        <a href="#" class="trigger"><i><img src="../../assets/plusIcon.png" alt="icon"></i></a>
+      </menu>
     </main>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

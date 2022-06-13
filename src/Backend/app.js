@@ -81,8 +81,11 @@ app.post("/login", (req, res) => {
               if (response.password === infos.password) {
                 if (response.accepted == 1) {
                   res.cookie("id", response.id);
-                  res.send("autenticado! cookie set!");
-                  res.end();
+                  res.sendFile(
+                    path.resolve(
+                      __dirname + "/../Frontend/empresa/pages/dashboard.html"
+                    )
+                  );
                 } else {
                   res.send("Sua empresa aínda não foi aceita!");
                   res.end();
@@ -250,10 +253,38 @@ app.get("/empresa", (req, res) => {
     path.resolve(__dirname + "/../Frontend/empresa/pages/dashboard.html")
   );
 });
+
+app.post("/api/enviarVaga", (req, res) => {
+  let data = req.body;
+  db.run(
+    `INSERT INTO vagas(idEmpresa, jobTitle, description, jobType, jobTime, jobState, jobCity, neededSkills, hardSkills, academicFormation) VALUES('${data.idEmpresa}','${data.name}','${data.descricao}','${data.tipo}','${data.horario}','${data.estado}','${data.cidade}','${data.ss}', '${data.hardSkills}', '${data.formacao}')`,
+    (err) => {
+      if (err == null) {
+        console.log(
+          `--> nenhum erro. '${data.name}' inserida no banco de dados.`
+        );
+      } else {
+        console.log("--> ERRO!", err);
+      }
+    }
+  );
+  db.get("");
+});
+
 app.get("/cadastrarVaga", (req, res) => {
   res.sendFile(
     path.resolve(__dirname + "/../Frontend/empresa/pages/cadastroVagas.html")
   );
+});
+
+app.get("/dashboardEmpresa", (req, res) => {
+  res.sendFile(
+    path.resolve(__dirname + "/../Frontend/empresa/pages/dashboard.html")
+  );
+});
+
+app.get("/minhasVagas", (req, res) => {
+  res.send("hello");
 });
 
 app.listen(port, hostname, () => {

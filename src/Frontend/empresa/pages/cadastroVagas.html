@@ -17,10 +17,10 @@
 
 <body>
   <header>
-    <a href="./dashboard.html">
+    <a href="/dashboardEmpresa">
       <img class="yellowBackBtn" src="../../assets/yellow-arrow-left.svg" alt="purpleBackBtn">
     </a>
-    <a href="./dashboard.html">
+    <a href="/dashboardEmpresa">
       <img class="purpleBackBtn" src="../../assets/purple-arrow-left.svg" alt="purpleBackBtn">
     </a>
     <h1>Cadastro de Vagas</h1>
@@ -30,23 +30,23 @@
   </header>
   <main>
     <div class="inputs">
-      <input placeholder="Nome da Vaga" type="text">
-      <input placeholder="Descrição" type="text">
-      <select class="form-select selectStyle" aria-label="Default select example">
-        <option selected aria-label="Disabled select example">Selecione o tipo de vaga</option>
+      <input placeholder="Nome da Vaga" id="nome"  type="text">
+      <input placeholder="Descrição" type="text" id="descricao">
+      <select id="selTipo" class="form-select selectStyle" aria-label="Default select example">
+        <option selected aria-label="Disabled select example" id="tipo">Selecione o tipo de vaga</option>
         <option value="1">Estágio</option>
         <option value="2">Temporário</option>
         <option value="3">Efetivo</option>
         <option value="4">Trainee</option>
       </select>
-      <select class="form-select selectStyle" aria-label="Default select example">
-        <option selected aria-label="Disabled select example">Selecione o formato da vaga </option>
+      <select id="selForm"class="form-select selectStyle" aria-label="Default select example">
+        <option selected aria-label="Disabled select example" id="formato">Selecione o formato da vaga </option>
         <option value="1">Presencial</option>
         <option value="2">Híbrido</option>
         <option value="3">Remoto</option>
       </select>
-      <select class="form-select selectStyle" aria-label="Default select example">
-        <option selected aria-label="Disabled select example">Selecione o horário da vaga</option>
+      <select id="selHor" class="form-select selectStyle" aria-label="Default select example">
+        <option selected aria-label="Disabled select example" id="horario">Selecione o horário da vaga</option>
         <option value="1">Matutino</option>
         <option value="2">Vespertino</option>
         <option value="3">Noturno</option>
@@ -61,9 +61,6 @@
           estado: document.getElementById('estado1')
         })
       </script>
-      <input placeholder="Requisitos" type="text">
-      <input placeholder="Nome da Vaga" type="text">
-      <input placeholder="Descrição" type="text">
       <form action="" class="ssContainer">
         <h1>Selecione as Soft Skills desejadas</h1>
         <div class="SkillBx1">
@@ -107,8 +104,8 @@
           <label for="ss10">Aprendizado ativo</label>
         </div>
       </form>
-      <input placeholder="Hard Skills" type="text">
-      <input placeholder="Formação Acadêmica" type="text">
+      <input placeholder="Hard Skills" id="HH" type="text">
+      <input placeholder="Formação Acadêmica" id="FA" type="text">
       <button class="registerBtn" onclick="enviar()" href="#">Cadastrar</button>
     </div>
   </main>

@@ -1,5 +1,6 @@
 const express = require("express");
 const path = require("path");
+const match = require("./match.js");
 const cors = require("cors");
 const bp = require("body-parser");
 const cookieParser = require("cookie-parser");
@@ -268,7 +269,6 @@ app.post("/api/enviarVaga", (req, res) => {
       }
     }
   );
-  db.get("");
 });
 
 app.get("/cadastrarVaga", (req, res) => {
@@ -284,7 +284,8 @@ app.get("/dashboardEmpresa", (req, res) => {
 });
 
 app.get("/minhasVagas", (req, res) => {
-  res.send("hello");
+  currentId = req.cookies.id;
+  match.match(req);
 });
 
 app.listen(port, hostname, () => {

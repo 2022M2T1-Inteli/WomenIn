@@ -28,7 +28,10 @@ const addFormacao = () => {
   counterFormacao += 1;
   $("#novaFormacao").append(
     `
-    <div style="margin:20px">
+    <div id="fomacao${counterFormacao}Container" class="formacaoContainer">
+    <button class="closeIcon" id='close' onclick="removeFormacaoContainer()">
+      <img src="../../assets/closeIcon.svg" alt="closeIcon">
+    </button>
     <h1 id="formacao" style="margin:20px">Formação ${counterFormacao}</h1>
     <div class="inputs">
       <input placeholder="Formação" type="text" id = "inputFormacao${counterFormacao}"/>
@@ -54,6 +57,20 @@ const addFormacao = () => {
   );
 };
 
+function removeFormacaoContainer() {
+  document.getElementById("close").onclick = function () {
+    this.parentNode.remove();
+    return false;
+  };
+}
+
+function removeExperienciaContainer() {
+  document.getElementById("closeEx").onclick = function () {
+    this.parentNode.remove();
+    return false;
+  };
+}
+
 const criarArrayFormacao = () => {
   let arrayFinal = [];
   for (let i = 1; i <= counterFormacao; i++) {
@@ -73,10 +90,16 @@ const addExperiencia = () => {
   counterExperiencia += 1;
   $("#novaExperiencia").append(
     `
-    <h1 id="experiencia">Experiência ${counterExperiencia}</h1>
-    <div class="inputs">
-      <input placeholder="Título" type="text" id="inputTitulo${counterExperiencia}"/>
-      <input placeholder="Descrição" type="text" id="inputDescricao${counterExperiencia}"/>
+    <div id="experiencia${counterExperiencia}Container" class="experienciaContainer">
+      <button class="closeIconEx" id='closeEx' onclick="removeExperienciaContainer()">
+        <img src="../../assets/closeIcon.svg" alt="closeIcon">
+      </button>
+      <h1 id="experiencia">Experiência ${counterExperiencia}</h1>
+      <div class="inputs">
+        <input placeholder="Título" type="text" id="inputTitulo${counterExperiencia}"/>
+        <input placeholder="Descrição" type="text" id="inputDescricao${counterExperiencia}"/>
+      </div>
+    </div>
     `
   );
 };

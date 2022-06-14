@@ -54,6 +54,49 @@ body {
 main {
   text-align: center;
 }
+
+.formacaoContainer{
+  margin:20px;
+  position: relative;
+}
+
+.experienciaContainer{
+  margin:20px;
+  position: relative;
+}
+
+.closeIcon{
+  width: 15px;
+  height: 15px;
+  display: flex;
+  border: 0px transparent;
+  background: none;
+  position: absolute;
+  right: 15px;
+  top: 80px;
+}
+
+.closeIconEx{
+  width: 15px;
+  height: 15px;
+  display: flex;
+  border: 0px transparent;
+  background: none;
+  position: absolute;
+  right: 15px;
+  top: 90px;
+}
+
+.closeIconEx img{
+  width: 15px;
+  height: 15px;
+}
+
+.closeIcon img{
+  width: 15px;
+  height: 15px;
+}
+
 #experiencia {
   margin: 30px;
 }
@@ -263,6 +306,7 @@ menu.open > .trigger > i {
   }
   body {
     padding: 0px 300px;
+    padding-bottom: 0px!important;
     background-color: rgb(40, 0, 68, 0.4) !important;
   }
 

@@ -283,7 +283,7 @@ app.get("/dashboardEmpresa", (req, res) => {
   );
 });
 
-app.post("/api/puxarVagas", async (req, res) => {
+app.get("/api/puxarVagas", async (req, res) => {
   currentId = req.cookies.id;
   if (currentId >= 3000) {
     const infos = await match.match(req);

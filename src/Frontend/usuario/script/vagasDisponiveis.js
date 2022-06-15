@@ -1,5 +1,5 @@
 const criarCard = (index) => {
-  $("#cards").append(`<div id="cards">
+  $("#cards").append(`
   <div class="cardContainer">
     <h1 id="jobTitle${index}" class="jobTitle"></h1>
     <div class="descriptionBx">
@@ -23,7 +23,7 @@ const criarCard = (index) => {
       <p id="hardSkills${index}" class="hardSkills"></p>
     </div>
     <div class="matchBx">
-      <h3>Hard Skills</h3>
+      <h3>Match</h3>
       <p id="porcentagem${index}" class="porcentagem"></p>
     </div>
     <div class="btnBx">
@@ -35,7 +35,7 @@ const criarCard = (index) => {
       >
         Ver Empresa
       </a>
-    </div>
+   
   </div>
 </div>`);
 };
@@ -51,13 +51,12 @@ getVagas().then((arrVagas) => {
     let vaga = arrVagas[i];
     console.log(vaga);
     criarCard(i);
-    $(`#jobTitle${i}`).text = vaga.jobTitle;
-    $(`#description${i}`).text = vaga.description;
-    // $(`#job${i}`).value = vaga.
-    // $(`${i}`).value = vaga.
-    // $(`${i}`).value = vaga.
-    // $(`${i}`).value = vaga.
-    // $(`${i}`).value = vaga.
+    $(`#jobTitle${i}`).text(vaga.jobTitle);
+    $(`#jobLocation${i}`).text(`${vaga.jobCity}, ${vaga.jobState}`);
+    $(`#jobType${i}`).text(vaga.jobType);
+    $(`#jobTime${i}`).text(vaga.jobTime);
+    $(`#hardSkills${i}`).text(vaga.hardSkills);
+    $(`#porcentagem${i}`).text(vaga.porcentagem);
   }
 });
 

@@ -283,7 +283,7 @@ app.get("/dashboardEmpresa", (req, res) => {
   );
 });
 
-app.get("/api/puxarVagas", async (req, res) => {
+app.post("/api/puxarVagas", async (req, res) => {
   currentId = req.cookies.id;
   if (currentId >= 3000) {
     const infos = await match.match(req);
@@ -291,6 +291,12 @@ app.get("/api/puxarVagas", async (req, res) => {
   } else {
     res.send("ERRO! ID não identificado ou ID de não-usuario");
   }
+});
+
+app.get("/minhasVagas", (req, res) => {
+  res.sendFile(
+    path.resolve(__dirname + "/../Frontend/usuario/pages/minhasVagas.html")
+  );
 });
 
 app.listen(port, hostname, () => {

@@ -30,19 +30,19 @@ document.querySelector("body").addEventListener("mouseup", function (event) {
     value = document.getElementById(currentSlider).value;
     const [selectedH2] = $("#" + currentSlider).next();
     switch (value) {
-      case "-2":
+      case "0":
         selectedH2.textContent = "Discordo";
         break;
-      case "-1":
+      case "1":
         selectedH2.textContent = "Discordo parcialmente";
         break;
-      case "0":
+      case "2":
         selectedH2.textContent = "-";
         break;
-      case "1":
+      case "3":
         selectedH2.textContent = "Concordo parcialmente";
         break;
-      case "2":
+      case "4":
         selectedH2.textContent = "Concordo";
         break;
     }
@@ -54,10 +54,10 @@ document.querySelector("body").addEventListener("mouseup", function (event) {
 // caso contrario, retorna o objeto
 const createObject = () => {
   let result = {};
-  for (let i = 1; i <= 20; i++) {
+  for (let i = 1; i <= 10; i++) {
     let currentId = "ss" + i;
     let value = document.querySelector("#" + currentId).value;
-    if (value == 0) return false;
+    if (value == 2) return false;
     result[currentId] = value;
   }
   console.log(result);

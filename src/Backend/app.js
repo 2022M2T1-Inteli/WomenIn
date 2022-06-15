@@ -283,9 +283,13 @@ app.get("/dashboardEmpresa", (req, res) => {
   );
 });
 
-app.get("/minhasVagas", (req, res) => {
+app.get("/api/puxarVagas", (req, res) => {
   currentId = req.cookies.id;
-  match.match(req);
+  if (currentId >= 3000) {
+    match.match(req);
+  } else {
+    res.send("ERRO! ID não identificado ou ID de não-usuario");
+  }
 });
 
 app.listen(port, hostname, () => {

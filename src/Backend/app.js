@@ -293,9 +293,9 @@ app.get("/api/puxarVagas", async (req, res) => {
   }
 });
 
-app.get("/minhasVagas", (req, res) => {
+app.get("/vagasDisponiveis", (req, res) => {
   res.sendFile(
-    path.resolve(__dirname + "/../Frontend/usuario/pages/minhasVagas.html")
+    path.resolve(__dirname + "/../Frontend/usuario/pages/vagasDisponiveis.html")
   );
 });
 

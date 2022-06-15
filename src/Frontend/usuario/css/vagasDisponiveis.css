@@ -26,41 +26,24 @@ body {
   left: 15px;
 }
 
-.card1 {
-  align-items: center;
-  max-width: 800px;
-  margin: 1.1rem;
-  margin-bottom: 0;
-  padding: 20px;
-  color: white;
+#cards{
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.cardContainer{
   background-color: #280044;
+  padding: 10px;
+  color: white;
+  margin: 20px;
   border-radius: 10px;
+
 }
 
-.job {
-  font-weight: 1000;
-  font-size: 25px;
-  margin-bottom: 1%;
-  text-align: left;
-}
-.empresa {
-  font-weight: 500;
-  font-size: 20px;
-  margin-bottom: 1%;
-  text-align: left;
-}
-.edereco{
-  font-weight: 500;
-  font-size: 20px;
-  margin-bottom: 1%;
-}
-
-.shadowBtn:hover{
-  box-shadow: white 0 0 10px!important;
-}
-
-@media (min-width: 480px) {
-  #header h1 br{
-    display: none;  
+@media (min-width: 800px){
+  #cards{
+    flex-direction: row;
+    flex-wrap: nowrap;
   }
 }

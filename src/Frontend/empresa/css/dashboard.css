@@ -13,8 +13,11 @@ header {
   background-image: url("../../assets/perfilEmpresaBackground.png");
   background-size: cover;
   background-repeat: no-repeat;
-  height: 146px;
+  height: 150px;
+  width: 1850px;
   text-align: center;
+  margin: auto;
+  padding: 5px;
 }
 
 .margin {
@@ -124,7 +127,7 @@ main h1 {
   .content {
     display: grid !important;
     grid-template-columns: 4fr 2fr !important;
-    
+    size: 1000px;
   }
 
   header {

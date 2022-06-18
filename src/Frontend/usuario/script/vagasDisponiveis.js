@@ -52,7 +52,6 @@ getVagas().then((arrVagas) => {
     console.log(vaga);
     criarCard(i);
     $(`#jobTitle${i}`).text(vaga.jobTitle);
-    $(`#jobLocation${i}`).text(`${vaga.jobCity}, ${vaga.jobState}`);
     $(`#jobType${i}`).text(vaga.jobType);
     $(`#jobTime${i}`).text(vaga.jobTime);
     $(`#hardSkills${i}`).text(vaga.hardSkills);

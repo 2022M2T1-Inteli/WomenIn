@@ -22,6 +22,7 @@ const getInfo = async () => {
 getInfo().then((res) => {
   //colocar nome
   document.querySelector("#username").textContent = res.name;
+  console.log(res.curriculum)
 
   //confere se o curriculo já foi preenchido
   if (res.curriculum) {
@@ -33,16 +34,16 @@ getInfo().then((res) => {
         <div class="formacaoContainer">
           <h3>Formação</h3>
           <p>
-            ${curriculumOBJ.formacao[0].Formacao}
+            ${curriculumOBJ.formacao[0].formacao}
           </p>
           <p>
             ${curriculumOBJ.formacao[0].lugar}
           </p>
           <p>
-            ${curriculumOBJ.formacao[0].DataEntrada}
+            ${curriculumOBJ.formacao[0].dataEntrada}
           </p>
           <p>
-            ${curriculumOBJ.formacao[0].DataSaida}
+            ${curriculumOBJ.formacao[0].dataSaida}
           </p>
         </div>
         <div class="experienciaContainer">

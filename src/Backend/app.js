@@ -299,6 +299,15 @@ app.get("/vagasDisponiveis", (req, res) => {
   );
 });
 
+app.post("/sendPhotoUrl", (req, res) => {
+  const infos = req.body;
+  const currentId = req.cookies.id;
+  console.log(currentId)
+  db.run(
+    `UPDATE users SET (photoUrl) = ('${infos.photoUrl}') WHERE id = ${currentId}`
+  );
+});
+
 app.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`);
 });

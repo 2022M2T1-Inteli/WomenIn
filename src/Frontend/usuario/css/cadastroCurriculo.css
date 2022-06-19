@@ -179,6 +179,7 @@ main {
   font-size: 20px !important;
   border-radius: 15px !important;
   font-weight: bold !important;
+  cursor: pointer!important;
 }
 .btn-warning {
   background-color: #f3c42e !important;

@@ -22,7 +22,10 @@ const getInfo = async () => {
 getInfo().then((res) => {
   //colocar nome
   document.querySelector("#username").textContent = res.name;
-  console.log(res.curriculum)
+  console.log(res);
+  if (res.photoUrl) {
+    document.querySelector("#user").src=`${res.photoUrl}`;
+  }
 
   //confere se o curriculo já foi preenchido
   if (res.curriculum) {
@@ -78,67 +81,66 @@ getInfo().then((res) => {
       `
       <h2 class="center">Soft Skills</h2>
       <div class="skillsBx">
-          <p>
-            Controle de Emoções: ${skillsOBJ.ss1}
-          </p>
-          <p>
-            Criatividade: ${skillsOBJ.ss2}
-          </p>
-          <p>
-            Trabalho em grupo: ${skillsOBJ.ss3}
-          </p>
-          <p>
-            Comunicação eficaz: ${skillsOBJ.ss4}
-          </p>
-          <p>
-            Liderança: ${skillsOBJ.ss5}
-          </p>
-          <p>
-            Pensamento crítico: ${skillsOBJ.ss6}
-          </p>
-          <p>
-            Empatia: ${skillsOBJ.ss7}
-          </p>
-          <p>
-            Atitude: ${skillsOBJ.ss8}
-          </p>
-          <p>
-            Flexivel nas tarefas: ${skillsOBJ.ss9}
-          </p>
-          <p>
-            Rápida tomada de decisões: ${skillsOBJ.ss10}
-          </p>
-          <p>
-            Negociações: ${skillsOBJ.ss11}
-          </p>
-          <p>
-            Adaptável: ${skillsOBJ.ss12}
-          </p>
-          <p>
-            Detalhista: ${skillsOBJ.ss13}
-          </p>
-          <p>
-            Relacionamentos interpessoais: ${skillsOBJ.ss14}
-          </p>
-          <p>
-            Gestão de tempo: ${skillsOBJ.ss15}
-          </p>
-          <p>
-            Planejamento: ${skillsOBJ.ss16}
-          </p>
-          <p>
-            Organização: ${skillsOBJ.ss17}
-          </p>
-          <p>
-            Resiliência: ${skillsOBJ.ss18}
-          </p>
-          <p>
-            Desempenho sobre pressão: ${skillsOBJ.ss19}
-          </p>
-          <p>
-            Desenvolvimento próprio: ${skillsOBJ.ss20}
-          </p>
-          
+          <div class="skillParagraph">  
+            <p>Resolução de Problemas Complexos: </p>
+              <div class="progressBar">
+                <div class="greenBar" style="width:calc(25%*${skillsOBJ.ss1})"></div>
+              </div>
+          </div>
+          <div class="skillParagraph">  
+            <p>Pensamento Crítico: </p>
+              <div class="progressBar">
+                <div class="greenBar" style="width:calc(25%*${skillsOBJ.ss2})"></div>
+              </div>
+          </div>
+          <div class="skillParagraph">  
+            <p>Criatividade: </p>
+              <div class="progressBar">
+                <div class="greenBar" style="width:calc(25%*${skillsOBJ.ss3})"></div>
+              </div>
+          </div>
+          <div class="skillParagraph">  
+            <p>Gestão de Pessoas: </p>
+              <div class="progressBar">
+                <div class="greenBar" style="width:calc(25%*${skillsOBJ.ss4})"></div>
+              </div>
+          </div>
+          <div class="skillParagraph">  
+            <p>Liderança e influência social: </p>
+              <div class="progressBar">
+                <div class="greenBar" style="width:calc(25%*${skillsOBJ.ss5})"></div>
+              </div>
+          </div>
+          <div class="skillParagraph">  
+            <p>Pensamento analítico e inovação: </p>
+              <div class="progressBar">
+                <div class="greenBar" style="width:calc(25%*${skillsOBJ.ss6})"></div>
+              </div>
+          </div>
+          <div class="skillParagraph">  
+            <p>Resiliência, tolerância e flexibilidade: </p>
+              <div class="progressBar">
+                <div class="greenBar" style="width:calc(25%*${skillsOBJ.ss7})"></div>
+              </div>
+          </div>
+          <div class="skillParagraph">  
+            <p>Inteligência emocional: </p>
+              <div class="progressBar">
+                <div class="greenBar" style="width:calc(25%*${skillsOBJ.ss8})"></div>
+              </div>
+          </div>
+          <div class="skillParagraph">  
+            <p>Persuasão e negociação: </p>
+              <div class="progressBar">
+                <div class="greenBar" style="width:calc(25%*${skillsOBJ.ss9})"></div>
+              </div>
+          </div>
+          <div class="skillParagraph">  
+            <p>Gestão do tempo: </p>
+              <div class="progressBar">
+                <div class="greenBar" style="width:calc(25%*${skillsOBJ.ss10})"></div>
+              </div>
+          </div>
       </div>
       `
     );
@@ -164,3 +166,10 @@ getInfo().then((res) => {
   }
 });
 
+function selectPhoto(){
+  var photoUrl = prompt("Digite a URL de uma foto sua")
+
+  $.post('/sendPhotoUrl', {photoUrl: photoUrl})
+
+  document.location.reload(true);
+}

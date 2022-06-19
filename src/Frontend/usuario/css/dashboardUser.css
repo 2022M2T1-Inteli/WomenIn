@@ -1,30 +1,31 @@
-*{
-  text-decoration: none!important;
+* {
+  text-decoration: none !important;
 }
 
-html{
-  overflow-x: hidden;
-}
-
-.center{
-  text-align: center;
-}
-
-#user {
+#user{
+  cursor: pointer;
   border-radius: 50%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 100px;
 }
-#username {
+
+html {
+  overflow: hidden;
+}
+body{
+  background-color: rgb(40, 0, 68, 0.2)!important;
+}
+
+.center {
   text-align: center;
-  margin-top: 20px;
 }
 .local {
   text-align: center;
   margin-top: 30px;
 }
+
+#username{
+  color: #280044;
+}
+
 #curriculum {
   text-align: center;
 }
@@ -45,35 +46,77 @@ html{
   color: rgb(188, 0, 0);
 }
 
-button:hover{
-  box-shadow: rgb(40, 0, 68) 0 0 10px!important;
+button:hover {
+  box-shadow: rgb(40, 0, 68) 0 0 10px !important;
 }
 
-.infosContainer{
+.infosContainer {
   justify-content: space-around;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: row;
   display: flex;
+  background-color: #280044;
+  border-radius: 20px 20px 0px 0px;
+  margin-top: 10px;
+  color: #e1cbf1;
+  padding: 20px;
+  box-shadow: #280044 0 0 10px;
 }
 
-.infosBx{
-  width: 50%!important;
+.infosBx {
+  width: 50% !important;
 }
 
-.curriculoBx{
+.curriculoBx {
   display: flex;
   align-items: flex-start;
   justify-content: space-evenly;
   flex-direction: row;
 }
 
-.skillsBx{
+.skillsBx {
   max-height: 200px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
 }
 
-.skillsBx p{
-  margin: 0px 10px;
+.skillsBx p {
+  margin: 5px;
+  display: flex;
+  flex-direction: row;
+}
+
+.skillParagraph {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.progressBar {
+  width: 50px;
+  background-color: #f1f1f1;
+  border-radius: 10px;
+}
+
+.greenBar {
+  background-color: #f3c42e;
+  height: 10px !important;
+  border-radius: 10px;
+}
+
+.imgContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.imgBx {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.imgBx img{
+  margin: 15px;
 }

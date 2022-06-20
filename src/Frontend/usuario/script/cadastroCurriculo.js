@@ -135,22 +135,26 @@ const enviarCurriculum = (file) => {
 const finalizar = () => {
   let userId = document.cookie.split("=")[1];
   let objetoFinal = {};
+  objetoFinal.experiencia = criarArrayExperiencia();
+  objetoFinal.formacao = criarArrayFormacao();
+  objetoFinal.loc = criarStrLocalizacao();
   //adiciona o ID do usuario ao obj
   objetoFinal.id = userId;
-
-  //adiciona as outras informações cadastradas ao obj
-  objetoFinal.loc = criarStrLocalizacao();
-  if (!objetoFinal.loc) {
+  
+  console.log(objetoFinal)
+  // adiciona as outras informações cadastradas ao obj
+  if (!objetoFinal.loc || !objetoFinal.experiencia[0]||!objetoFinal.formacao[0]) {
     Swal.fire({
       title: "Oops!",
-      text: "Preencha sua localização",
+      text: "Preencha todas suas informações",
       icon: "error",
       confirmButtonText: "OK",
     });
     return;
   }
-  objetoFinal.formacao = criarArrayFormacao();
-  objetoFinal.experiencia = criarArrayExperiencia();
+
+
+
   // envia o curriculo
   enviarCurriculum(objetoFinal);
   window.location.replace("/dashboard");

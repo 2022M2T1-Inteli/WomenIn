@@ -1,171 +1,27 @@
-/* HEADER */
-
-header {
-  border-bottom: 9px #e1e1e1 solid;
-  height: 320px;
-  position: absolute;
-  width: 100%;
-  top: 0;
-  z-index: -10;
-}
-
-.perfilBackground {
-  background-image: url("../../assets/perfilEmpresaBackground.png");
+.background{
+  background-image: url("../../assets/capaEmpresa.jfif");
   background-size: cover;
   background-repeat: no-repeat;
-  height: 150px;
-  width: 1850px;
-  text-align: center;
-  margin: auto;
-  padding: 5px;
-}
-
-.margin {
-  margin-bottom: 280px;
-}
-
-.imgPerfil {
-  text-align: center;
-}
-
-.imgPerfil img {
-  margin-top: 40px;
-}
-
-.headerInfos {
-  text-align: center;
-}
-
-.headerInfos h1 {
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.headerInfos p {
-  font-size: 14px;
-  font-weight: bold;
-  color: #808080;
-}
-
-.headerInfos a {
-  background-color: #f3c42e;
-  padding: 10px;
-  border-radius: 10px;
-  top: 17px;
-  position: relative;
-  color: #280044;
-  font-size: 14px;
-  font-weight: bold;
-  margin: 0px 10px;
-}
-
-/* MAIN */
-
-main h1 {
-  margin: 20px 0px 0px;
-  text-align: center;
-  color: #280044;
-  font-weight: bold;
-}
-
-.statisticsContainer {
-  padding: 10px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-
-.statisticsBox {
-  border: 2px #f3c42e solid;
-  border-radius: 10px;
-  margin: 20px 10px;
-  height: 100%;
-  background-color: #f3c42e;
-  color: #280044;
+  background-position: center;
+ 
   position: relative;
 }
 
-.statisticsInfoTitle {
-  text-align: center;
-  margin: 10px;
-  font-size: 20px;
-  font-weight: bold;
+.logo{
+  padding: 30px 30px 0px;
 }
 
-.statisticsInfoValue {
-  font-size: 36px;
-  text-align: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%);
+#content{
+  display: flex;
+  flex-direction: row;
 }
-.infos {
-  display: 100%;
-  margin: auto;
-  padding: 5px;
+
+.nameDescription{
+  padding: 20px 40px;
+  width: 60%;
 }
-.nome{
-  display: inline-block;
-  font-weight: 100px;
- 
-}
-.site {
-  display: inline;
-  
-}
-.location {
-  display: inline-block;
-  margin-left: 1200px;
 
- 
-}
-@media (min-width: 700px) {
-  .margin {
-    display: none;
-  }
+.sedeLink{
+  padding: 68px 40px;
 
-  .content {
-    display: grid !important;
-    grid-template-columns: 4fr 2fr !important;
-    size: 1000px;
-  }
-
-  header {
-    border-radius: 10px;
-    height: 100%;
-    margin: 20px;
-    position: grid;
-    width: unset;
-    border: 3px #280044 solid;
-    box-shadow: #280044 0 0 10px;
-  }
-
-  .perfilBackground {
-    border-radius: 10px 10px 0px 0px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .imgPerfil {
-    margin: 20px;
-  }
-
-  .headerInfos {
-    margin: 40px;
-    text-align: left;
-  }
-
-  .statisticsBox {
-    height: 50%;
-  }
-  
-
-  main {
-    border-radius: 10px;
-    border: 3px #280044 solid;
-    margin: 20px;
-    box-shadow: #280044 0 0 10px;
-    padding: 20px;
-  }
 }

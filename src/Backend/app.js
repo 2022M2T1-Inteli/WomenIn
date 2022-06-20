@@ -220,7 +220,7 @@ app.post("/api/editarEmpresa", (req, res) => {
   var data = req.body;
   // var info = req.body.id;
   db.run(
-    `UPDATE empresas SET (profileName, bio, website, companyState, companyCity) = ('${data.name}', '${data.bio}', '${data.website}', '${data.estado}','${data.cidade}') WHERE id = ${data.id}`,
+    `UPDATE empresas SET (profileName, bio, website, profileUrl, backgroundUrl, companyState, companyCity) = ('${data.name}', '${data.bio}', '${data.website}', '${data.profileUrl}', '${data.backgroundUrl}', '${data.estado}','${data.cidade}') WHERE id = ${data.id}`,
     (err) => {
       if (err == null) {
         console.log(

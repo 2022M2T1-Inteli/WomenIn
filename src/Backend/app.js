@@ -302,10 +302,29 @@ app.get("/vagasDisponiveis", (req, res) => {
 app.post("/sendPhotoUrl", (req, res) => {
   const infos = req.body;
   const currentId = req.cookies.id;
-  console.log(currentId)
+  console.log(currentId);
   db.run(
     `UPDATE users SET (photoUrl) = ('${infos.photoUrl}') WHERE id = ${currentId}`
   );
+});
+app.get("/minhasVagas", (req, res) => {
+  res.sendFile(
+    path.resolve(__dirname + "/../Frontend/usuario/pages/minhasVagas.html")
+  );
+});
+app.get("/api/apply", (req, res) => {
+  res.send("oi");
+});
+
+app.post("/api/apply", (req, res) => {
+  console.log("oioioioi");
+  userId = req.body.userid;
+  vagaId = req.body.vagaid;
+  console.log(vagaId, userId);
+  // db.get(`SELECT * FROM empresas WHERE id == ${currentId}`, (err, response) => {
+  //   console.log(`--> GET api - sent infos of empresas ${currentId}`);
+  //   res.send(response);
+  // });
 });
 
 app.listen(port, hostname, () => {

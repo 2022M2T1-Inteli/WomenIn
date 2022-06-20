@@ -1,3 +1,5 @@
+let userId = document.cookie.split("=")[1];
+
 const criarCard = (index) => {
   $("#cards").append(`
   <div class="cardContainer">
@@ -27,14 +29,13 @@ const criarCard = (index) => {
       <p id="porcentagem${index}" class="porcentagem"></p>
     </div>
     <div class="btnBx">
-      <a href="" type="button" class="btn btn-warning shadowBtn"> Aplicar </a>
-      <a
-        href="perfilEmpresaUser.html"
+      <button href="" type="button" class="btn btn-warning shadowBtn" onclick="apply(${arrVagas[i].id})"> Aplicar </button>
+      <button
         type="button"
         class="btn btn-warning shadowBtn"
       >
         Ver Empresa
-      </a>
+      </button>
    
   </div>
 </div>`);
@@ -46,7 +47,22 @@ const getVagas = async () => {
   return data;
 };
 
+const sendApply = (ID) => {
+  infos = { userid: userId, vagaid: ID };
+  alert(JSON.stringify(infos));
+  const parameters = {
+    method: "POST",
+    body: JSON.stringify(infos),
+    credentials: "same-origin",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
+  fetch("http://127.0.0.1:3030/api/apply", parameters);
+};
+
 getVagas().then((arrVagas) => {
+  alert(JSON.stringify(arrVagas));
   for (let i in arrVagas) {
     let vaga = arrVagas[i];
     console.log(vaga);
@@ -59,15 +75,8 @@ getVagas().then((arrVagas) => {
   }
 });
 
-// academicFormation: "undefined"
-// description: "sfdffv"
-// hardSkills: "undefined"
-// id: 13
-// idEmpresa: 500
-// jobCity: "Antônio Olinto"
-// jobState: "PR"
-// jobTime: "Vespertino"
-// jobTitle: "Paulo Presa Evangelista"
-// jobType: "Estágio"
-// neededSkills: "ss1,ss2"
-// porcentagem: "75"
+//função executada quando o user clica para apllicar em uma vaga
+const apply = (IDVaga) => {
+  alert("USUario aplicou para a vaga " + IDVaga);
+  sendApply(IDVaga);
+};

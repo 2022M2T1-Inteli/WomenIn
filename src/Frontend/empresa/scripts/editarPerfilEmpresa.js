@@ -26,12 +26,16 @@ getInfo().then((res) => {
   document.getElementById("profileName").value = res.profileName;
   document.getElementById("bio").value = res.bio;
   document.getElementById("website").value = res.website;
+  document.getElementById("profileUrl").value = res.profileUrl;
+  document.getElementById("backgroundUrl").value = res.backgroundUrl;
 });
 
 function enviar() {
   let nome = document.getElementById("profileName").value;
   let bio = document.getElementById("bio").value;
   let website = document.getElementById("website").value;
+  let profileUrl = document.getElementById("profileUrl").value;
+  let backgroundUrl = document.getElementById("backgroundUrl").value;
   let estado = document.getElementById("estado1").value;
   let cidade = document.getElementById("cidade1").value;
   let obj = {
@@ -39,6 +43,8 @@ function enviar() {
     name: nome,
     bio: bio,
     website: website,
+    profileUrl: profileUrl,
+    backgroundUrl: backgroundUrl,
     estado: estado,
     cidade: cidade,
   };

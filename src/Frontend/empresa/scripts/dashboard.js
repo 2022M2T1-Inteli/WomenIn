@@ -22,6 +22,13 @@ const getInfo = async () => {
 getInfo().then((res) => {
   console.log(res)
   if (res) {
+    if (res.profileUrl) {
+      document.querySelector("#background").style.backgroundImage =`url("${res.backgroundUrl}")`;
+    }
+  
+    if (res.backgroundUrl) {
+      document.querySelector("#profile").src=`${res.profileUrl}`;
+    }
     $("#content").append(
       `
       <div class="nameDescription">

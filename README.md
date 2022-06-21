@@ -10,10 +10,10 @@
 
 ## Integrantes: 
 - <a href="https://www.linkedin.com/in/victorbarq/">Ariel </a>
-- <a href="https://www.linkedin.com/in/victorbarq/">Cristiane Andrade</a>
+- <a href="https://www.linkedin.com/in/crisandrade/">Cristiane Andrade</a>
 - <a href="https://www.linkedin.com/in/victorbarq/">Daniel Cunha</a> 
-- <a href="https://www.linkedin.com/in/victorbarq/">Lívia Coutinho</a> 
-- <a href="https://www.linkedin.com/in/victorbarq/">Luiz Alencar</a>
+- <a href="https://www.linkedin.com/in/liviapcoutinho/">Lívia Coutinho</a> 
+- <a href="https://www.linkedin.com/in/luiz-k-alencar/">Luiz Alencar</a>
 - <a href="https://www.linkedin.com/in/victorbarq/">Paulo Evangelista</a> 
 
 ## 📝 Descrição
@@ -36,16 +36,24 @@ T4_G5_V01_Web_application_document.pdf
 Faça o mesmo para a documentação em formato DOCX.
 ```
 
-|--> documentos<br>
-  &emsp;| --> outros <br>
-  &emsp;| T(NUMERO_DA_TURMA)_G(NUMERO_DO_GRUPO)_V(VERSÃO)_Web_application_document.pdf<br>
-  &emsp;| T(NUMERO_DA_TURMA)_G(NUMERO_DO_GRUPO)_V(VERSÃO)_Web_application_document.docx<br>
-|--> imagens<br>
-|--> src<br>
-  &emsp;|--> Backend<br>
-  &emsp;|--> Frontend<br>
-| readme.md<br>
-| license.txt
+|-->.git <br>
+|-->.vscode <br>
+     
+|-->bootstrap <br>
+|-->documentos <br>
+ |-->antigos
+|-->imagens <br>
+|-->src <br>
+    |-->.vscode
+ |-->Backend <br>
+        |-->node_modules
+ |-->Frontend <br>
+        |-->assets
+        |-->Bit
+        |-->empresa
+        |-->global
+        |-->usuario
+
 
 Dentre os arquivos presentes na raiz do projeto, definem-se:
 

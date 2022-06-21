@@ -4,22 +4,23 @@
 <a href= "https://www.inteli.edu.br/"><img src="https://www.inteli.edu.br/wp-content/uploads/2021/08/20172028/marca_1-2.png" alt="Inteli - Instituto de Tecnologia e Liderança" border="0"></a>
 </p>
 
-# Nome do projeto
+# BIT Match
 
-## Nome do grupo
+## WomenIn
 
 ## Integrantes: 
-- <a href="https://www.linkedin.com/in/victorbarq/">Nome do integrante 1</a>
-- <a href="https://www.linkedin.com/in/victorbarq/">Nome do integrante 2</a>
-- <a href="https://www.linkedin.com/in/victorbarq/">Nome do integrante 3</a> 
-- <a href="https://www.linkedin.com/in/victorbarq/">Nome do integrante 4</a> 
-- <a href="https://www.linkedin.com/in/victorbarq/">Nome do integrante 5</a>
-- <a href="https://www.linkedin.com/in/victorbarq/">Nome do integrante 6</a> 
-- <a href="https://www.linkedin.com/in/victorbarq/">Nome do integrante 7</a>
+- <a href="https://www.linkedin.com/in/victorbarq/">Ariel </a>
+- <a href="https://www.linkedin.com/in/victorbarq/">Cristiane Andrade</a>
+- <a href="https://www.linkedin.com/in/victorbarq/">Daniel Cunha</a> 
+- <a href="https://www.linkedin.com/in/victorbarq/">Lívia Coutinho</a> 
+- <a href="https://www.linkedin.com/in/victorbarq/">Luiz Alencar</a>
+- <a href="https://www.linkedin.com/in/victorbarq/">Paulo Evangelista</a> 
 
 ## 📝 Descrição
 
-Curta descrição sobre o que o seu projeto faz (problema a ser resolvido e solução proposta).
+Mulheres são mais seletivas ao se candidatar a vagas de emprego, boa parte dessas mulheres acreditam que não cumprem 100% dos requisitos solicitados pela empresa e por isso acabam abandonando a candidatura. Para diminuir essas percepções, foi proposto ao grupo uma aplicação web voltada para mulheres que querem encontrar um emprego na área de tecnologia. A solução propõem às usuárias o cadastramento de seu curriculo e suas softskills e apartir dessas softskills é feito um match com as vagas disponiveis que se adequem ao perfil da candidata, eliminando assim a percepção de que a usuária deve atender à 100% dos requisitos. Outro requisito é a padronização de nome das vagas, dando a possibilidade que não exista mais de um nome para uma vaga.
+A solução propõe às usuárias o cadastramento de seu curriculo e suas softskills e a partir dessas softskills é feito um match com as vagas disponiveis que se adequem ao perfil da candidata, eliminando assim a percepção de que a usuária deve atender à 100% dos requisitos.
+
 
 ## 📁 Estrutura de pastas
 
@@ -93,18 +94,34 @@ deve possuir o valor "node app.js".
 
 ## 🗃 Histórico de lançamentos
 
-* 0.2.1 - 25/01/2022
-    * Atualização de documentos (código do módulo permanece inalterado).
-* 0.2.0 - 15/01/2022
-    * Remove `setDefaultXYZ()`
-    * Adiciona `init()`
-* 0.1.1 - 11/01/2022
-    * Crash quando chama `baz()`
-* 0.1.0 - 10/01/2022
-    * O primeiro lançamento adequado
-    * Renomeia `foo()` para `bar()`
-* 0.0.1 - 01/01/2022
-    * Trabalho em andamento
+* 0.5.2 - 20/06/2022
+    * Alterações no estilo de páginas da empresa e da usuária.
+* 0.5.1 - 17/06/2022
+    * Correção de erros na responsividade da página.
+* 0.5.0 - 14/06/2022
+    * Correção em direcionamentos de páginas.
+* 0.4.2 - 10/06/2022
+    * Entrega da integração do sistema.
+* 0.4.1 - 07/06/2022
+    * Integração das Soft Skills.
+* 0.4.0 - 30/05/2022
+    * Início da integração do Back-End com o Front-End.
+* 0.3.1 - 27/06/2022
+    * Entrega da primeira versão do Back-End com implementação de NodeJs e banco de dados.
+* 0.3.0 - 16/05/2022
+    * Início da implementação do javascript no projeto.
+* 0.2.1 - 13/05/2022
+    * Entrega da primeira versão do Front-End.
+* 0.2.0 - 04/05/2022
+    * Ínicio do design do Front-End.
+    
+* 0.1.1 - 29/04/2022
+    * Preenchimento do WAD: Personas, Análise do Mercado, Análise SWOT, Descrição da Solução, Proposta de Valor e Matriz de Risco.
+* 0.1.0 - 22/04/2022
+    * Criação do WAD
+    
+* 0.0.1 - 18/04/2022
+    * Início do desenvolvimento do projeto.
 
 ## 📋 Licença/License
 

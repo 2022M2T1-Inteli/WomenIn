@@ -1,6 +1,6 @@
 let userId = document.cookie.split("=")[1];
 
-const criarCard = (index) => {
+const criarCard = (index, IDVaga) => {
   $("#cards").append(`
   <div class="cardContainer">
     <h1 id="jobTitle${index}" class="jobTitle"></h1>
@@ -29,7 +29,7 @@ const criarCard = (index) => {
       <p id="porcentagem${index}" class="porcentagem"></p>
     </div>
     <div class="btnBx">
-      <button href="" type="button" class="btn btn-warning shadowBtn" onclick="apply(${arrVagas[i].id})"> Aplicar </button>
+      <button href="" type="button" class="btn btn-warning shadowBtn" onclick="apply(${IDVaga})"> Aplicar </button>
       <button
         type="button"
         class="btn btn-warning shadowBtn"
@@ -65,9 +65,9 @@ getVagas().then((arrVagas) => {
   alert(JSON.stringify(arrVagas));
   for (let i in arrVagas) {
     let vaga = arrVagas[i];
-    console.log(vaga);
-    criarCard(i);
+    criarCard(i, vaga.id);
     $(`#jobTitle${i}`).text(vaga.jobTitle);
+    $(`#idvaga${i}`).text(vaga.jobTitle);
     $(`#jobType${i}`).text(vaga.jobType);
     $(`#jobTime${i}`).text(vaga.jobTime);
     $(`#hardSkills${i}`).text(vaga.hardSkills);

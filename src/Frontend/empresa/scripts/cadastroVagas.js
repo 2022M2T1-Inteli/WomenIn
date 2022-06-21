@@ -23,12 +23,12 @@ function enviar() {
   let hardSkills = document.querySelector("#HH").value;
   let formacao = document.getElementById("FA").value;
   let estado = document.getElementById("estado1").value;
-  let nome = document.getElementById("nome").value;
+  let nome = $("#nome :selected").text();
   let descricao = document.getElementById("descricao").value;
   let tipo = $("#selTipo :selected").text();
   let formato = $("#selForm :selected").text();
   let horario = $("#selHor :selected").text();
-  alert(hardSkills);
+
   if (
     cidade &&
     estado &&

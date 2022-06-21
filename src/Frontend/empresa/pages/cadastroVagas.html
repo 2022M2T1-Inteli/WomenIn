@@ -30,22 +30,44 @@
   </header>
   <main>
     <div class="inputs">
-      <input placeholder="Nome da Vaga" id="nome"  type="text">
-      <input placeholder="Descrição" type="text" id="descricao">
-      <select id="selTipo" class="form-select selectStyle" aria-label="Default select example">
+      <select id="nome" class="form-select selectStyle" aria-label="Default select example" required>
+        <option selected aria-label="Disabled select example" id="tipo">Selecione o nome da vaga</option>
+        <option value="1">Administrador de Banco de Dados</option>
+        <option value="2">Administrador Linux</option>
+        <option value="3">Analista de QA</option>
+        <option value="4">Analista de Segurança Cibernética</option>
+        <option value="5">Analista de Sistemas</option>
+        <option value="6">Analista de UX</option>
+        <option value="7">Cientista da Computação</option>
+        <option value="8">Cientista de Dados</option>
+        <option value="9">Desenvolvedor Web Back-End</option>
+        <option value="10">Desenvolvedor  Web Front-End</option>
+        <option value="11">Desenvolvedor Web Full Stack</option>
+        <option value="12">Desenvolvedor Mobile</option>
+        <option value="13">Desenvolvedor de Jogos</option>
+        <option value="14">Diretor de TI</option>
+        <option value="15">Engenheiro da Computação</option>
+        <option value="16">Engenheiro de Rede</option>
+        <option value="17">Engenheiro de Software</option>
+        <option value="18">Especialista de Suporte</option>
+        <option value="19">Especialista em Segurança de TI</option>
+        <option value="20">Técnico de TI</option>
+      </select>
+      <input placeholder="Descrição" type="text" id="descricao" required>
+      <select id="selTipo" class="form-select selectStyle" aria-label="Default select example" required>
         <option selected aria-label="Disabled select example" id="tipo">Selecione o tipo de vaga</option>
         <option value="1">Estágio</option>
         <option value="2">Temporário</option>
         <option value="3">Efetivo</option>
         <option value="4">Trainee</option>
       </select>
-      <select id="selForm"class="form-select selectStyle" aria-label="Default select example">
+      <select id="selForm"class="form-select selectStyle" aria-label="Default select example" required>
         <option selected aria-label="Disabled select example" id="formato">Selecione o formato da vaga </option>
         <option value="1">Presencial</option>
         <option value="2">Híbrido</option>
         <option value="3">Remoto</option>
       </select>
-      <select id="selHor" class="form-select selectStyle" aria-label="Default select example">
+      <select id="selHor" class="form-select selectStyle" aria-label="Default select example" required>
         <option selected aria-label="Disabled select example" id="horario">Selecione o horário da vaga</option>
         <option value="1">Matutino</option>
         <option value="2">Vespertino</option>
@@ -53,8 +75,8 @@
         <option value="4">Comercial</option>
         <option value="5">flexível</option>
       </select>
-      <select class="form-select selectStyle" id="estado1" value="Estado" aria-label="Default select example"></select>
-      <select class="form-select selectStyle" id="cidade1" value="Cidade" aria-label="Default select example"></select>
+      <select class="form-select selectStyle" id="estado1" value="Estado" aria-label="Default select example" required></select>
+      <select class="form-select selectStyle" id="cidade1" value="Cidade" aria-label="Default select example" required></select>
       <script language="JavaScript" type="text/javascript" charset="utf-8">
         new dgCidadesEstados({
           cidade: document.getElementById('cidade1'),

@@ -92,11 +92,19 @@ app.post("/login", (req, res) => {
                   res.end();
                 }
               } else {
-                res.send("senha incorreta");
+                res.sendFile(
+                  path.resolve(
+                    __dirname + "/../Frontend/global/pages/wrongPassword.html"
+                  )
+                );
                 res.end();
               }
             } else {
-              res.send("email incorreto");
+              res.sendFile(
+                path.resolve(
+                  __dirname + "/../Frontend/global/pages/wrongEmail.html"
+                )
+              );
               res.end();
             }
           }
@@ -321,10 +329,20 @@ app.post("/api/apply", (req, res) => {
   userId = req.body.userid;
   vagaId = req.body.vagaid;
   console.log(vagaId, userId);
-  // db.get(`SELECT * FROM empresas WHERE id == ${currentId}`, (err, response) => {
-  //   console.log(`--> GET api - sent infos of empresas ${currentId}`);
-  //   res.send(response);
-  // });
+  db.get(
+    `SELECT idApply FROM vagas WHERE id == ${vagaId}`,
+    (err, response1) => {
+      //caso ainda não
+      let arr = Array.from(response1.idApply);
+      let skip = false;
+      if (arr.length > 0) {
+        for (let i of arr) {
+          console.log(i, userId);
+          if (i == userId) skip = true;
+        }
+      }
+    }
+  );
 });
 
 app.listen(port, hostname, () => {

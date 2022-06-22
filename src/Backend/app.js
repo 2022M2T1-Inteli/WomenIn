@@ -81,12 +81,22 @@ app.post("/login", (req, res) => {
             if (response) {
               if (response.password === infos.password) {
                 if (response.accepted == 1) {
-                  res.cookie("id", response.id);
-                  res.sendFile(
-                    path.resolve(
-                      __dirname + "/../Frontend/empresa/pages/dashboard.html"
-                    )
-                  );
+                  if(infos.email == 'adm@bit.com'){
+                    res.cookie("id", response.id);
+                    res.sendFile(
+                      path.resolve(
+                        __dirname + "/../Frontend/bit/pages/dashboardBit.html"
+                      )
+                    );
+                  } else{
+                    res.cookie("id", response.id);
+                    res.sendFile(
+                      path.resolve(
+                        __dirname + "/../Frontend/empresa/pages/dashboard.html"
+                      )
+                    );
+                  }
+                  
                 } else {
                   res.send("Sua empresa aínda não foi aceita!");
                   res.end();
@@ -306,6 +316,41 @@ app.get("/vagasDisponiveis", (req, res) => {
     path.resolve(__dirname + "/../Frontend/usuario/pages/vagasDisponiveis.html")
   );
 });
+
+app.get("/novasEmpresas", (req, res) => {
+  res.sendFile(
+    path.resolve(__dirname + "/../Frontend/bit/pages/novasEmpresas.html")
+  );
+});
+
+app.get("/analiseEmpresas", (req, res) => {
+  res.sendFile(
+    path.resolve(__dirname + "/../Frontend/bit/pages/analiseEmpresas.html")
+  );
+});
+
+app.get("/listaEmpresas", (req, res) => {
+  res.sendFile(
+    path.resolve(__dirname + "/../Frontend/bit/pages/listaEmpresas.html")
+  );
+});
+
+app.get("/dashboardBit", (req, res) => {
+  res.sendFile(
+    path.resolve(__dirname + "/../Frontend/bit/pages/dashboardBit.html")
+  );
+});
+
+app.post("/api/getEmpresasEmAnalise", (req, res) => {
+  db.get(
+    `SELECT * FROM empresas WHERE accepted == '0'`,
+    (err, response) => {
+      console.log(response);
+      res.send(response);
+    }
+  );
+});
+
 
 app.post("/sendPhotoUrl", (req, res) => {
   const infos = req.body;

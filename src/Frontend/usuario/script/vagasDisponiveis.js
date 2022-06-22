@@ -78,31 +78,43 @@ getVagas().then((arrVagas) => {
 
 //função executada quando o user clica para apllicar em uma vaga
 const apply = async (IDVaga) => {
-  let status = await sendApply(IDVaga);
-  switch (status.status) {
-    case "alreadyApplied":
-      Swal.fire({
-        title: "Oops!",
-        text: "Você já aplicou para essa vaga! Aguarde o retorno da empresa!",
-        icon: "warning",
-        confirmButtonText: "OK",
-      });
-      break;
-    case "sucess":
-      Swal.fire({
-        title: "Aplicação concluída!",
-        text: "A empresa já recebeu seu currículo e entrará em contato em breve!",
-        icon: "success",
-        confirmButtonText: "OK",
-      });
-      break;
-    case "error":
-      Swal.fire({
-        title: "Oops!",
-        text: "Erro no banco de dados!",
-        icon: "error",
-        confirmButtonText: "OK",
-      });
-      break;
+  let result = await Swal.fire({
+    title: "Já está pronta para aplicar?",
+    text: "Isso não pode ser revertido.",
+    icon: "info",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Enviar",
+    cancelButtonText: "Cancelar",
+  });
+  if (result.isConfirmed) {
+    let status = await sendApply(IDVaga);
+    switch (status.status) {
+      case "alreadyApplied":
+        Swal.fire({
+          title: "Oops!",
+          text: "Você já aplicou para essa vaga! Aguarde o retorno da empresa!",
+          icon: "warning",
+          confirmButtonText: "OK",
+        });
+        break;
+      case "sucess":
+        Swal.fire({
+          title: "Aplicação concluída!",
+          text: "A empresa já recebeu seu currículo e entrará em contato em breve!",
+          icon: "success",
+          confirmButtonText: "OK",
+        });
+        break;
+      case "error":
+        Swal.fire({
+          title: "Oops!",
+          text: "Erro no banco de dados!",
+          icon: "error",
+          confirmButtonText: "OK",
+        });
+        break;
+    }
   }
 };

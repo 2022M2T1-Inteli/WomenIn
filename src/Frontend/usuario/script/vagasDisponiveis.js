@@ -1,4 +1,5 @@
 let userId = document.cookie.split("=")[1];
+const hostname = "127.0.0.1";
 
 const criarCard = (index, IDVaga) => {
   $("#cards").append(`
@@ -47,7 +48,7 @@ const getVagas = async () => {
   return data;
 };
 
-const sendApply = (ID) => {
+const sendApply = async (ID) => {
   infos = { userid: userId, vagaid: ID };
   const parameters = {
     method: "POST",
@@ -57,7 +58,9 @@ const sendApply = (ID) => {
       "Content-Type": "application/json",
     },
   };
-  fetch("http://127.0.0.1:3030/api/apply", parameters);
+  let test1 = await fetch("http://127.0.0.1:3030/api/apply", parameters);
+  let test2 = await test1.json();
+  return test2;
 };
 
 getVagas().then((arrVagas) => {
@@ -74,6 +77,44 @@ getVagas().then((arrVagas) => {
 });
 
 //função executada quando o user clica para apllicar em uma vaga
-const apply = (IDVaga) => {
-  sendApply(IDVaga);
+const apply = async (IDVaga) => {
+  Swal.fire({
+    title: "Are you sure?",
+    text: "You won't be able to revert this!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Yes, delete it!",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      let status = await sendApply(IDVaga);
+  switch (status.status) {
+    case "alreadyApplied":
+      Swal.fire({
+        title: "Oops!",
+        text: "Você já aplicou para essa vaga! Aguarde o retorno da empresa!",
+        icon: "warning",
+        confirmButtonText: "OK",
+      });
+      break;
+    case "sucess":
+      Swal.fire({
+        title: "Aplicação concluída!",
+        text: "A empresa já recebeu seu currículo e entrará em contato em breve!",
+        icon: "success",
+        confirmButtonText: "OK",
+      });
+      break;
+    case "error":
+      Swal.fire({
+        title: "Oops!",
+        text: "Erro no banco de dados!",
+        icon: "error",
+        confirmButtonText: "OK",
+      });
+      break;
+  }
+    }
+  });
 };

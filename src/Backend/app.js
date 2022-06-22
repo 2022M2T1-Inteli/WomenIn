@@ -325,11 +325,13 @@ app.get("/api/apply", (req, res) => {
 });
 
 app.post("/api/apply", (req, res) => {
-  userId = req.body.userid;
+  userId = 21;
+  // userId = req.body.userid;
   vagaId = req.body.vagaid;
   db.get(
     `SELECT idApply FROM vagas WHERE id == ${vagaId}`,
     (err, response1) => {
+      console.log(err);
       let arrResp = response1.idApply.split(",");
       let arr = [];
       let isApplied = false;
@@ -341,7 +343,27 @@ app.post("/api/apply", (req, res) => {
           isApplied = true;
           break;
         }
-      console.log(isApplied);
+
+      if (!isApplied) {
+        arr.push(Number(userId));
+        db.run(
+          `UPDATE vagas SET idApply = '${arr}' WHERE id == ${vagaId}`,
+          (err) => {
+            if (!err) {
+              console.log(
+                `-> nenhum erro! user ${userId} aplicado na vaga ${vagaId}`
+              );
+              res.send('{"status":"sucess"}');
+            } else {
+              console.log("erro de db");
+              res.send('{"status":"error"}');
+            }
+          }
+        );
+      } else {
+        console.log(`-> user ${userId} já estava aplicado na vaga ${vagaId}`);
+        res.send('{"status":"alreadyApplied"}');
+      }
     }
   );
 });

@@ -1,4 +1,5 @@
 "use strict";
+const hostname = "127.0.0.1";
 
 let userId = document.cookie.split("=")[1];
 let counterFormacao = 1;
@@ -140,10 +141,14 @@ const finalizar = () => {
   objetoFinal.loc = criarStrLocalizacao();
   //adiciona o ID do usuario ao obj
   objetoFinal.id = userId;
-  
-  console.log(objetoFinal)
+
+  console.log(objetoFinal);
   // adiciona as outras informações cadastradas ao obj
-  if (!objetoFinal.loc || !objetoFinal.experiencia[0]||!objetoFinal.formacao[0]) {
+  if (
+    !objetoFinal.loc ||
+    !objetoFinal.experiencia[0] ||
+    !objetoFinal.formacao[0]
+  ) {
     Swal.fire({
       title: "Oops!",
       text: "Preencha todas suas informações",
@@ -152,8 +157,6 @@ const finalizar = () => {
     });
     return;
   }
-
-
 
   // envia o curriculo
   enviarCurriculum(objetoFinal);
@@ -208,6 +211,6 @@ getInfo().then((res) => {
 // função do menu
 
 const trigger = document.querySelector("menu > .trigger");
-trigger.addEventListener('click', (e) => {
+trigger.addEventListener("click", (e) => {
   e.currentTarget.parentElement.classList.toggle("open");
 });

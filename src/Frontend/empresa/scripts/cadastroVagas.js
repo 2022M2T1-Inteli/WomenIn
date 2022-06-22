@@ -1,4 +1,5 @@
 let userId = document.cookie.split("=")[1];
+const hostname = "127.0.0.1";
 
 const getCheckedSS = () => {
   let arr = [];

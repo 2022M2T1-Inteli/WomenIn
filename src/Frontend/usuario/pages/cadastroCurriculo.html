@@ -52,12 +52,14 @@
             id="estado1"
             value="Estado"
             aria-label="Default select example"
+            required
           ></select>
           <select
             class="form-select selectStyle"
             id="cidade1"
             value="Cidade"
             aria-label="Default select example"
+            required
           ></select>
           <script language="JavaScript" type="text/javascript" charset="utf-8">
             new dgCidadesEstados({
@@ -68,11 +70,17 @@
         </div>
         <h1 id="formacao" style="margin: 20px">Formação</h1>
         <div class="inputs">
-          <input placeholder="Formação" type="text" id="inputFormacao1" />
+          <input
+            placeholder="Formação"
+            type="text"
+            id="inputFormacao1"
+            required
+          />
           <input
             placeholder="Universidade"
             type="text"
             id="inputUniversidade1"
+            required
           />
           <div class="data">
             <p>
@@ -83,6 +91,7 @@
                 placeholder="Duração"
                 type="text"
                 id="inputDataEntrada1"
+                required
               />
             </p>
             <p>
@@ -92,17 +101,23 @@
                 placeholder="Duração"
                 type="text"
                 id="inputDataSaida1"
+                req
               />
             </p>
           </div>
         </div>
       </div>
       <span id="novaFormacao"></span>
-      
+
       <h1 id="experiencia">Experiência</h1>
       <div class="inputs">
-        <input placeholder="Título" type="text" id="inputTitulo1" />
-        <input placeholder="Descrição" type="text" id="inputDescricao1" />
+        <input placeholder="Título" type="text" id="inputTitulo1" required />
+        <input
+          placeholder="Descrição"
+          type="text"
+          id="inputDescricao1"
+          required
+        />
       </div>
       <span id="novaExperiencia"></span>
 
@@ -111,9 +126,15 @@
       </div>
 
       <menu>
-        <a style="cursor: pointer;" class="action" onclick="addFormacao()"><i>Adicionar Formação</i></a>
-        <a style="cursor: pointer;" class="action" onclick="addExperiencia()"><i>Adicionar Experiência</i></a>
-        <a style="cursor: pointer;" class="trigger"><i><img src="../../assets/plusIcon.png" alt="icon"></i></a>
+        <a style="cursor: pointer" class="action" onclick="addFormacao()"
+          ><i>Adicionar Formação</i></a
+        >
+        <a style="cursor: pointer" class="action" onclick="addExperiencia()"
+          ><i>Adicionar Experiência</i></a
+        >
+        <a style="cursor: pointer" class="trigger"
+          ><i><img src="../../assets/plusIcon.png" alt="icon" /></i
+        ></a>
       </menu>
     </main>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>

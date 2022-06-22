@@ -41,18 +41,18 @@ Faça o mesmo para a documentação em formato DOCX.
      
 |-->bootstrap <br>
 |-->documentos <br>
- |-->antigos
+ |-->antigos<br>
 |-->imagens <br>
 |-->src <br>
-    |-->.vscode
+    |-->.vscode<br>
  |-->Backend <br>
-        |-->node_modules
+        |-->node_modules<br>
  |-->Frontend <br>
-        |-->assets
-        |-->Bit
-        |-->empresa
-        |-->global
-        |-->usuario
+        |-->assets<br>
+        |-->Bit<br>
+        |-->empresa<br>
+        |-->global<br>
+        |-->usuario<br>
 
 
 Dentre os arquivos presentes na raiz do projeto, definem-se:

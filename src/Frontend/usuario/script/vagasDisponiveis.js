@@ -78,17 +78,7 @@ getVagas().then((arrVagas) => {
 
 //função executada quando o user clica para apllicar em uma vaga
 const apply = async (IDVaga) => {
-  Swal.fire({
-    title: "Are you sure?",
-    text: "You won't be able to revert this!",
-    icon: "warning",
-    showCancelButton: true,
-    confirmButtonColor: "#3085d6",
-    cancelButtonColor: "#d33",
-    confirmButtonText: "Yes, delete it!",
-  }).then((result) => {
-    if (result.isConfirmed) {
-      let status = await sendApply(IDVaga);
+  let status = await sendApply(IDVaga);
   switch (status.status) {
     case "alreadyApplied":
       Swal.fire({
@@ -115,6 +105,4 @@ const apply = async (IDVaga) => {
       });
       break;
   }
-    }
-  });
 };

@@ -49,7 +49,6 @@ const getVagas = async () => {
 
 const sendApply = (ID) => {
   infos = { userid: userId, vagaid: ID };
-  alert(JSON.stringify(infos));
   const parameters = {
     method: "POST",
     body: JSON.stringify(infos),
@@ -62,7 +61,6 @@ const sendApply = (ID) => {
 };
 
 getVagas().then((arrVagas) => {
-  alert(JSON.stringify(arrVagas));
   for (let i in arrVagas) {
     let vaga = arrVagas[i];
     criarCard(i, vaga.id);
@@ -77,6 +75,5 @@ getVagas().then((arrVagas) => {
 
 //função executada quando o user clica para apllicar em uma vaga
 const apply = (IDVaga) => {
-  alert("USUario aplicou para a vaga " + IDVaga);
   sendApply(IDVaga);
 };

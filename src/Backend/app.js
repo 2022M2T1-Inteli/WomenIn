@@ -327,34 +327,21 @@ app.get("/api/apply", (req, res) => {
 app.post("/api/apply", (req, res) => {
   userId = req.body.userid;
   vagaId = req.body.vagaid;
-  console.log(vagaId, userId);
   db.get(
     `SELECT idApply FROM vagas WHERE id == ${vagaId}`,
     (err, response1) => {
-      let str = response1.idApply;
-      let arr = str.split(" ");
-      console.log("array chegou do db -> " + arr);
-      let skip = false;
-      if (arr.length > 0) {
-        for (let i of arr) {
-          if (i == userId) {
-            skip = true;
-            console.log(`ID ${userId} já no array. Pulando...`);
-          }
+      let arrResp = response1.idApply.split(",");
+      let arr = [];
+      let isApplied = false;
+      let finalArr = [];
+      for (let i of arrResp) arr.push(Number(i));
+      console.log(arr);
+      for (let i of arr)
+        if (userId == i) {
+          isApplied = true;
+          break;
         }
-        if (!skip) arr.push(userId);
-      } else {
-        arr = userId;
-      }
-      for (let i in arr) if (arr[i] == "") arr.splice(i, 1);
-      let strFinal = " ";
-      for (let i of arr) strFinal += `${i} `;
-      db.get(
-        `UPDATE vagas SET idApply = '${strFinal}' WHERE id == ${vagaId}`,
-        (respon) => {
-          console.log(respon);
-        }
-      );
+      console.log(isApplied);
     }
   );
 });

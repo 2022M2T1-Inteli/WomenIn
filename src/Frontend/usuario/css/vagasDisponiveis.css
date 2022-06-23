@@ -3,7 +3,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  background-color: rgb(40, 0, 68,0.4)!important;
+  background-color: rgb(40, 0, 68, 0.4) !important;
 }
 
 #header {
@@ -13,37 +13,32 @@ body {
   padding: 15px;
 }
 
-#header h1{
+#header h1 {
   font-size: 36px;
   font-weight: bold;
   margin: 0px;
 }
 
-.backBtn{
+.backBtn {
   height: 40px;
   position: absolute;
   top: 15px;
   left: 15px;
 }
 
-#cards{
+#cards {
   display: flex;
-  flex-direction: column;
-  
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
 }
 
-.cardContainer{
+.cardContainer {
   background-color: #280044;
   padding: 10px;
   color: white;
   margin: 20px;
   border-radius: 10px;
-
-}
-
-@media (min-width: 800px){
-  #cards{
-    flex-direction: row;
-    flex-wrap: nowrap;
-  }
+  width:40%
 }

@@ -252,9 +252,11 @@ app.post("/api/editarEmpresa", (req, res) => {
 
 app.post("/api/getEmpresaInfo", (req, res) => {
   currentId = req.body.id;
-  console.log("oi");
-  db.get(`SELECT * FROM empresas WHERE id == ${currentId}`, (err, response) => {
+  console.log(currentId);
+  db.get(`SELECT * FROM empresas WHERE id == '${currentId}'`, (err, response) => {
     console.log(`--> GET api - sent infos of empresas ${currentId}`);
+    console.log(response)
+    console.log(err)
     res.send(response);
   });
 });
@@ -275,7 +277,7 @@ app.get("/empresa", (req, res) => {
 app.post("/api/enviarVaga", (req, res) => {
   let data = req.body;
   db.run(
-    `INSERT INTO vagas(idEmpresa, jobTitle, description, jobType, jobTime, jobState, jobCity, neededSkills, hardSkills, academicFormation) VALUES('${data.idEmpresa}','${data.name}','${data.descricao}','${data.tipo}','${data.horario}','${data.estado}','${data.cidade}','${data.ss}', '${data.hardSkills}', '${data.formacao}')`,
+    `INSERT INTO vagas(idEmpresa, companyName, jobTitle, description, jobType, jobTime, jobState, jobCity, neededSkills, hardSkills, academicFormation) VALUES('${data.idEmpresa}', '${data.companyName}', '${data.name}','${data.descricao}','${data.tipo}','${data.horario}','${data.estado}','${data.cidade}','${data.ss}', '${data.hardSkills}', '${data.formacao}')`,
     (err) => {
       if (err == null) {
         console.log(

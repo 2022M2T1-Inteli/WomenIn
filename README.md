@@ -11,7 +11,7 @@
 ## Integrantes: 
 - <a href="https://www.linkedin.com/in/victorbarq/">Ariel </a>
 - <a href="https://www.linkedin.com/in/crisandrade/">Cristiane Andrade</a>
-- <a href="https://www.linkedin.com/in/victorbarq/">Daniel Cunha</a> 
+- <a href="https://www.linkedin.com/in/daniel-eduardocunha/">Daniel Cunha</a> 
 - <a href="https://www.linkedin.com/in/liviapcoutinho/">Lívia Coutinho</a> 
 - <a href="https://www.linkedin.com/in/luiz-k-alencar/">Luiz Alencar</a>
 - <a href="https://www.linkedin.com/in/victorbarq/">Paulo Evangelista</a> 
@@ -36,7 +36,6 @@ T4_G5_V01_Web_application_document.pdf
 Faça o mesmo para a documentação em formato DOCX.
 ```
 
-|-->.git <br>
 |-->.vscode <br>
      
 |-->bootstrap <br>
@@ -58,6 +57,8 @@ Faça o mesmo para a documentação em formato DOCX.
 Dentre os arquivos presentes na raiz do projeto, definem-se:
 
 - <b>readme.md</b>: arquivo que serve como guia e explicação geral sobre o projeto (o mesmo que você está lendo agora).
+- <b>.vscode</b>: arquivo que serve como extensões essenciais para o funcionamento do VsCode.
+- <b>bootstrap</b>: arquivo que serve como repositório dos estilos do banco de dados do bootstrap.
 
 - <b>documentos</b>: aqui estarão todos os documentos do projeto. Há também uma pasta denominada <b>outros</b> onde estão presentes aqueles documentos complementares ao <b>web application document</b>.
 
@@ -133,10 +134,12 @@ deve possuir o valor "node app.js".
 
 ## 📋 Licença/License
 
-<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"><p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/Spidus/Teste_Final_1">MODELO GIT INTELI</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://www.yggbrasil.com.br/vr">Inteli, Nome do integrante 1, Nome do integrante 2, Nome do integrante 3, Nome do integrante 4, Nome do integrante 5, Nome do integrante 6, Nome do integrante 7</a> is licensed under <a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">Attribution 4.0 International</a>.</p>
+<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"><p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/Spidus/Teste_Final_1">BIT Match</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://www.yggbrasil.com.br/vr">Inteli, Ariel Kizilevski, Cristiane Andrade, Daniel Cunha, Lívia Coutinho, Luiz Alencar, Paulo Evangelista </a> is licensed under <a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">Attribution 4.0 International</a>.</p>
 
 ## 🎓 Referências
 
 Aqui estão as referências usadas no projeto:
 
-1. <https://creativecommons.org/share-your-work/>
+1. <https://getbootstrap.com>
+2. <https://code.google.com/archive/p/cidades-estados-js/>
+3. <https://www.flaticon.com>

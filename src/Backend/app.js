@@ -347,6 +347,13 @@ app.all("/api/getEmpresasEmAnalise", (req, res) => {
   });
 });
 
+app.all("/api/getEmpresasAprovadas", (req, res) => {
+  db.all(`SELECT * FROM empresas WHERE accepted == 1`, (err, response) => {
+    console.log(response);
+    res.send(JSON.stringify(response));
+  });
+});
+
 app.post("/aproveCompany", (req, res) => {
   const infos = req.body;
   db.run(

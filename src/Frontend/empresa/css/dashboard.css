@@ -1,5 +1,5 @@
 .background{
-  background-image: url("../../assets/capaEmpresa.jfif");
+  background-image: url("../../assets/empresaBackground.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -20,6 +20,7 @@
 #content{
   display: flex;
   flex-direction: row;
+
 }
 
 .nameDescription{
@@ -30,4 +31,12 @@
 .sedeLink{
   padding: 68px 40px;
 
+}
+
+.uncompletedProfile{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  margin-top: 30px;
 }

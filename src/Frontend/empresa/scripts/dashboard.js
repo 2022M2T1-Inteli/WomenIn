@@ -21,14 +21,15 @@ const getInfo = async () => {
 
 getInfo().then((res) => {
   console.log(res)
-  if (res) {
-    if (res.profileUrl) {
-      document.querySelector("#background").style.backgroundImage =`url("${res.backgroundUrl}")`;
-    }
+  if (res.profileUrl) {
+    document.querySelector("#background").style.backgroundImage =`url("${res.backgroundUrl}")`;
+  }
   
-    if (res.backgroundUrl) {
-      document.querySelector("#profile").src=`${res.profileUrl}`;
-    }
+  if (res.backgroundUrl) {
+    document.querySelector("#profile").src=`${res.profileUrl}`;
+  }
+  
+  if (res.profileName && res.bio && res.companyCity && res.companyState && res.website) {
     $("#content").append(
       `
       <div class="nameDescription">
@@ -52,11 +53,13 @@ getInfo().then((res) => {
   } else {
     $("#content").append(
       `
-            <h4 class="local">Você ainda não terminou seu perfil</h4>
-            <a href="/editarEmpresa">
-              <button id="criarcurriculo"type="button"  class="btn btn-warning">Terminar perfil</button>
-            </a>
-            `
+      <div class="uncompletedProfile">
+        <h4 class="local">Você ainda não terminou seu perfil</h4>
+        <a href="/editarEmpresa">
+        <button id="criarcurriculo"type="button"  class="btn btn-warning">Terminar perfil</button>
+        </a>
+      </div>
+        `
     );
   }
 });

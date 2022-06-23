@@ -3,7 +3,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  background-color: rgba(40, 0, 68, 0.4)!important;  
+  background-color: rgba(40, 0, 68, 0.4) !important;
 }
 
 #header {
@@ -13,32 +13,77 @@ body {
   padding: 15px;
 }
 
-#header h1{
+#header h1 {
   font-size: 36px;
   font-weight: bold;
   margin: 0px;
 }
 
-.backBtn{
+#cards {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+
+.backBtn {
   height: 40px;
   position: absolute;
   top: 15px;
   left: 15px;
 }
 
-.card1 {
-  align-items: center;
-  max-width: 600px;
+.cardBx {
+  max-width: 40%;
   margin: 1.1rem;
   margin-bottom: 0;
-  padding: 20px;
+  padding: 30px;
   color: white;
   background-color: #280044;
   border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  min-width: fit-content;
+  justify-content: space-between;
 }
 
-.job {
+.title {
   font-weight: 1000;
   margin-bottom: 5%;
   text-align: center;
+}
+
+.btnBx {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.acceptBtn {
+  color: white;
+  font-weight: 400;
+  padding: 10px;
+  border-radius: 15px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s;
+  border: 1px transparent hidden;
+  margin: 10px;
+}
+
+.acceptBtn:hover {
+  color: white;
+  font-weight: 500;
+  transform: scale(1.1);
+  border: 1px transparent hidden;
+}
+
+.red {
+  background: red;
+}
+
+.green {
+  background: green;
 }

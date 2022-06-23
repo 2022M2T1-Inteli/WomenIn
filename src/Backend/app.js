@@ -81,14 +81,14 @@ app.post("/login", (req, res) => {
             if (response) {
               if (response.password === infos.password) {
                 if (response.accepted == 1) {
-                  if(infos.email == 'adm@bit.com'){
+                  if (infos.email == "adm@bit.com") {
                     res.cookie("id", response.id);
                     res.sendFile(
                       path.resolve(
                         __dirname + "/../Frontend/bit/pages/dashboardBit.html"
                       )
                     );
-                  } else{
+                  } else {
                     res.cookie("id", response.id);
                     res.sendFile(
                       path.resolve(
@@ -340,11 +340,29 @@ app.get("/dashboardBit", (req, res) => {
   );
 });
 
-app.post("/api/getEmpresasEmAnalise", (req, res) => {
-  db.get(
-    `SELECT * FROM empresas WHERE accepted == '0'`,
+app.all("/api/getEmpresasEmAnalise", (req, res) => {
+  db.all(`SELECT * FROM empresas WHERE accepted == 0`, (err, response) => {
+    console.log(response);
+    res.send(JSON.stringify(response));
+  });
+});
+
+app.post("/aproveCompany", (req, res) => {
+  const infos = req.body;
+  db.run(
+    `
+      UPDATE empresas SET (accepted) = ('1') WHERE id == '${infos.ID_Company}'
+    `
+  );
+});
+
+app.post("/denyCompany", (req, res) => {
+  const infos = req.body;
+  db.run(
+    `DELETE FROM empresas WHERE id == '${infos.ID_Company}'`,
     (err, response) => {
       console.log(response);
+      console.log(err);
       res.send(response);
     }
   );

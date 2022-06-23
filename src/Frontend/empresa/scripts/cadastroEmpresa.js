@@ -8,7 +8,7 @@ const cadastrarEmpresa = () => {
     password: password,
   };
 
-  alert(JSON.stringify(objeto));
+  alert("sua empresa está em análise!");
 
   const parameters = {
     method: "POST",

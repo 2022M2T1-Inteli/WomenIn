@@ -413,22 +413,6 @@ app.get('/api/getTotalOfJobs', (req,res) =>{
   )
 })
 
-app.post("/api/cadastrarEmpresaBit", (req, res) => {
-  const infos = req.body;
-  db.run(
-    `INSERT INTO empresas(name, email, password) VALUES('${data.name}','${data.email}','${data.password}')`,
-    (err) => {
-      if (err == null) {
-        console.log(
-          `--> nenhum erro. '${data.name}' inserida no banco de dados.`
-        );
-      } else {
-        console.log("--> ERRO!", err);
-      }
-    }
-  );
-});
-
 // app.all("/seeCompany", (req, res) => {
 //   const infos = req.body;
 //   db.get(`SELECT * FROM empresas WHERE id == ${infos.ID_Company}`, (err, response) => {

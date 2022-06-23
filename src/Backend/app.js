@@ -354,10 +354,13 @@ app.all("/api/getEmpresasEmAnalise", (req, res) => {
 });
 
 app.all("/api/getEmpresasAprovadas", (req, res) => {
-  db.all(`SELECT * FROM empresas WHERE accepted == 1 AND email != 'adm@bit.com'`, (err, response) => {
-    console.log(response);
-    res.send(JSON.stringify(response));
-  });
+  db.all(
+    `SELECT * FROM empresas WHERE accepted == 1 AND email != 'adm@bit.com'`,
+    (err, response) => {
+      console.log(response);
+      res.send(JSON.stringify(response));
+    }
+  );
 });
 
 app.post("/aproveCompany", (req, res) => {
@@ -381,37 +384,35 @@ app.post("/denyCompany", (req, res) => {
   );
 });
 
-app.get('/api/getTotalOfCompany', (req,res) =>{
+app.get("/api/getTotalOfCompany", (req, res) => {
   db.get(
-    `SELECT COUNT(*) from empresas WHERE accepted = '1'`, (err, response) => {
-      res.send(JSON.stringify(response))
+    `SELECT COUNT(*) from empresas WHERE accepted = '1'`,
+    (err, response) => {
+      res.send(JSON.stringify(response));
     }
-  )
-})
+  );
+});
 
-app.get('/api/getTotalOfCompanyInAnalisys', (req,res) =>{
+app.get("/api/getTotalOfCompanyInAnalisys", (req, res) => {
   db.get(
-    `SELECT COUNT(*) from empresas WHERE accepted = '0'`, (err, response) => {
-      res.send(JSON.stringify(response))
+    `SELECT COUNT(*) from empresas WHERE accepted = '0'`,
+    (err, response) => {
+      res.send(JSON.stringify(response));
     }
-  )
-})
+  );
+});
 
-app.get('/api/getTotalOfUsers', (req,res) =>{
-  db.get(
-    `SELECT COUNT(*) from users`, (err, response) => {
-      res.send(JSON.stringify(response))
-    }
-  )
-})
+app.get("/api/getTotalOfUsers", (req, res) => {
+  db.get(`SELECT COUNT(*) from users`, (err, response) => {
+    res.send(JSON.stringify(response));
+  });
+});
 
-app.get('/api/getTotalOfJobs', (req,res) =>{
-  db.get(
-    `SELECT COUNT(*) from vagas`, (err, response) => {
-      res.send(JSON.stringify(response))
-    }
-  )
-})
+app.get("/api/getTotalOfJobs", (req, res) => {
+  db.get(`SELECT COUNT(*) from vagas`, (err, response) => {
+    res.send(JSON.stringify(response));
+  });
+});
 
 // app.all("/seeCompany", (req, res) => {
 //   const infos = req.body;
@@ -434,13 +435,25 @@ app.get("/minhasVagas", (req, res) => {
     path.resolve(__dirname + "/../Frontend/usuario/pages/minhasVagas.html")
   );
 });
-app.get("/api/apply", (req, res) => {
-  res.send("oi");
+app.post("/api/getVagasEmpresa", (req, res) => {
+  const currentId = req.cookies.id;
+  console.log(currentId);
+  db.all(
+    `SELECT * FROM vagas WHERE idEmpresa == ${currentId}`,
+    (err, response) => {
+      res.send(response);
+    }
+  );
+});
+
+app.get("/vagasEmpresa", (req, res) => {
+  res.sendFile(
+    path.resolve(__dirname + "/../Frontend/empresa/pages/vagasEmpresa.html")
+  );
 });
 
 app.post("/api/apply", (req, res) => {
-  userId = 21;
-  // userId = req.body.userid;
+  userId = req.body.userid;
   vagaId = req.body.vagaid;
   db.get(
     `SELECT idApply FROM vagas WHERE id == ${vagaId}`,

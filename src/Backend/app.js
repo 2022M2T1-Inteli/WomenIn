@@ -340,6 +340,12 @@ app.get("/dashboardBit", (req, res) => {
   );
 });
 
+app.get("/perfilEmpresaBit", (req, res) => {
+  res.sendFile(
+    path.resolve(__dirname + "/../Frontend/bit/pages/perfilEmpresaBit.html")
+  );
+});
+
 app.all("/api/getEmpresasEmAnalise", (req, res) => {
   db.all(`SELECT * FROM empresas WHERE accepted == 0`, (err, response) => {
     console.log(response);
@@ -348,7 +354,7 @@ app.all("/api/getEmpresasEmAnalise", (req, res) => {
 });
 
 app.all("/api/getEmpresasAprovadas", (req, res) => {
-  db.all(`SELECT * FROM empresas WHERE accepted == 1`, (err, response) => {
+  db.all(`SELECT * FROM empresas WHERE accepted == 1 AND email != 'adm@bit.com'`, (err, response) => {
     console.log(response);
     res.send(JSON.stringify(response));
   });
@@ -374,6 +380,14 @@ app.post("/denyCompany", (req, res) => {
     }
   );
 });
+
+// app.all("/seeCompany", (req, res) => {
+//   const infos = req.body;
+//   db.get(`SELECT * FROM empresas WHERE id == ${infos.ID_Company}`, (err, response) => {
+//     console.log(response)
+//     res.send(response);
+//   });
+// });
 
 app.post("/sendPhotoUrl", (req, res) => {
   const infos = req.body;

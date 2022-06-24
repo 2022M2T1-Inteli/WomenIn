@@ -9,12 +9,12 @@
 ## WomenIn
 
 ## Integrantes: 
-- <a href="https://www.linkedin.com/in/victorbarq/">Ariel Kisilevzky</a>
+- <a href="https://www.linkedin.com/in//">Ariel Kisilevzky</a>
 - <a href="https://www.linkedin.com/in/crisandrade/">Cristiane Andrade</a>
 - <a href="https://www.linkedin.com/in/daniel-eduardocunha/">Daniel Cunha</a> 
 - <a href="https://www.linkedin.com/in/liviapcoutinho/">Lívia Coutinho</a> 
 - <a href="https://www.linkedin.com/in/luiz-k-alencar/">Luiz Alencar</a>
-- <a href="https://www.linkedin.com/in/victorbarq/">Paulo Evangelista</a> 
+- <a href="https://www.linkedin.com/in//">Paulo Evangelista</a> 
 
 ## 📝 Descrição
 
@@ -83,7 +83,7 @@ Isso instalará todas as dependências definidas no arquivo <b>package.json</b> 
 ```sh
 npm start
 ```
-5. Agora você pode acessar a aplicação através do link http://localhost:1234/
+5. Agora você pode acessar a aplicação através do link http://localhost:1030/
 6. O servidor está online.
 
 

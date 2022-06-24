@@ -77,7 +77,6 @@ function enviar() {
         horario: horario,
         ss: arrSS,
       };
-      alert(JSON.stringify(obj));
       const parameters = {
         method: "POST",
         body: JSON.stringify(obj),
@@ -87,6 +86,7 @@ function enviar() {
         },
       };
       fetch("http://127.0.0.1:3030/api/enviarVaga", parameters);
+      window.location.replace("/dashboardEmpresa");
     } else alert("er");
   });
 }

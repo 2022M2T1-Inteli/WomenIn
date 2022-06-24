@@ -20,11 +20,10 @@ const getInfo = async () => {
 
 const criarCard = (index, idVaga, aplicantes) => {
   $("#container").append(`
-    <div class="card1" id="card${index}">
-    <h1 class="job" id="job${index}">Engenheiro de sistemas</h1>
+    <div class="cardBx" id="card${index}">
+    <h1 class="job" id="job${index}"></h1>
     <h2 class="number" id="number${index}">23 aplicantes</h2>
-    <p class="desc" id="desc${index}">
-    </p>
+    <p class="desc" id="desc${index}"></p>
     <div>
       <button
       onclick="aplicantes(${aplicantes})"
@@ -38,6 +37,7 @@ const criarCard = (index, idVaga, aplicantes) => {
 };
 
 getInfo().then((res) => {
+  console.log(res)
   for (let i in res) {
     let idVaga = res[i].id;
     let infos = res[i];
@@ -47,7 +47,6 @@ getInfo().then((res) => {
     $(`#job${i}`).text(infos.jobTitle);
     $(`#desc${i}`).text(infos.description);
   }
-  console.log(res);
 });
 
 const aplicantes = (a) => {

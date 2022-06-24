@@ -129,6 +129,12 @@ app.get("/loginPage", (req, res) => {
   );
 });
 
+app.get("/vagasEmpresa", (req, res) => {
+  res.sendFile(
+    path.resolve(__dirname + "/../Frontend/empresa/pages/vagasEmpresa.html")
+  );
+});
+
 app.post("/api/getUserInfo", (req, res) => {
   currentId = req.body.id;
   db.get(

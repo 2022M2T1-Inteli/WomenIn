@@ -37,19 +37,21 @@ const criarCard = (index, idVaga, aplicantes) => {
 };
 
 getInfo().then((res) => {
-  console.log(res)
+  console.log(res);
   for (let i in res) {
     let idVaga = res[i].id;
     let infos = res[i];
     let aplicantes = `'${res[i].idApply}'`;
     console.log(aplicantes);
+    let teste = aplicantes.split(",");
     criarCard(i, idVaga, aplicantes);
     $(`#job${i}`).text(infos.jobTitle);
+    $(`#number${i}`).text(teste.length + " candidatas");
     $(`#desc${i}`).text(infos.description);
   }
 });
 
-const aplicantes = (a) => {
+const aplicantes = async (a) => {
   console.log(a);
   let infos = { id: a };
   const parameters = {
@@ -60,5 +62,23 @@ const aplicantes = (a) => {
       "Content-Type": "application/json",
     },
   };
-  fetch("http://127.0.0.1:3030/api/getCandidatasVaga", parameters);
+  const response = await fetch(
+    "http://127.0.0.1:3030/api/getCandidatasVaga",
+    parameters
+  );
+
+  const data = await response.json();
+  strModal = ``;
+  for (let i in data) {
+    strModal += `<h2>${data[i].name} - ${data[i].location}</h2>
+    <h4 style="color: gray">${data[i].email}</h4>
+    <p>${data[i].bio}<p><hr>
+    `;
+  }
+  $(".modal-content").append(strModal);
+  $("#myModal").modal("toggle");
 };
+
+$("#myModal").on("hide.bs.modal", () => {
+  $(".modal-content").text(" ");
+});

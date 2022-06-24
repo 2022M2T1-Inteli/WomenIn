@@ -8,6 +8,7 @@ const app = express();
 const hostname = "127.0.0.1";
 const port = 3030;
 const sqlite3 = require("sqlite3");
+const { JSONCookie } = require("cookie-parser");
 const db = new sqlite3.Database("database.db");
 app.use(bp.urlencoded({ extended: true }));
 app.use(cors());
@@ -259,12 +260,15 @@ app.post("/api/editarEmpresa", (req, res) => {
 app.post("/api/getEmpresaInfo", (req, res) => {
   currentId = req.body.id;
   console.log(currentId);
-  db.get(`SELECT * FROM empresas WHERE id == '${currentId}'`, (err, response) => {
-    console.log(`--> GET api - sent infos of empresas ${currentId}`);
-    console.log(response)
-    console.log(err)
-    res.send(response);
-  });
+  db.get(
+    `SELECT * FROM empresas WHERE id == '${currentId}'`,
+    (err, response) => {
+      console.log(`--> GET api - sent infos of empresas ${currentId}`);
+      console.log(response);
+      console.log(err);
+      res.send(response);
+    }
+  );
 });
 
 app.get("/editarEmpresa", (req, res) => {
@@ -510,14 +514,14 @@ app.post("/api/getCandidatasVaga", (req, res) => {
   let strQuery = "";
   for (i in arrIdAplicantes) {
     if (i == 0) {
-      strQuery += `SELECT name FROM users WHERE id == ${arrIdAplicantes[i]} `;
+      strQuery += `SELECT * FROM users WHERE id == ${arrIdAplicantes[i]} `;
     } else {
-      strQuery += `UNION SELECT name FROM users WHERE id == ${arrIdAplicantes[i]} `;
+      strQuery += `UNION SELECT * FROM users WHERE id == ${arrIdAplicantes[i]} `;
     }
   }
   db.all(strQuery, (err, response) => {
     console.log(strQuery);
-    console.log(response, err);
+    res.send(JSON.stringify(response));
   });
 });
 

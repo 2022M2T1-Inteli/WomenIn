@@ -71,8 +71,7 @@ const aplicantes = async (a) => {
   strModal = ``;
   for (let i in data) {
     strModal += `<h2>${data[i].name} - ${data[i].location}</h2>
-    <h4 style="color: gray">${data[i].email}</h4>
-    <p>${data[i].bio}<p><hr>
+    <h4 style="color: gray">${data[i].email}</h4><hr>
     `;
   }
   $(".modal-content").append(strModal);

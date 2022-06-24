@@ -497,6 +497,24 @@ app.post("/api/apply", (req, res) => {
   );
 });
 
+app.post("/api/getCandidatasVaga", (req, res) => {
+  let aplicantes = req.body.id.split(",");
+  console.log(req.body.id);
+  let arrIdAplicantes = aplicantes.map(Number);
+  let strQuery = "";
+  for (i in arrIdAplicantes) {
+    if (i == 0) {
+      strQuery += `SELECT name FROM users WHERE id == ${arrIdAplicantes[i]} `;
+    } else {
+      strQuery += `UNION SELECT name FROM users WHERE id == ${arrIdAplicantes[i]} `;
+    }
+  }
+  db.all(strQuery, (err, response) => {
+    console.log(strQuery);
+    console.log(response, err);
+  });
+});
+
 app.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`);
 });

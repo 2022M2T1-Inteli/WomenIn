@@ -18,26 +18,20 @@ const getInfo = async () => {
   return data;
 };
 
-const criarCard = (index, idVaga) => {
+const criarCard = (index, idVaga, aplicantes) => {
   $("#container").append(`
-    <div class="card" id="card${index}">
-    <h3>id ${idVaga}<h3>
+    <div class="card1" id="card${index}">
     <h1 class="job" id="job${index}">Engenheiro de sistemas</h1>
     <h2 class="number" id="number${index}">23 aplicantes</h2>
     <p class="desc" id="desc${index}">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
-      itaque enim ex, id optio eos, dignissimos facere blanditiis culpa
-      accusantium nobis eum.
     </p>
     <div>
-      <a
-        href="./aplicantes.html"
-        id="button${index}"
-        type="button"
+      <button
+      onclick="aplicantes(${aplicantes})"
         class="btn btn-warning"
       >
         Ver aplicantes
-      </a>
+      </button>
     </div>
   </div>
   `);
@@ -46,6 +40,26 @@ const criarCard = (index, idVaga) => {
 getInfo().then((res) => {
   for (let i in res) {
     let idVaga = res[i].id;
-    criarCard(i, idVaga);
+    let infos = res[i];
+    let aplicantes = `'${res[i].idApply}'`;
+    console.log(aplicantes);
+    criarCard(i, idVaga, aplicantes);
+    $(`#job${i}`).text(infos.jobTitle);
+    $(`#desc${i}`).text(infos.description);
   }
+  console.log(res);
 });
+
+const aplicantes = (a) => {
+  console.log(a);
+  let infos = { id: a };
+  const parameters = {
+    method: "POST",
+    body: JSON.stringify(infos),
+    credentials: "same-origin",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
+  fetch("http://127.0.0.1:3030/api/getCandidatasVaga", parameters);
+};
